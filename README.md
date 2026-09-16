@@ -32,4 +32,4 @@ No wallets. No player API keys. Remix federation = point at existing Play URLs â
 
 ## First ship Play
 
-SmiR canonical Live (remix off): https://heart-giant-plum-lotus.grok.me
+SmiR canonical Live (remix off): https://boltverse-odysseyyy.grok.me

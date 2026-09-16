@@ -3,7 +3,7 @@
   "gateSub": null,
   "handle": "@SMiR123451",
   "displayName": "SmiR 9",
-  "playUrl": "https://heart-giant-plum-lotus.grok.me",
+  "playUrl": "https://boltverse-odysseyyy.grok.me",
   "remixEnabled": false,
   "citadel": { "defaultRoom": "frost" },
   "hangs": [],
@@ -15,5 +15,5 @@
   "playTimeSec": 0,
   "lastRun": null,
   "updatedAt": "2026-09-16T08:11:16Z",
-  "notes": "Ship Play moved from olive (publish stuck) to heart-giant-plum-lotus. gateSub filled on first gated open."
+  "notes": "Ship Play canonical Live is boltverse-odysseyyy.grok.me (heart-giant-plum-lotus superseded; olive publish stuck). gateSub filled on first gated open."
 }
