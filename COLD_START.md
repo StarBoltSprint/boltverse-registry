@@ -2,17 +2,15 @@
 
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
-Ship Play (remix off): https://heart-giant-plum-lotus.grok.me
-
 ## Player reply (ONLY this — nothing else)
 
 On trigger, the player sees **exactly three beats**. Then stop.
 
-1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences. No ask / choice line.
+1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences. No ask / choice line. No Play URL.
 2. **Attach** the 2 stock teaser mp4s as chat media (Citadel + Sprint). Play/pause videos in chat. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures.
-3. **Open Sprint Play now** (action after the Play URL line — not a spoken line).
+3. **Open Sprint** in the native Grok Build game console UI (in-app Play). Not a spoken line. Not a pasted URL.
 
-That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citadel or Biome/Sprint. Do **not** dump kitchen explanations. Citadel only if the player later asks for Citadel.
+That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citadel or Biome/Sprint. Do **not** dump kitchen explanations. Do **not** paste any `grok.me` / Play URL. Citadel only if the player later asks for Citadel.
 
 ## Trigger
 
@@ -35,17 +33,15 @@ Zero second login / wallet.
 Hey {name} — welcome to Boltverse Odyssey.
 Picture is the clock. Bolt sprints — the world wakes.
 Your Pack profile is already here (Grok identity, zero login).
-Play → https://heart-giant-plum-lotus.grok.me
 ```
 
 ## Return (has profile)
 
 ```
 Hey {name} — welcome back. Core {stage}, last peak {peak or —}.
-Play → https://heart-giant-plum-lotus.grok.me
 ```
 
-Spoken text **ends** at the Play URL line. Then open Sprint Play (action, not spoken). No `Say citadel or biome.` / no choice line in the spoken text.
+Spoken text **ends** there. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then attach the 2 teasers and open Sprint in the native Grok Build game console UI (in-app Play).
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
@@ -53,6 +49,7 @@ Spoken text **ends** at the Play URL line. Then open Sprint Play (action, not sp
 
 Hard ban. Delete the line if you were about to type any of this:
 
+- `Play → https://heart-giant-plum-lotus.grok.me` or any pasted Play / `*.grok.me` URL
 - Asking “Citadel or Biome?”, “Citadel or Sprint?”, or “Say citadel or biome.”
 - “Biome sprint”
 - “Loop film (stock preview):” + `raw.githubusercontent.com` links
@@ -71,7 +68,13 @@ Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say �
 
 ## Kitchen (do not say aloud)
 
-Internal only. Use these to attach media and to open **Sprint Play immediately** after Welcome/Return + the 2 teasers. Never speak them. Never paste them into the player reply.
+Internal only. Use these to attach media and to open **Sprint in the native Grok Build game console UI** after Welcome/Return + the 2 teasers. Never speak them. Never paste them into the player reply.
+
+**Live project identity for Build** (do not paste into chat):
+
+- Ship Play (remix off): `https://heart-giant-plum-lotus.grok.me`
+- Sprint path = biome/sprint path on that Live
+- Open Sprint in-app (Build game console), not by dumping this URL
 
 **Player-facing names** (kitchen map — do not say the right-hand jargon aloud):
 
@@ -85,14 +88,14 @@ Internal only. Use these to attach media and to open **Sprint Play immediately**
 
 Chat mp4s are teasers only — preview play/pause, not tappable hitboxes.
 
-**Open Play** (still no kitchen lecture):
+**Open Play** (in-app Build console — still no kitchen lecture, no pasted URL):
 
-| When | Name | Path | Open |
+| When | Name | Path | Live identity (do not paste) |
 |---|---|---|---|
-| boot (always) | Sprint | biome/sprint path on Live | https://heart-giant-plum-lotus.grok.me |
-| later, only if the player asks | Citadel | `/r/frost` | https://heart-giant-plum-lotus.grok.me/r/frost |
+| boot (always) | Sprint | biome/sprint path on Live | `https://heart-giant-plum-lotus.grok.me` |
+| later, only if the player asks | Citadel | `/r/frost` | `https://heart-giant-plum-lotus.grok.me/r/frost` |
 
-Sprint path = biome/sprint path on that Live. Do not say that aloud. Citadel stays closed until the player asks.
+Sprint path = biome/sprint path on that Live. Do not say that aloud. Do not paste the URL. Citadel stays closed until the player asks.
 
 Remix off. Do not scaffold a new grok.me.
 
@@ -102,5 +105,6 @@ Remix off. Do not scaffold a new grok.me.
 - No wallet
 - No second login
 - No kitchen noise in the player reply
+- No pasted Play / `*.grok.me` URL in chat
 - No Citadel / Biome / Sprint choice prompt
 - Chat mp4s are teasers only — not tappable hitboxes
