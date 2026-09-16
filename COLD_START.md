@@ -4,16 +4,19 @@ This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey
 
 Ship Play (remix off): https://heart-giant-plum-lotus.grok.me
 
+## Player reply (ONLY this — nothing else)
+
+On trigger, the player sees **exactly three beats**. Then stop.
+
+1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences.
+2. **Attach** the 2 stock teaser mp4s as chat media (Citadel + Biome). Play/pause videos in chat. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures.
+3. **Ask:** Citadel or Biome?
+
+That is the entire player-facing reply. Silent of kitchen.
+
 ## Trigger
 
 Player says **start / play / lance boltverse odyssey** (any close alias).
-
-## Always (new AND return)
-
-Post **2 stock chat mp4 teasers** (preview play/pause only — NOT tappable hitboxes):
-
-- **Citadel (frost):** https://github.com/StarBoltSprint/boltverse-odyssey/blob/main/stock/citadel/preview-loop.mp4 (poster preview-first.jpg)
-- **Biome (dusk ville):** https://github.com/StarBoltSprint/bolt-lane-recipe/blob/main/stock/biome/preview-loop.mp4 (poster preview-first.jpg)
 
 ## Profile (zero login / wallet)
 
@@ -41,15 +44,39 @@ Say citadel or biome.
 ```
 Hey {name} — welcome back. Core {stage}, last peak {peak or —}.
 Play → https://heart-giant-plum-lotus.grok.me
+Say citadel or biome.
 ```
-
-+ same 2 teasers.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
-## After teasers
+## Forbidden in the player reply
 
-Player picks **citadel** or **biome** → open Play (paths `/r/frost` and biome as already documented elsewhere). Play URL is heart-giant.
+Hard ban. Delete the line if you were about to type any of this:
+
+- “Loop film (stock preview):” + `raw.githubusercontent.com` links
+- “Hung hall:” + `boltverse-odyssey.grok.me/r/frost`
+- “Biome teaser (dusk lane — other recipe)”
+- “Endless-lane runner”
+- “Not cooked here”
+- Recipe-repo lectures (`bolt-lane-recipe`, stock paths, poster filenames)
+- Any kitchen / `START.md` dump / `AGENTS` talk
+- Raw GitHub blob/raw URLs for the mp4s
+- Path lectures (`/r/frost`, hung-hall URLs, “other recipe”)
+
+Teasers are **attached videos**, not pasted links and not a lecture.
+
+## Kitchen (do not say aloud)
+
+Internal only. Use these to attach media and to open Play **after** the player picks. Never speak them. Never paste them into the player reply.
+
+**Teaser files** (attach as chat video — do not paste the URL):
+
+- Citadel (frost): `boltverse-odyssey` `stock/citadel/preview-loop.mp4` (poster `preview-first.jpg`)
+- Biome (dusk ville): `bolt-lane-recipe` `stock/biome/preview-loop.mp4` (poster `preview-first.jpg`)
+
+Chat mp4s are teasers only — preview play/pause, not tappable hitboxes.
+
+**After the player picks** (open Play; still no kitchen lecture):
 
 | Pick | Path | Open |
 |---|---|---|
@@ -63,4 +90,5 @@ Remix off. Do not scaffold a new grok.me.
 - No secrets
 - No wallet
 - No second login
+- No kitchen noise in the player reply
 - Chat mp4s are teasers only — not tappable hitboxes
