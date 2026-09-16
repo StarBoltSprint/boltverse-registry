@@ -8,9 +8,9 @@ Ship Play (remix off): https://heart-giant-plum-lotus.grok.me
 
 On trigger, the player sees **exactly three beats**. Then stop.
 
-1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences.
+1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences. No ask / choice line.
 2. **Attach** the 2 stock teaser mp4s as chat media (Citadel + Sprint). Play/pause videos in chat. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures.
-3. **Open Sprint Play now.**
+3. **Open Sprint Play now** (action after the Play URL line — not a spoken line).
 
 That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citadel or Biome/Sprint. Do **not** dump kitchen explanations. Citadel only if the player later asks for Citadel.
 
@@ -44,6 +44,8 @@ Play → https://heart-giant-plum-lotus.grok.me
 Hey {name} — welcome back. Core {stage}, last peak {peak or —}.
 Play → https://heart-giant-plum-lotus.grok.me
 ```
+
+Spoken text **ends** at the Play URL line. Then open Sprint Play (action, not spoken). No `Say citadel or biome.` / no choice line in the spoken text.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
