@@ -1,0 +1,13 @@
+{
+  "userId": "smir9",
+  "handle": "@SMiR123451",
+  "displayName": "SmiR 9",
+  "playUrl": "https://olive-lion-quartz-craft.grok.me",
+  "remixEnabled": false,
+  "citadel": { "defaultRoom": "frost" },
+  "hangs": [],
+  "resonance": { "peak": null, "lastRunAt": null },
+  "cosmetics": { "packTitle": null },
+  "updatedAt": "2026-09-16T05:17:32Z",
+  "notes": "userId smir9 is a placeholder until real Grok session id is known. Canonical ship Play until boltverse-odyssey slug works."
+}
