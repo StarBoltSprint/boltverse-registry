@@ -24,7 +24,9 @@ Player says **start / play / lance boltverse odyssey** (any close alias).
 
 ## Profile (zero login / wallet)
 
-`{name}` = displayName from `profiles/<id>.json`, else gate/app name, else “runner”.
+Spoken opener is **`Hey {name}`**. `{name}` = Grok profile display name (chat user name) first, else registry `displayName`, else gate/app name, else “runner”.
+
+**Forbidden** for `{name}`: “Packmate”, “player”, “friend”, or any generic stand-in when a real name is available.
 
 Load profile from `profiles/<userId>.json` or `registry.json`.
 
@@ -76,6 +78,7 @@ Hard ban. Delete the line if you were about to type any of this:
 - Any kitchen / `START.md` dump / `AGENTS` talk
 - Raw GitHub blob/raw URLs for the mp4s
 - Path lectures (`/r/frost`, hung-hall URLs, “other recipe”)
+- “Packmate”, “player”, “friend”, or any generic stand-in for `{name}` when a real name is available
 
 Teasers are **attached videos**, not spoken status lines, not pasted links, and not a lecture.
 
@@ -84,6 +87,8 @@ Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say �
 ## Kitchen (do not say aloud)
 
 Internal only. Tools on cold-start: **GitHub** (fetch + attach the two `preview-loop.mp4` files) and the **native Grok Build console** (open Sprint). Never call a Grok Bot connector. Never wake Director. Never wake any Grok Bot. Players must not depend on SmiR’s bots. Never speak kitchen. Never paste kitchen into the player reply.
+
+**Name:** if chat cannot resolve a display name, use “runner” — never Packmate.
 
 **Live project identity for Build** (do not paste into chat):
 
@@ -126,3 +131,4 @@ Remix off. Do not scaffold a new grok.me.
 - No spoken teaser substitutes (“Citadel teaser and Sprint teaser are on”)
 - No spoken “Open Sprint on the native Grok Build…”
 - Chat mp4s are teasers only — not tappable hitboxes
+- No “Packmate” / “player” / “friend” stand-in when a real name is available
