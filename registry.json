@@ -2,9 +2,21 @@
   "version": 1,
   "players": [
     {
+      "userId": "pack-wire-decode",
+      "handle": null,
+      "displayName": "Decode Probe",
+      "playUrl": "https://heart-giant-plum-lotus.grok.me",
+      "lastSeenAt": "2026-09-16T17:12:59.386Z",
+      "playTimeSec": 0,
+      "updatedAt": "2026-09-16T17:12:59.386Z"
+    },
+    {
       "userId": "smir9",
       "handle": "@SMiR123451",
+      "displayName": "smir9",
       "playUrl": "https://heart-giant-plum-lotus.grok.me",
+      "lastSeenAt": "2026-09-16T08:11:16Z",
+      "playTimeSec": 0,
       "updatedAt": "2026-09-16T08:11:16Z"
     }
   ]
