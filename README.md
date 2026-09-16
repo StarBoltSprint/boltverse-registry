@@ -6,6 +6,12 @@ On **start / play / lance boltverse odyssey**: post the locked Pack Welcome (no 
 
 → **[COLD_START.md](COLD_START.md)**
 
+## Kitchen: Pack federation wire
+
+Any `*.grok.me` Live auto-joins central Pack profiles. Identity = Grok gate `sub`, not the URL. Writes go to the **central Pack API** — not a single Live’s secrets.
+
+→ **[PACK.md](PACK.md)**
+
 ---
 
 Pack **player profiles** + federated **Play URL** index for Boltverse Odyssey.
@@ -22,7 +28,7 @@ Cloud save (GitHub) — **not** `localStorage`. Keyed by Grok `userId`.
 
 ## Auto-save hooks
 
-Write profile + update `registry.json` on: Keep / Hang / seal / remix publish / cosmetics change.
+Write profile + update `registry.json` on: Pack boot / heartbeat (central API — [PACK.md](PACK.md)) · Keep / Hang / seal / remix publish / cosmetics change. Keyed by gate `sub` when known.
 
 ## Cold-start
 
