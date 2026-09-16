@@ -33,15 +33,19 @@ Zero second login / wallet.
 Hey {name} — welcome to Boltverse Odyssey.
 Picture is the clock. Bolt sprints — the world wakes.
 Your Pack profile is already here (Grok identity, zero login).
+Powered by xAI & YOU.
+Ready to sprint?
 ```
 
 ## Return (has profile)
 
 ```
 Hey {name} — welcome back. Core {stage}, last peak {peak or —}.
+Powered by xAI & YOU.
+Ready to sprint?
 ```
 
-Spoken text **ends** there. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then attach the 2 teasers and open Sprint in the native Grok Build game console UI (in-app Play).
+Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then attach the 2 teasers and open Sprint in the native Grok Build game console UI (in-app Play).
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
