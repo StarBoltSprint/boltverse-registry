@@ -1,5 +1,6 @@
 {
   "userId": "smir9",
+  "gateSub": null,
   "handle": "@SMiR123451",
   "displayName": "SmiR 9",
   "playUrl": "https://olive-lion-quartz-craft.grok.me",
@@ -7,7 +8,9 @@
   "citadel": { "defaultRoom": "frost" },
   "hangs": [],
   "resonance": { "peak": null, "lastRunAt": null },
-  "cosmetics": { "packTitle": null },
-  "updatedAt": "2026-09-16T05:17:32Z",
-  "notes": "userId smir9 is a placeholder until real Grok session id is known. Canonical ship Play until boltverse-odyssey slug works."
+  "starCore": { "charge": 0, "stage": "kindled" },
+  "cosmetics": { "packTitle": null, "inventory": [] },
+  "lastRun": null,
+  "updatedAt": "2026-09-16T07:42:55Z",
+  "notes": "gateSub filled when olive gate auth is on (JWT sub). userId smir9 remains alias until first real sub write."
 }
