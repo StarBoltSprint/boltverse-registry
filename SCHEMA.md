@@ -7,7 +7,7 @@ See `profiles/smir9.json` for a filled example.
 | userId | string | Opaque Grok session id when known; placeholder ok until then |
 | handle | string | `@handle` from X/Grok when available |
 | displayName | string | |
-| playUrl | string | Canonical `*.grok.me` Play |
+| playUrl | string | Canonical `*.grok.me` Play — e.g. `https://boltverse-odysseyyy.grok.me` |
 | remixEnabled | boolean | |
 | citadel | object | e.g. `{ \"defaultRoom\": \"frost\" }` |
 | hangs | array | Short list of hung room ids / urls |
