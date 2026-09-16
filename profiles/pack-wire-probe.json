@@ -1,0 +1,29 @@
+{
+  "userId": "pack-wire-probe",
+  "gateSub": "pack-wire-probe",
+  "handle": null,
+  "displayName": "Pack probe",
+  "playUrl": "https://heart-giant-plum-lotus.grok.me",
+  "remixEnabled": false,
+  "citadel": {
+    "defaultRoom": null
+  },
+  "hangs": [],
+  "resonance": {
+    "peak": null,
+    "lastRunAt": null
+  },
+  "starCore": {
+    "charge": 0,
+    "stage": "kindled"
+  },
+  "cosmetics": {
+    "packTitle": null,
+    "inventory": []
+  },
+  "sessionStartedAt": "2026-09-16T08:28:00Z",
+  "lastSeenAt": "2026-09-16T08:28:00Z",
+  "playTimeSec": 0,
+  "lastRun": null,
+  "updatedAt": "2026-09-16T08:28:00Z"
+}
