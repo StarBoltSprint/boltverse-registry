@@ -1,0 +1,29 @@
+{
+  "userId": "pack-wire-decode",
+  "gateSub": "pack-wire-decode",
+  "handle": null,
+  "displayName": "Decode Probe",
+  "playUrl": "https://heart-giant-plum-lotus.grok.me",
+  "remixEnabled": false,
+  "citadel": {
+    "defaultRoom": null
+  },
+  "hangs": [],
+  "resonance": {
+    "peak": null,
+    "lastRunAt": null
+  },
+  "starCore": {
+    "charge": 0,
+    "stage": "kindled"
+  },
+  "cosmetics": {
+    "packTitle": null,
+    "inventory": []
+  },
+  "sessionStartedAt": "2026-09-16T17:10:00.000Z",
+  "lastSeenAt": "2026-09-16T17:12:59.386Z",
+  "playTimeSec": 0,
+  "lastRun": null,
+  "updatedAt": "2026-09-16T17:12:59.386Z"
+}
