@@ -3,14 +3,17 @@
   "gateSub": null,
   "handle": "@SMiR123451",
   "displayName": "SmiR 9",
-  "playUrl": "https://olive-lion-quartz-craft.grok.me",
+  "playUrl": "https://heart-giant-plum-lotus.grok.me",
   "remixEnabled": false,
   "citadel": { "defaultRoom": "frost" },
   "hangs": [],
   "resonance": { "peak": null, "lastRunAt": null },
   "starCore": { "charge": 0, "stage": "kindled" },
   "cosmetics": { "packTitle": null, "inventory": [] },
+  "sessionStartedAt": null,
+  "lastSeenAt": null,
+  "playTimeSec": 0,
   "lastRun": null,
-  "updatedAt": "2026-09-16T07:42:55Z",
-  "notes": "gateSub filled when olive gate auth is on (JWT sub). userId smir9 remains alias until first real sub write."
+  "updatedAt": "2026-09-16T08:11:16Z",
+  "notes": "Ship Play moved from olive (publish stuck) to heart-giant-plum-lotus. gateSub filled on first gated open."
 }
