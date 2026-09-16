@@ -4,7 +4,7 @@ This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey
 
 ## Cold-start tools (hard)
 
-**GitHub + native Grok Build console only.**
+**GitHub + Build only.**
 
 Never call a **Grok Bot connector**. Do not wake Director. Do not wake any Grok Bot. Players must not depend on SmiR’s bots.
 
@@ -14,7 +14,7 @@ On trigger, the player sees **exactly three beats**. Then stop.
 
 1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences. No ask / choice line. No Play URL.
 2. **Attach** the 2 stock `preview-loop.mp4` files as chat media (Citadel + Sprint). **Must attach** — real video files in the chat. Play/pause videos in chat. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures. Do **not** speak a substitute.
-3. **Open Sprint** in the native Grok Build game console UI (in-app Play). **Silent after media.** Not a spoken line. Not a pasted URL.
+3. **Attach / open** the tappable Sprint as an **in-chat Build game preview** (playable card / Live preview in the thread) — same idea as attaching the videos: the player gets Sprint in the chat. Not a pasted `*.grok.me` URL. Not a spoken “open Build…” line. If in-chat Build game attach is unavailable, fall back to silently opening the native Build game console — still no URL paste.
 
 That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citadel or Biome/Sprint. Do **not** dump kitchen explanations. Do **not** paste any `grok.me` / Play URL. Citadel only if the player later asks for Citadel.
 
@@ -55,7 +55,7 @@ Powered by xAI & YOU.
 Ready to sprint?
 ```
 
-Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then **attach** the 2 `preview-loop.mp4` files as chat media and **silently** open Sprint in the native Grok Build game console UI (in-app Play). No spoken stand-in for either beat.
+Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then **attach** the 2 `preview-loop.mp4` files as chat media and **attach / open** the tappable Sprint as an in-chat Build game preview (playable card / Live preview in the thread). If that attach is unavailable, silently open the native Build game console. No spoken stand-in for any beat. No URL paste.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
@@ -65,9 +65,8 @@ Hard ban. Delete the line if you were about to type any of this:
 
 - Calling / waking a Grok Bot connector (Director or any Grok Bot). Players must not depend on SmiR’s bots.
 - “Citadel teaser and Sprint teaser are on”
-- “Open Sprint on the native Grok Build…”
 - Any spoken stand-in for the attached `preview-loop.mp4` files
-- Any spoken stand-in for opening Sprint in Build
+- Any spoken stand-in for attaching / opening Sprint (“open Build…”, “Open Sprint on the native Grok Build…”)
 - `Play → https://heart-giant-plum-lotus.grok.me` or any pasted Play / `*.grok.me` URL
 - Asking “Citadel or Biome?”, “Citadel or Sprint?”, or “Say citadel or biome.”
 - “Biome sprint”
@@ -90,15 +89,17 @@ Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say �
 
 ## Kitchen (do not say aloud)
 
-Internal only. Tools on cold-start: **GitHub** (fetch + attach the two `preview-loop.mp4` files) and the **native Grok Build console** (open Sprint). Never call a Grok Bot connector. Never wake Director. Never wake any Grok Bot. Players must not depend on SmiR’s bots. Never speak kitchen. Never paste kitchen into the player reply.
+Internal only. Tools on cold-start: **GitHub** (fetch + attach the two `preview-loop.mp4` files) and **Build** (attach / open Sprint as an in-chat playable Build game preview; if that attach is unavailable, silently open the native Build game console). Never call a Grok Bot connector. Never wake Director. Never wake any Grok Bot. Players must not depend on SmiR’s bots. Never speak kitchen. Never paste kitchen into the player reply.
 
 **Name:** opener is always `Hey Packmate {name}`. If chat cannot resolve a display name, use “runner” — still say Packmate. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available.
 
-**Live project identity for Build** (do not paste into chat):
+**Sprint Build / Live identity for test** (do not paste into chat):
 
-- Ship Play (remix off): `https://heart-giant-plum-lotus.grok.me`
+- Test Live (interim): `https://heart-giant-plum-lotus.grok.me`
+- This is **test-only** — may not be the final dusk Sprint. SmiR’s real Sprint is the **houla** Build convo when publish works.
+- Prefer opening that Live as an **attached playable Build preview** in the thread (tappable card / Live preview), never dump the URL in chat.
+- True dusk Sprint source of truth = Build convo **houla** (LanePlayer). Point kitchen at houla when a stable Live exists; until then heart-giant is test-only.
 - Sprint path = biome/sprint path on that Live
-- Open Sprint in-app (Build game console), not by dumping this URL
 
 **Player-facing names** (kitchen map — do not say the right-hand jargon aloud):
 
@@ -112,14 +113,17 @@ Internal only. Tools on cold-start: **GitHub** (fetch + attach the two `preview-
 
 Chat mp4s are teasers only — preview play/pause, not tappable hitboxes.
 
-**Open Play** (in-app Build console — silent after media, no kitchen lecture, no pasted URL):
+**Open Sprint** (in-chat Build game preview first — silent after media, no kitchen lecture, no pasted URL):
+
+Prefer: attach / open the tappable Sprint as an in-chat Build game preview (playable card / Live preview in the thread), same idea as attaching the two mp4s.
+Fallback: if in-chat Build game attach is unavailable, silently open the native Build game console. Still no URL paste.
 
 | When | Name | Path | Live identity (do not paste) |
 |---|---|---|---|
-| boot (always) | Sprint | biome/sprint path on Live | `https://heart-giant-plum-lotus.grok.me` |
+| boot (always) | Sprint | biome/sprint path on Live | `https://heart-giant-plum-lotus.grok.me` (test-only until houla Live is stable) |
 | later, only if the player asks | Citadel | `/r/frost` | `https://heart-giant-plum-lotus.grok.me/r/frost` |
 
-Sprint path = biome/sprint path on that Live. Do not say that aloud. Do not paste the URL. Opening Sprint in Build is **silent after the media**. Ban spoken “Open Sprint on the native Grok Build…”. Citadel stays closed until the player asks.
+Sprint path = biome/sprint path on that Live. Do not say that aloud. Do not paste the URL. Beat 3 is **attach the playable in chat**, not a spoken “open Build…” line. Ban spoken “Open Sprint on the native Grok Build…”. Citadel stays closed until the player asks.
 
 Remix off. Do not scaffold a new grok.me.
 
@@ -133,7 +137,7 @@ Remix off. Do not scaffold a new grok.me.
 - No pasted Play / `*.grok.me` URL in chat
 - No Citadel / Biome / Sprint choice prompt
 - No spoken teaser substitutes (“Citadel teaser and Sprint teaser are on”)
-- No spoken “Open Sprint on the native Grok Build…”
+- No spoken “open Build…” / “Open Sprint on the native Grok Build…”
 - Chat mp4s are teasers only — not tappable hitboxes
 - No `Hey Packmate` alone when a display name exists
 - No dropping Packmate from the opener
