@@ -2,7 +2,7 @@
 
 ## Grok: read COLD_START.md first
 
-On **start / play / lance boltverse odyssey**: post the locked Pack Welcome (no Play URL) + **attach** the 2 stock `preview-loop.mp4` teasers as chat media, then **attach / open** the tappable Sprint as an in-chat Build game preview (playable card / Live preview). If that attach is unavailable, silently open the native Build game console. GitHub + Build only — never call a Grok Bot. Do not ask Citadel or Biome. Do not paste a grok.me link.
+On **start / play / lance boltverse odyssey**: post the locked Pack Welcome (no Play URL) + **attach** the 2 stock `preview-loop.mp4` teasers as chat media, then **attach / open** the tappable Sprint as an in-chat Build game preview (playable card / Live preview). If that attach is unavailable, silently open the native Build game console. Prefer GitHub + Build for boot media/Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Do not ask Citadel or Biome. Do not paste a grok.me link.
 
 → **[COLD_START.md](COLD_START.md)**
 

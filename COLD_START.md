@@ -4,9 +4,7 @@ This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey
 
 ## Cold-start tools (hard)
 
-**GitHub + Build only.**
-
-Never call a **Grok Bot connector**. Do not wake Director. Do not wake any Grok Bot. Players must not depend on SmiR’s bots.
+Prefer **GitHub + Build** for boot media / Sprint. Grok may use **Grok Bot** tools if useful (normal Grok feature — Grok↔Bot handoff is allowed). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough.
 
 ## Player reply (ONLY this — nothing else)
 
@@ -63,7 +61,6 @@ Spoken text **ends** on those two closing lines. No `Play →` line. No pasted P
 
 Hard ban. Delete the line if you were about to type any of this:
 
-- Calling / waking a Grok Bot connector (Director or any Grok Bot). Players must not depend on SmiR’s bots.
 - “Citadel teaser and Sprint teaser are on”
 - Any spoken stand-in for the attached `preview-loop.mp4` files
 - Any spoken stand-in for attaching / opening Sprint (“open Build…”, “Open Sprint on the native Grok Build…”)
@@ -89,7 +86,7 @@ Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say �
 
 ## Kitchen (do not say aloud)
 
-Internal only. Tools on cold-start: **GitHub** (fetch + attach the two `preview-loop.mp4` files) and **Build** (attach / open Sprint as an in-chat playable Build game preview; if that attach is unavailable, silently open the native Build game console). Never call a Grok Bot connector. Never wake Director. Never wake any Grok Bot. Players must not depend on SmiR’s bots. Never speak kitchen. Never paste kitchen into the player reply.
+Internal only. Prefer **GitHub** (fetch + attach the two `preview-loop.mp4` files) and **Build** (attach / open Sprint as an in-chat playable Build game preview; if that attach is unavailable, silently open the native Build game console) for boot media / Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply.
 
 **Name:** opener is always `Hey Packmate {name}`. If chat cannot resolve a display name, use “runner” — still say Packmate. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available.
 
@@ -132,7 +129,7 @@ Remix off. Do not scaffold a new grok.me.
 - No secrets
 - No wallet
 - No second login
-- No Grok Bot connector / Director / any Grok Bot on cold-start
+- Players must not depend on SmiR’s private bots — public GitHub COLD_START remains enough
 - No kitchen noise in the player reply
 - No pasted Play / `*.grok.me` URL in chat
 - No Citadel / Biome / Sprint choice prompt
