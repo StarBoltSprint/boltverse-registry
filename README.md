@@ -2,7 +2,7 @@
 
 ## Grok: read COLD_START.md first
 
-On **start / play / lance boltverse odyssey**: post the locked Pack Welcome (no Play URL) + 2 stock teasers, then open Sprint in the native Grok Build game console. Do not ask Citadel or Biome. Do not paste a grok.me link.
+On **start / play / lance boltverse odyssey**: speak the locked Pack Welcome (no Play URL), **attach** the 2 stock teaser mp4s as chat media, then **silently** open Sprint in the native Grok Build game console. Do not narrate teasers. Do not ask Citadel or Biome. Do not paste a grok.me link.
 
 → **[COLD_START.md](COLD_START.md)**
 
