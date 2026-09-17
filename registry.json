@@ -27,6 +27,15 @@
       "lastSeenAt": "2026-09-17T06:12:46.181Z",
       "playTimeSec": 0,
       "updatedAt": "2026-09-17T06:12:46.181Z"
+    },
+    {
+      "userId": "pack-doc-boot",
+      "handle": null,
+      "displayName": null,
+      "playUrl": "https://boltverse-odysseyyy.grok.me",
+      "lastSeenAt": "2026-09-17T07:35:07.605Z",
+      "playTimeSec": 0,
+      "updatedAt": "2026-09-17T07:35:07.605Z"
     }
   ]
 }
