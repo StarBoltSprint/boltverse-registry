@@ -1,7 +1,8 @@
 # ASSETS — automatic `assetId` (Imagine-rail mint)
 
 > **HARD LOCK — Pack assets = Grok Imagine cook-rail output ONLY (images / videos).**
-> **Mint `assetId` ONLY when a Grok Imagine cook completes through the Pack / Boltverse cook rail** (Build hooks / Imagine session attached to gated Live / cook-room path — whatever the Pack wire uses).
+> **Cook asset = Imagine (in the Grok chat app).** Mint `assetId` ONLY when a Grok Imagine cook completes through the Pack / Boltverse cook rail (Imagine in-app — Build hooks / Imagine session attached to gated Live / cook-room path — whatever the Pack wire uses).
+> **Chest surface law** (play / earn / open / put-in-chest) = Grok chat app only — see [CHESTS.md](CHESTS.md). No external Pack website required to cook.
 > **Provenance is automatic.** The server / rail writes it at mint. The player **never** supplies proof.
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim.
 
@@ -17,7 +18,7 @@ Chest product / NSFW pool / reveal / **creator-only chest entry**: [CHESTS.md](C
 
 ## Law: mint only via the Imagine cook rail
 
-Mint `assetId` **automatically** the moment a **Grok Imagine cook completes** through the Pack / Boltverse cook rail — Build hooks, Imagine session on a gated Live, cook-room path, whatever that Pack wire is.
+Mint `assetId` **automatically** the moment a **Grok Imagine cook completes** through the Pack / Boltverse cook rail — **Imagine in the Grok chat app**, Build hooks, Imagine session on a gated Live, cook-room path, whatever that Pack wire is. Creators cook **in app**. No external cook website.
 
 **Do not** mint from Hang, forge, chest propose, biome plate, or a player form. Those later **reference** the existing `assetId`.
 
@@ -88,7 +89,7 @@ If the same Imagine-rail bytes were already minted — keep the **first** `asset
 
 **Stolen re-encode (new hash)** → not the same id. Player report + drop + ban. Pack seal. v1 = auth + hash + report (no heavy DRM). See [CHESTS.md](CHESTS.md) ownership block.
 
-Chest propose of an already-minted asset = **reference only**, and **only** when the caller’s gate `sub` matches `creatorSub`. Write the `assetId` into `chests/pool.json` (when live) / `chestPool` on the existing manifest. Never `a_…` a second time. No manual ownership claim form.
+Chest propose of an already-minted asset = **reference only**, and **only** when the caller’s gate `sub` matches `creatorSub`. Action from **Grok chat** or **Build** after mint (in app) — [CHESTS.md](CHESTS.md) surface law. Write the `assetId` into `chests/pool.json` (when live) / `chestPool` on the existing manifest. Never `a_…` a second time. No manual ownership claim form. No creator portal.
 
 ## Manifest
 
@@ -160,17 +161,19 @@ Do not put GitHub App private keys, xAI keys, wallets, or tickets in this repo.
 
 At mint: `creatorSub` = Grok `sub` of the cook (gate JWT / Imagine rail — automatic).
 
-At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form.
+At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is in-app (Grok chat or Build).
 
-Full ownership law: [CHESTS.md](CHESTS.md).
+Full ownership + surface + rarity law: [CHESTS.md](CHESTS.md).
 
 ## Done criteria
 
 - `assetId` mints **only** when a Grok Imagine cook completes through the Pack / Boltverse cook rail
+- Cook = **Imagine in the Grok chat app** — no external cook website
 - Provenance is **automatic** (server / rail) — no player manual proof step
 - **HARD BAN** player file upload, X/Twitter URL paste, Drive / Discord drop, arbitrary mp4/img URL
 - Format `a_<sub>_<img|vid>_<hash8>`
 - Same hash = same id; first creator keeps ownership
 - Chest / Hang / forge / biome **reference** — never remint
-- Chest propose only if caller `sub` === `creatorSub`
+- Chest propose only if caller `sub` === `creatorSub` (in-app: Grok chat or Build)
 - Grok Imagine only — HARD
+- Chest surface + rarity: [CHESTS.md](CHESTS.md)
