@@ -25,3 +25,5 @@ See `profiles/smir9.json` for a filled example.
 Federation write rules (boot + heartbeat): merge-patch only — never wipe `resonance` / `starCore` / `cosmetics`. Always set `gateSub`, `playUrl` (from body), `lastSeenAt=now`, `updatedAt=now`. Full wire: [PACK.md](PACK.md).
 
 Heavy mp4s stay on the Play host — only pointers here.
+
+Grok asset manifests live in `assets/<assetId>.json` — **profiles stay separate**. **Mint-on-create** (Hang / forge / chest propose / biome plate seal / any Pack entry) — not chest-only. Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id. Chests **reference** the existing `assetId`; they do not remint. Source = `grok-imagine` only. Law: [ASSETS.md](ASSETS.md). Chest product: [CHESTS.md](CHESTS.md).
