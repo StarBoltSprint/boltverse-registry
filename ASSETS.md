@@ -3,18 +3,19 @@
 > **HARD LOCK — Pack assets = Grok Imagine cook-rail output ONLY (images / videos).**
 > **Cook asset = Imagine (in the Grok chat app).** Mint `assetId` ONLY when a Grok Imagine cook completes through the Pack / Boltverse cook rail (Imagine in-app — Build hooks / Imagine session attached to gated Live / cook-room path — whatever the Pack wire uses).
 > **Chest surface law** (play / earn / open / put-in-chest) = Grok chat app only — see [CHESTS.md](CHESTS.md). No external Pack website required to cook.
+> **Chest overlay = Pack Engine, not the biome plate.** Chests, Hang, forge, and biome plates **reference** `assetId`s. They do **not** host chest UI. Federated `*.grok.me` / hung-biome creators: ZERO chest wire. Put-in-chest is optional.
 > **Provenance is automatic.** The server / rail writes it at mint. The player **never** supplies proof.
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim.
 
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
 
-This file is the **source of truth** for Pack asset identity. Chests, Hang, forge, and biome plates **reference** these ids — they do not invent their own.
+This file is the **source of truth** for Pack asset identity. Chests, Hang, forge, and biome plates **reference** these ids — they do not invent their own. Biome plates do **not** implement chest UI; overlay + earn + open = Pack Engine ([CHESTS.md](CHESTS.md) engine overlay / creator zero wire).
 
 Creators do not drop files from elsewhere into Boltverse. Wallet media is also banned (see hard lock). Same lock as [CHESTS.md](CHESTS.md).
 
 Profiles stay in `profiles/<userId>.json`. Asset manifests stay in `assets/<assetId>.json`. A profile / hang / chest may *point* at `assetId`s; it must not embed the blob.
 
-Chest product / NSFW pool / reveal / **creator-only chest entry**: [CHESTS.md](CHESTS.md).
+Chest product / NSFW pool / reveal / **creator-only chest entry** / **engine overlay + creator zero wire**: [CHESTS.md](CHESTS.md).
 
 ## Law: mint only via the Imagine cook rail
 
@@ -161,9 +162,9 @@ Do not put GitHub App private keys, xAI keys, wallets, or tickets in this repo.
 
 At mint: `creatorSub` = Grok `sub` of the cook (gate JWT / Imagine rail — automatic).
 
-At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is in-app (Grok chat or Build).
+At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link.
 
-Full ownership + surface + rarity law: [CHESTS.md](CHESTS.md).
+Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHESTS.md](CHESTS.md).
 
 ## Done criteria
 
@@ -176,4 +177,4 @@ Full ownership + surface + rarity law: [CHESTS.md](CHESTS.md).
 - Chest / Hang / forge / biome **reference** — never remint
 - Chest propose only if caller `sub` === `creatorSub` (in-app: Grok chat or Build)
 - Grok Imagine only — HARD
-- Chest surface + rarity: [CHESTS.md](CHESTS.md)
+- Chest surface + rarity + engine overlay / creator zero wire: [CHESTS.md](CHESTS.md)
