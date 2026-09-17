@@ -4,6 +4,8 @@ Kitchen + implementer contract. English. Silent of player chat. No secrets in th
 
 This file is the **source of truth** for chest law. Odyssey holds the Peak crystal KEEP still only — `StarBoltSprint/boltverse-odyssey` `stock/chests/peak-closed.png`. Do not fork a second law in Odyssey.
 
+**HARD LOCK — chest contents = Grok Imagine assets ONLY (images / videos).** **HARD BAN:** Spotify, external mp3, wallet media, and any non-Grok upload. Creators do not drop files from elsewhere into the pool.
+
 Profiles stay in `profiles/<userId>.json`. Chest assets are **not** profile fields. A profile may later *point* at `assetId`s; it must not embed the blob.
 
 ## Product
@@ -12,17 +14,16 @@ Profiles stay in `profiles/<userId>.json`. Chest assets are **not** profile fiel
 - Container skin = Peak crystal KEEP (`boltverse-odyssey` `stock/chests/peak-closed.png`).
 - **Crystal never chrome.** No wood / iron lootbox chrome. No invented closed plate.
 - Closed UX = mystery card / `?` flip (suspense). Reveal = the sealed creator **Grok Imagine** asset.
-- Creators put **only Grok Imagine assets** into chests: images or videos (ultra quality).
+- Creators put **only Grok Imagine assets** into chests: images or videos (ultra quality). No other source.
 - Cosmetics / Pack lore only — **never pay-to-win**.
 
 ### Hard bans (product)
 
+- **No Spotify / external mp3 / non-Grok uploads** (hard lock — see top)
 - No daily-login streak chest
-- No Spotify / external mp3
 - No wallet / NFT / connect-wallet
 - No chrome / generic lootbox skin
 - No baking one fixed object into a shared open plate for all creators
-- No non–Grok Imagine media in the pool
 
 ## Soft earn
 

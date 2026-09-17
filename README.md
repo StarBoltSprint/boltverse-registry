@@ -20,7 +20,7 @@ Any `*.grok.me` Live auto-joins central Pack profiles. Identity = Grok gate `sub
 
 ## Kitchen: Chests (Pack SoT for rewards)
 
-Run-earned **cosmetic** chests — not daily login. Peak crystal KEEP. Closed UX = mystery `?` flip; reveal = sealed Grok Imagine asset (img / vid). Automatic `assetId`. NSFW layers are hard. Cosmetics / Pack lore only — never pay-to-win. Profiles stay separate from asset manifests.
+Run-earned **cosmetic** chests — not daily login. Peak crystal KEEP. Closed UX = mystery `?` flip; reveal = sealed **Grok Imagine** asset (img / vid) **only**. **HARD BAN** Spotify / external mp3 / non-Grok uploads. Automatic `assetId`. NSFW layers are hard. Cosmetics / Pack lore only — never pay-to-win. Profiles stay separate from asset manifests.
 
 → **[CHESTS.md](CHESTS.md)**
 
