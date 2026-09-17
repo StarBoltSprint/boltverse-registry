@@ -9,6 +9,7 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 - **Identity** = Grok gate `sub`, not the URL
 - **`playUrl`** = whatever origin they opened (`location.origin`)
 - Same `sub` on a second Live → **same** `profiles/<sub>.json`, `playUrl` updated
+- **Pack Play / central Pack API host (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play, not the central host.
 
 ## Hard bans
 
@@ -17,6 +18,7 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 - No xAI keys in the client
 - No “only one Live has `/api/pack`” — the recipe must ship the client; writes go to the **central Pack API**
 - Unsigned / no JWT → `{ "ok": false, "github": "skip", "reason": "no-sub" }` — **never invent a sub**
+- Do not treat `https://boltverse-odysseyyy.grok.me` (three y’s) as Pack Play or the central Pack API host — superseded Beat 3 target
 
 ## Architecture
 
@@ -25,7 +27,7 @@ Any Live (*.grok.me)
   boot → client Pack snippet
     playUrl = location.origin
     forward gate JWT / ticket
-       → CENTRAL Pack API  (one host)
+       → CENTRAL Pack API  (one host: https://boltverse-odysseyyyy.grok.me)
             verify x-grok-identity (decode sub; trust x-forwarded-host *.grok.me; JWKS optional)
             GitHub App → StarBoltSprint/boltverse-registry
             upsert profiles/<sub>.json + registry.json row
@@ -126,7 +128,7 @@ No wallet UI. Fail soft if central is down (Play still works).
 
 1. Stand up central Pack API + GitHub App on boltverse-registry (`contents:write`)
 2. Drop client snippet into Odyssey recipe (post lane merge)
-3. Validate on https://boltverse-odysseyyy.grok.me open-from-Grok → `profiles/<sub>.json`
+3. Validate on https://boltverse-odysseyyyy.grok.me open-from-Grok → `profiles/<sub>.json`
 4. Any remix from recipe inherits client → auto-joined
 
 ## Done criteria
