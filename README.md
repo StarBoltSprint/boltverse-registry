@@ -18,6 +18,12 @@ Any `*.grok.me` Live auto-joins central Pack profiles. Identity = Grok gate `sub
 
 → **[PACK.md](PACK.md)**
 
+## Kitchen: Chests (Pack SoT for rewards)
+
+Run-earned **cosmetic** chests — not daily login. Peak crystal KEEP. Closed UX = mystery `?` flip; reveal = sealed Grok Imagine asset (img / vid). Automatic `assetId`. NSFW layers are hard. Cosmetics / Pack lore only — never pay-to-win. Profiles stay separate from asset manifests.
+
+→ **[CHESTS.md](CHESTS.md)**
+
 ---
 
 Pack **player profiles** + federated **Play URL** index for Boltverse Odyssey.
@@ -29,6 +35,8 @@ Cloud save (GitHub) — **not** `localStorage`. Keyed by Grok `userId`.
 | What | Where |
 |---|---|
 | Profile (handle, playUrl, Resonance, hangs index) | this repo `profiles/<userId>.json` |
+| Chest / Grok asset manifests | this repo [CHESTS.md](CHESTS.md) — `assets/<assetId>.json`; optional `chests/pool.json` |
+| Peak crystal KEEP (closed still) | `boltverse-odyssey` `stock/chests/peak-closed.png` |
 | Live Play + heavy media | each player `*.grok.me` |
 | Cook / Hang laws | `boltverse-odyssey` + `bolt-lane-recipe` |
 
