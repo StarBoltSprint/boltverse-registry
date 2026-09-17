@@ -10,6 +10,7 @@
 > **Mint happens on the Imagine cook rail** — see [ASSETS.md](ASSETS.md). Chests **reference** an existing `assetId`. They never mint.
 > **Only the creator can put THEIR `assetId` into a chest.** Caller ticket / JWT `sub` MUST match `assetId.creatorSub` — else refuse.
 > **Provenance is automatic.** No player proof screenshot, certificate, or ownership-claim form.
+> **HARD LOCK — cosmetics only. Never pay-to-win. Never play-to-win.** Chest rewards = skins / titles / Pack lore looks. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, or wallet boost. Pack Pass / tips / X subs never buy gameplay power — only cosmetic / drop-count soft.
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL · Spotify · external mp3 · non-Grok uploads · paste-someone-else’s-URL as ownership · external Pack website / creator portal / desktop-only tool as a required player or creator UI · requiring biome / link creators to wire chests.
 
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
@@ -67,7 +68,7 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - **Crystal never chrome.** No wood / iron lootbox chrome. No invented closed plate.
 - Closed UX = mystery card / `?` flip (suspense). Reveal = the sealed creator **Grok Imagine** asset — shown by the **engine** in **Build** / in-chat Live preview after the ~6s open.
 - Creators **may** put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint. Immediate Pack receipt in Grok chat — never a silent drop. This is **optional**. Skipping it does not remove Pack pool overlays from their federated link.
-- Cosmetics / Pack lore only — **never pay-to-win**.
+- Cosmetics / Pack lore only — **never pay-to-win / never play-to-win** (see Soft earn).
 
 ### Hard bans (product)
 
@@ -77,6 +78,9 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - **No external Pack website / creator portal / desktop-only tool** as a required player or creator UI (surface HARD)
 - **No creator plate duty** — do not require biome / link creators to bake chests into plates, host open videos, or add Open Chest chrome
 - No daily-login streak chest
+- No AFK wall-clock chest
+- **No pay-to-win / no play-to-win** — no speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, wallet boost
+- No Pack Pass / tips / X subs buying gameplay power
 - No wallet / NFT / connect-wallet
 - No chrome / generic lootbox skin
 - No baking one fixed object into a shared open plate for all creators
@@ -88,11 +92,39 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 
 Chest drops from **run thresholds** — Resonance / peak / picture-time / Loom — with a **soft daily cap**. The **Pack Engine** watches those thresholds during play, then overlays + opens in **Build** / in-chat Live preview (in app). The biome plate does not implement earn.
 
-- Cap is a run-earn throttle, **not** a calendar login reward.
-- Exact threshold knobs live in Play rails (Odyssey). This file is the law, not the numbers.
-- Optional **Pack Pass** later = more drops. Still cosmetic. Pass / tips **never** bypass safety.
-- Loom / Resonance / tips / low supply may **signal Rare** (see rarity). They do not invent a beauty score.
-- Earn on a federated `*.grok.me` / hung biome uses the **same** Pack pool + engine overlay. The link creator does not wire a local chest.
+**v1 knobs are law in this file.** Odyssey implements them. Do not fork a second number set in Odyssey rails.
+
+Day clock = **player local calendar day** (Europe-friendly: the day rolls at the player’s local midnight — e.g. Europe/Paris `00:00`. Do **not** use a UTC-only day that resets mid-morning for Europe). Kitchen date key = `YYYY-MM-DD` in that local zone.
+
+Cap is a **run-earn** throttle. **Not** a daily login reward. **Not** an AFK wall-clock. Sitting in picture without a Peak arm does not mint a chest.
+
+| Knob | v1 law |
+|---|---|
+| Soft daily cap | **max 2 chests / calendar day** (player local) |
+| **Run chest** | Common / Rare pool. 1st armed Peak of a run — ~**45–60s** bone picture-time + `m` high enough for Peak arm. Soft max **1 Run chest / day**. |
+| **Peak chest** | Peak / Legendary pool path. 2nd higher threshold **same day** (stronger `m` / Legendary lean). Soft max **1 Peak chest / day**. |
+| Total | Soft max **1–2 / day** (0 if no Peak arm; 1 if only Run; 2 if Run + Peak). |
+| Pack Pass (optional, later) | **+1** soft drop. Still **cosmetic only**. Never gameplay power. Never bypass safety. |
+
+- Earn on a federated `*.grok.me` / hung biome uses the **same** Pack pool + engine overlay + these numbers. The link creator does not wire a local chest.
+- Loom / Resonance / tips / low supply may **signal Rare** (see rarity). They do not invent a beauty score. Tips never buy a bypass or a third chest.
+
+### Cosmetics (HARD — never pay-to-win / never play-to-win)
+
+Chest rewards = **cosmetics only**: skins, titles, Pack lore looks.
+
+**Never** grant:
+
+- Speed
+- Resonance power
+- Score multiplier
+- Path advantage
+- Easier Hit windows
+- Extra lives
+- Paid skill
+- Wallet boost
+
+**Pack Pass / tips / X subs** never buy gameplay power — only cosmetic / drop-count soft (`+1` later, still cosmetic). Playing more does not buy a stronger lane. Paying does not buy a stronger lane.
 
 ## Rarity (HARD — not a beauty score)
 
@@ -165,7 +197,7 @@ Every asset must pass **all** layers before it can be live in a chest pool. Fail
 4. **Smoke / lint FAIL** → not hung into the live chest pool
 5. **Rarity-aware seal** — Common = **auto seal** (large pool) after layers 1–4 + creator-only entry. Peak / Legendary = **Pack seal** + soft supply cap — no auto-publish. Rare uses Loom / Resonance / tips / low supply signals. Soft queue / trust tier still applies to Peak. **Not** a beauty / pixel AI score.
 6. **Player report** → drop from pool + repeat ban
-7. **Pack Pass / tips never bypass filters**
+7. **Pack Pass / tips / X subs never bypass filters** and **never buy gameplay power** — cosmetic / drop-count soft only
 
 v1: Common may auto-seal into the large pool after layers 1–4. Peak / Legendary wait for Pack seal + soft supply cap. A later trust tier may shorten the Peak queue — it does **not** skip layers 1–4 or 7.
 
@@ -259,7 +291,7 @@ Common may auto-seal and hang into the large pool after layers 1–4 + creator-o
 
 ## Odyssey pointer
 
-Odyssey kitchen map should say: chests law = this file; stock KEEP = `stock/chests/peak-closed.png`; chest UI = Pack Engine overlay on the canonical Play / Pack client. Do not copy the law into Odyssey. Do not add chest chrome to biome plate recipes.
+Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = this file (implement, do not fork); stock KEEP = `stock/chests/peak-closed.png`; chest UI = Pack Engine overlay on the canonical Play / Pack client. Do not copy the law into Odyssey. Do not add chest chrome to biome plate recipes.
 
 ## Done criteria
 
@@ -278,4 +310,5 @@ Odyssey kitchen map should say: chests law = this file; stock KEEP = `stock/ches
 - NSFW / safety layers 1–7 are hard
 - **Rarity HARD:** Common = auto seal, large pool; Rare = Loom / Resonance / tips / low supply signals; Peak / Legendary = Pack seal + soft supply cap. **Not** a beauty / pixel AI score
 - Shared Peak open video ~6s closed→empty glow; engine then shows won `assetId`
-- Cosmetics only — never pay-to-win
+- **Soft earn NUMBERS HARD (v1):** player-local calendar day (Europe-friendly local midnight). Soft daily cap **max 2**. Run chest = 1st armed Peak (~45–60s bone picture-time + `m` for Peak arm), max **1 / day**, Common/Rare pool. Peak chest = 2nd higher threshold same day (stronger `m` / Legendary lean), max **1 / day**, Peak/Legendary path. Total soft max **1–2 / day**. Not daily login. Not AFK wall-clock. Optional Pack Pass later = +1 soft drop, cosmetic only
+- **Cosmetics HARD — never pay-to-win / never play-to-win:** skins / titles / Pack lore looks only. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, wallet boost. Pack Pass / tips / X subs never buy gameplay power
