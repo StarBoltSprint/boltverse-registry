@@ -2,7 +2,7 @@
 
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
-`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` cold-start blocks should **mirror** this file (English Welcome + `{playerCount}` + `Open Sprint — Pack save, zero login.` + kitchen split). This launch updates **boltverse-registry** only — Director syncs Odyssey.
+`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (English Welcome + `{playerCount}` + `Open Sprint — Pack save, zero login.` + kitchen split + **name resolve** + **Build play surface**). Registry is source of truth for the Welcome lock; Odyssey must carry the same name + Beat 3 locks.
 
 ## Cold-start tools (hard)
 
@@ -16,7 +16,12 @@ On trigger, the player sees **exactly three beats**. Then stop.
 
 1. **Speak** the locked Welcome or Return text below (**English only**). Verbatim. No extra sentences. No French. No ask / choice line. No Play URL. Locked `{playerCount}` + `Open Sprint — Pack save, zero login.` — no GitHub / registry lecture.
 2. **Attach** exactly **1** stock `preview-loop.mp4` as chat media — the Odyssey epic citadel teaser (`StarBoltSprint/boltverse-odyssey` `stock/citadel/preview-loop.mp4`, poster `preview-first.jpg`). **Must attach** — a real video file in the chat. Play/pause video in chat. Do **not** attach a second teaser. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures. Do **not** speak a substitute.
-3. **Attach / open** the tappable Sprint as an **in-chat Build game preview** (playable card / Live preview in the thread) — same idea as attaching the video: the player gets Sprint in the chat. Not a pasted `*.grok.me` URL. Not a spoken “open Build…” line. If in-chat Build game attach is unavailable, fall back to silently opening the native Build game console — still no URL paste.
+3. **Attach / open** the tappable Sprint on **Build** — native Grok Build game console / in-chat playable Live preview. Interactive Sprint lives on **Build** (tabs: Chat / Imagine / Build). It does **not** live on Chat Imagine. It is **not** a downloadable `preview-loop.mp4` file chip alone. Beat 2’s Chat mp4 is a teaser only — Beat 3 must be a **playable** Sprint.
+
+If the current thread is Chat-only and cannot attach a playable Build preview: **silently** open / switch to Build (or attach the Live playable card). Still never paste a `*.grok.me` URL in the player reply.
+
+**Forbidden:** leaving the player with only `preview-loop.mp4` as a file attachment and no playable Sprint.
+**Forbidden spoken:** “open the Build tab yourself” lectures — do the open/attach. If truly impossible, one short English line is OK: `Open the Build tab for Sprint.` Prefer silent open/attach first.
 
 That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citadel or Biome/Sprint. Do **not** dump kitchen explanations. Do **not** paste any `grok.me` / Play URL. Citadel only if the player later asks for Citadel.
 
@@ -28,11 +33,20 @@ Chat trigger = Welcome + media + Sprint attach. **Not** a hard register.
 
 ## Profile (zero login / wallet)
 
-Spoken opener is **`Hey Packmate {name}`**. Packmate stays (immersive). `{name}` = Grok profile display name (chat user name) first — required when available — else registry `displayName`, else gate/app name, else “runner”.
+Spoken opener is **`Hey Packmate {name}`**. Packmate stays (immersive).
 
-Example: `Hey Packmate SmiR 9` / whatever their Grok name is.
+`{name}` resolve order (do **not** skip ahead to `runner`):
 
-**Forbidden:** `Hey Packmate` alone with no name when a display name exists. **Forbidden:** dropping Packmate. Do not swap `{name}` for “player”, “friend”, or any generic stand-in when a real name is available.
+1. Grok profile `displayName` (visible chat account name)
+2. registry `displayName`
+3. gate/app name
+4. **only then** `runner`
+
+**Hard ban — `runner` is last-resort only.** If the chat UI / session exposes **ANY** user name / handle / profile label, **never** say `runner`. Prefer the visible chat account name over inventing `runner`. `runner` is ONLY last-resort when literally no name can be resolved.
+
+Example: `Hey Packmate SmiR 9` (Grok display name exists — SmiR 9 / SmiR). **Never** `Hey Packmate runner` when that name is on screen.
+
+**Forbidden:** `Hey Packmate runner` when any name / handle / profile label is visible. **Forbidden:** `Hey Packmate` alone with no name when a display name exists. **Forbidden:** dropping Packmate. Do not swap `{name}` for “player”, “friend”, `runner`, or any generic stand-in when a real name is available.
 
 Load profile from `profiles/<userId>.json` or `registry.json` (**read**). Do **not** upsert on this chat turn.
 
@@ -90,7 +104,7 @@ Powered by xAI & YOU.
 Ready to sprint?
 ```
 
-Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then **attach** exactly **1** stock `preview-loop.mp4` as chat media (Odyssey epic citadel teaser) and **attach / open** the tappable Sprint as an in-chat Build game preview (playable card / Live preview in the thread). If that attach is unavailable, silently open the native Build game console. No spoken stand-in for any beat. No URL paste.
+Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then **attach** exactly **1** stock `preview-loop.mp4` as chat media (Odyssey epic citadel teaser) and **attach / open** the tappable Sprint on **Build** (native Grok Build game console / in-chat playable Live preview). If the thread is Chat-only and cannot attach a playable Build preview, silently open / switch to Build. A Chat `preview-loop.mp4` file chip alone is **not** Beat 3. No “open the Build tab yourself” lecture. If truly impossible, one short English line is OK: `Open the Build tab for Sprint.` Prefer silent open/attach first. No URL paste.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
@@ -104,7 +118,8 @@ Hard ban. Delete the line if you were about to type any of this:
 
 - “Citadel teaser is on” / “Citadel teaser and Sprint teaser are on”
 - Any spoken stand-in for the attached citadel `preview-loop.mp4`
-- Any spoken stand-in for attaching / opening Sprint (“open Build…”, “Open Sprint on the native Grok Build…”)
+- Any spoken stand-in for attaching / opening Sprint (“open the Build tab yourself”, “open Build…”, “Open Sprint on the native Grok Build…”) except the last-resort line `Open the Build tab for Sprint.`
+- Leaving the player with only `preview-loop.mp4` as a file attachment and no playable Sprint
 - `Play →` plus any pasted Play / `*.grok.me` URL
 - Asking “Citadel or Biome?”, “Citadel or Sprint?”, or “Say citadel or biome.”
 - “Biome sprint”
@@ -121,9 +136,10 @@ Hard ban. Delete the line if you were about to type any of this:
 - Fake or hardcoded Pack size (always read live; N=0 → first-Packmates line)
 - “Stay 30 seconds” / heartbeat-duration lecture
 - Any French (or non-English) in Welcome / Return
+- `Hey Packmate runner` when any name / handle / profile label is visible in the chat UI / session
 - `Hey Packmate` alone (no `{name}`) when a display name exists
 - Dropping Packmate from the opener
-- “player”, “friend”, or any generic stand-in for `{name}` when a real name is available
+- “player”, “friend”, `runner`, or any generic stand-in for `{name}` when a real name is available
 
 The teaser is an **attached video**, not a spoken status line, not a pasted link, and not a lecture.
 
@@ -131,9 +147,9 @@ Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say �
 
 ## Kitchen (do not say aloud)
 
-Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` for `{playerCount}`) and **Build** (attach / open Sprint as an in-chat playable Build game preview; if that attach is unavailable, silently open the native Build game console) for boot media / Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply.
+Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` for `{playerCount}`) and **Build** (attach / open Sprint as a playable Build game console / in-chat Live preview; if the thread is Chat-only, silently open / switch to Build) for boot media / Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply.
 
-**Name:** opener is always `Hey Packmate {name}`. If chat cannot resolve a display name, use “runner” — still say Packmate. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available.
+**Name:** opener is always `Hey Packmate {name}`. Resolve `{name}` in order: Grok profile `displayName` → registry `displayName` → gate/app name → **only then** `runner`. **Hard ban:** if the chat UI / session exposes ANY user name / handle / profile label, never say `runner`. Prefer the visible chat account name over inventing `runner`. Example still `Hey Packmate SmiR 9`. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available. Never `Hey Packmate runner` when a name exists.
 
 **Hard register / gateSub write** (not the chat trigger):
 
@@ -149,7 +165,7 @@ Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.m
 - Speak the `{playerCount}` line only. No “registry”, no “GitHub”, no probe talk
 - Count is live. Do not hardcode N in the Welcome block
 
-**Odyssey mirror (Director):** copy this Welcome / Return / `{playerCount}` / `Open Sprint — Pack save, zero login.` / hard-write split into `boltverse-odyssey` `START.md`, `GROK.md`, and `AGENTS.md` cold-start blocks. Registry is source of truth this launch.
+**Odyssey mirror (Director):** copy this Welcome / Return / `{playerCount}` / `Open Sprint — Pack save, zero login.` / hard-write split / **name resolve** / **Build play surface** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, and README cold-start blocks. Registry is source of truth for the Welcome lock.
 
 **Sprint Build / Live identity** (do not paste into chat):
 
@@ -171,17 +187,21 @@ Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.m
 
 The chat mp4 is a teaser only — preview play/pause, not a tappable hitbox.
 
-**Open Sprint** (in-chat Build game preview first — silent after media, no kitchen lecture, no pasted URL):
+**Open Sprint** (Build play surface — silent after media, no kitchen lecture, no pasted URL):
 
-Prefer: attach / open the tappable Sprint as an in-chat Build game preview (playable card / Live preview in the thread), same idea as attaching the citadel mp4.
-Fallback: if in-chat Build game attach is unavailable, silently open the native Build game console. Still no URL paste.
+Interactive Sprint lives on **Build** (native Grok Build game console / in-chat playable Live preview). **Not** Chat Imagine. **Not** a downloadable `preview-loop.mp4` file chip alone.
+
+Prefer: attach / open the tappable Sprint as an in-chat Build playable Live preview (playable card in the thread), or silently open / switch to the Build tab.
+If the current thread is Chat-only and cannot attach a playable Build preview: silently open / switch to Build. Still no URL paste.
+**Forbidden:** leaving the player with only `preview-loop.mp4` as a file attachment and no playable Sprint.
+**Forbidden spoken:** “open the Build tab yourself” lectures. If truly impossible, one short English line is OK: `Open the Build tab for Sprint.` Prefer silent open/attach first.
 
 | When | Name | Path | Live identity (do not paste) |
 |---|---|---|---|
 | boot (always) | Sprint | biome/sprint path on Live | `https://boltverse-odysseyyy.grok.me` |
 | later, only if the player asks | Citadel | `/r/frost` | `https://boltverse-odysseyyy.grok.me/r/frost` |
 
-Sprint path = biome/sprint path on that Live. Do not say that aloud. Do not paste the URL. Beat 3 is **attach the playable in chat**, not a spoken “open Build…” line. Ban spoken “Open Sprint on the native Grok Build…”. Citadel stays closed until the player asks.
+Sprint path = biome/sprint path on that Live. Do not say that aloud. Do not paste the URL. Beat 3 is **Build playable Sprint**, not a Chat file chip, not a spoken “open the Build tab yourself” lecture. Citadel stays closed until the player asks.
 
 Remix off. Do not scaffold a new grok.me.
 
@@ -195,9 +215,11 @@ Remix off. Do not scaffold a new grok.me.
 - No pasted Play / `*.grok.me` URL in chat
 - No Citadel / Biome / Sprint choice prompt
 - No spoken teaser substitutes (“Citadel teaser is on”)
-- No spoken “open Build…” / “Open Sprint on the native Grok Build…”
-- The chat mp4 is a teaser only — not a tappable hitbox
+- No “open the Build tab yourself” lectures — do the open/attach (last-resort spoken: `Open the Build tab for Sprint.`)
+- The chat mp4 is a teaser only — not a tappable hitbox and **not** Beat 3
+- No leaving the player with only `preview-loop.mp4` as a file chip and no playable Sprint
 - No second teaser at boot (biome / Sprint `preview-loop.mp4` stays off)
+- No `Hey Packmate runner` when any name / handle / profile label is visible
 - No `Hey Packmate` alone when a display name exists
 - No dropping Packmate from the opener
 - No profile upsert on chat-only start — hard write stays on gated Live open
