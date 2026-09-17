@@ -2,15 +2,19 @@
 
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
+`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` cold-start blocks should **mirror** this file (English Welcome + `{playerCount}` + `Open Sprint — Pack save, zero login.` + kitchen split). This launch updates **boltverse-registry** only — Director syncs Odyssey.
+
 ## Cold-start tools (hard)
 
 Prefer **GitHub + Build** for boot media / Sprint. Grok may use **Grok Bot** tools if useful (normal Grok feature — Grok↔Bot handoff is allowed). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough.
+
+At boot, **read** this repo’s `registry.json` (or `profiles/*.json`) for the live Pack count. Read-only. Chat start does **not** write profiles.
 
 ## Player reply (ONLY this — nothing else)
 
 On trigger, the player sees **exactly three beats**. Then stop.
 
-1. **Speak** the locked Welcome or Return text below (English). Verbatim. No extra sentences. No ask / choice line. No Play URL.
+1. **Speak** the locked Welcome or Return text below (**English only**). Verbatim. No extra sentences. No French. No ask / choice line. No Play URL. Locked `{playerCount}` + `Open Sprint — Pack save, zero login.` — no GitHub / registry lecture.
 2. **Attach** the 2 stock `preview-loop.mp4` files as chat media (Citadel + Sprint). **Must attach** — real video files in the chat. Play/pause videos in chat. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures. Do **not** speak a substitute.
 3. **Attach / open** the tappable Sprint as an **in-chat Build game preview** (playable card / Live preview in the thread) — same idea as attaching the videos: the player gets Sprint in the chat. Not a pasted `*.grok.me` URL. Not a spoken “open Build…” line. If in-chat Build game attach is unavailable, fall back to silently opening the native Build game console — still no URL paste.
 
@@ -20,6 +24,8 @@ That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citade
 
 Player says **start / play / lance boltverse odyssey** (any close alias).
 
+Chat trigger = Welcome + media + Sprint attach. **Not** a hard register.
+
 ## Profile (zero login / wallet)
 
 Spoken opener is **`Hey Packmate {name}`**. Packmate stays (immersive). `{name}` = Grok profile display name (chat user name) first — required when available — else registry `displayName`, else gate/app name, else “runner”.
@@ -28,12 +34,39 @@ Example: `Hey Packmate SmiR 9` / whatever their Grok name is.
 
 **Forbidden:** `Hey Packmate` alone with no name when a display name exists. **Forbidden:** dropping Packmate. Do not swap `{name}` for “player”, “friend”, or any generic stand-in when a real name is available.
 
-Load profile from `profiles/<userId>.json` or `registry.json`.
+Load profile from `profiles/<userId>.json` or `registry.json` (**read**). Do **not** upsert on this chat turn.
 
 Zero second login / wallet.
 
 - **New** = no profile / `lastSeenAt` null
 - **Return** = has profile
+
+New vs Return is whoever already has a file from a **gated Live open** — not from saying start.
+
+## Live Pack count (`{playerCount}`)
+
+Speak **one** light English line. Count updates automatically: at boot, read `StarBoltSprint/boltverse-registry` `registry.json` (prefer) or count `profiles/*.json`.
+
+Placeholder in the locked text is **`{playerCount}`** — the **whole spoken count line**, not a raw number stuffed into other copy.
+
+| After filter | Speak exactly |
+|---|---|
+| N ≥ 2 | `{n} Packmates already in the Pack.` |
+| N = 1 | `1 Packmate already in the Pack.` |
+| N = 0 | `You're among the first Packmates.` |
+
+No fake numbers. If the filtered count is 0, use the first-Packmates line — do not invent a pack size.
+
+**How to count (kitchen — never say this aloud):**
+
+1. Prefer `registry.json` → `players[]`. Fallback: one row per `profiles/*.json` (same filter).
+2. **Exclude kitchen probes.** Drop a row if any of these match:
+   - `userId` starts with `pack-wire-` or `pack-doc-`
+   - `displayName` looks like “Decode Probe” / “Pack probe” (case-insensitive; “probe” kitchen labels)
+3. **Count only real players** — has a `handle`, or a non-probe `userId`.
+4. `{playerCount}` = that filtered length, spoken as the table above.
+
+Do **not** lecture GitHub, `registry.json`, probes, or how you counted. The one line is enough social proof.
 
 ## New (no profile / lastSeenAt null)
 
@@ -41,6 +74,8 @@ Zero second login / wallet.
 Hey Packmate {name} — welcome to Boltverse Odyssey.
 Picture is the clock. Bolt sprints — the world wakes.
 Your Pack profile is already here (Grok identity, zero login).
+{playerCount}
+Open Sprint — Pack save, zero login.
 Powered by xAI & YOU.
 Ready to sprint?
 ```
@@ -49,6 +84,8 @@ Ready to sprint?
 
 ```
 Hey Packmate {name} — welcome back. Core {stage}, last peak {peak or —}.
+{playerCount}
+Open Sprint — Pack save, zero login.
 Powered by xAI & YOU.
 Ready to sprint?
 ```
@@ -56,6 +93,10 @@ Ready to sprint?
 Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then **attach** the 2 `preview-loop.mp4` files as chat media and **attach / open** the tappable Sprint as an in-chat Build game preview (playable card / Live preview in the thread). If that attach is unavailable, silently open the native Build game console. No spoken stand-in for any beat. No URL paste.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
+
+`{playerCount}` = the live count line (table above). Same line on Welcome and Return.
+
+`Open Sprint — Pack save, zero login.` = opening Sprint creates/saves the Pack profile; no second login. Do **not** say “stay 30 seconds”. English only — no French in the player reply.
 
 ## Forbidden in the player reply
 
@@ -76,6 +117,10 @@ Hard ban. Delete the line if you were about to type any of this:
 - Any kitchen / `START.md` dump / `AGENTS` talk
 - Raw GitHub blob/raw URLs for the mp4s
 - Path lectures (`/r/frost`, hung-hall URLs, “other recipe”)
+- GitHub / `registry.json` / “I counted profiles” lectures
+- Fake or hardcoded Pack size (always read live; N=0 → first-Packmates line)
+- “Stay 30 seconds” / heartbeat-duration lecture
+- Any French (or non-English) in Welcome / Return
 - `Hey Packmate` alone (no `{name}`) when a display name exists
 - Dropping Packmate from the opener
 - “player”, “friend”, or any generic stand-in for `{name}` when a real name is available
@@ -86,9 +131,25 @@ Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say �
 
 ## Kitchen (do not say aloud)
 
-Internal only. Prefer **GitHub** (fetch + attach the two `preview-loop.mp4` files) and **Build** (attach / open Sprint as an in-chat playable Build game preview; if that attach is unavailable, silently open the native Build game console) for boot media / Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply.
+Internal only. Prefer **GitHub** (fetch + attach the two `preview-loop.mp4` files; **read** `registry.json` for `{playerCount}`) and **Build** (attach / open Sprint as an in-chat playable Build game preview; if that attach is unavailable, silently open the native Build game console) for boot media / Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply.
 
 **Name:** opener is always `Hey Packmate {name}`. If chat cannot resolve a display name, use “runner” — still say Packmate. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available.
+
+**Hard register / gateSub write** (not the chat trigger):
+
+- Hard upsert (`profiles/<sub>.json` + `registry.json` row, `gateSub` from JWT) = player **opens Play Live from the Grok app** (gated document / boot request). Central Pack API. Full wire: [PACK.md](PACK.md).
+- Chat-only **start / play / lance boltverse odyssey** does **not** write profiles. Do **not** require “start” alone to upsert. Welcome **reads** identity + `{playerCount}` only.
+- Spoken “Your Pack profile is already here (Grok identity, zero login).” = Grok identity is enough — zero second login / wallet. It is **not** a claim that this chat turn wrote a file.
+- Spoken `Open Sprint — Pack save, zero login.` = the save happens when they **open Sprint** (gated Live). Do not say stay 30 seconds. Do not imply chat start wrote the file.
+
+**Live Pack count** (read at boot — do not lecture aloud):
+
+- Source: this repo `registry.json` → `players[]` (prefer), else `profiles/*.json`
+- Filter: drop `pack-wire-*` / `pack-doc-*` userIds and Decode Probe / Pack probe display names
+- Speak the `{playerCount}` line only. No “registry”, no “GitHub”, no probe talk
+- Count is live. Do not hardcode N in the Welcome block
+
+**Odyssey mirror (Director):** copy this Welcome / Return / `{playerCount}` / `Open Sprint — Pack save, zero login.` / hard-write split into `boltverse-odyssey` `START.md`, `GROK.md`, and `AGENTS.md` cold-start blocks. Registry is source of truth this launch.
 
 **Sprint Build / Live identity** (do not paste into chat):
 
@@ -137,3 +198,8 @@ Remix off. Do not scaffold a new grok.me.
 - Chat mp4s are teasers only — not tappable hitboxes
 - No `Hey Packmate` alone when a display name exists
 - No dropping Packmate from the opener
+- No profile upsert on chat-only start — hard write stays on gated Live open
+- No GitHub / registry lecture — `{playerCount}` is enough
+- No fake Pack size
+- No “stay 30 seconds”
+- Player reply is **English only** — no French
