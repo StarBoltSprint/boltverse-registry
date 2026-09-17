@@ -18,15 +18,15 @@ Any `*.grok.me` Live auto-joins central Pack profiles. Identity = Grok gate `sub
 
 → **[PACK.md](PACK.md)**
 
-## Kitchen: Assets (mint-on-create)
+## Kitchen: Assets (Imagine-rail mint)
 
-Mint `assetId` automatically when a player **creates / puts a Grok asset into Boltverse** (Hang, forge, chest propose, biome plate seal — any Pack entry). Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id. **HARD LOCK:** Grok Imagine img / vid only. **HARD BAN:** Spotify / external mp3 / non-Grok uploads.
+Mint `assetId` **only** when a Grok Imagine cook completes through the Pack / Boltverse cook rail. Provenance is **automatic** (server / rail — `creatorSub`, `source: grok-imagine`, `contentHash`, `kind`, `createdAt`, optional `cookId` / `threadId` / `railsVersion`). Player never supplies proof. Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id; first creator keeps ownership. **HARD LOCK:** Grok Imagine cook-rail img / vid only. **HARD BAN:** player file upload / X/Twitter URL / Drive / Discord / arbitrary mp4-img URL / Spotify / external mp3 / non-Grok uploads / manual proof.
 
 → **[ASSETS.md](ASSETS.md)**
 
 ## Kitchen: Chests (Pack SoT for rewards)
 
-Run-earned **cosmetic** chests — not daily login. Peak crystal KEEP. Closed UX = mystery `?` flip; reveal = sealed **Grok Imagine** asset (img / vid) **only**. Chest **references** the existing `assetId` — does not mint a second id. NSFW layers are hard. Cosmetics / Pack lore only — never pay-to-win. Profiles stay separate from asset manifests.
+Run-earned **cosmetic** chests — not daily login. Peak crystal KEEP. Closed UX = mystery `?` flip; Shared Peak open video ~6s closed→empty glow (no baked reward); engine then shows the won `assetId`. Chest **references** an existing Imagine-rail `assetId` — does not mint. **Only the creator** can put THEIR `assetId` in (caller `sub` MUST match `creatorSub`). NSFW layers are hard. Cosmetics / Pack lore only — never pay-to-win. Profiles stay separate from asset manifests.
 
 → **[CHESTS.md](CHESTS.md)**
 
@@ -41,7 +41,7 @@ Cloud save (GitHub) — **not** `localStorage`. Keyed by Grok `userId`.
 | What | Where |
 |---|---|
 | Profile (handle, playUrl, Resonance, hangs index) | this repo `profiles/<userId>.json` |
-| Grok asset manifests (`assetId` mint-on-create) | this repo [ASSETS.md](ASSETS.md) — `assets/<assetId>.json` |
+| Grok asset manifests (`assetId` Imagine-rail mint) | this repo [ASSETS.md](ASSETS.md) — `assets/<assetId>.json` |
 | Chest pool (references existing `assetId`s) | this repo [CHESTS.md](CHESTS.md) — optional `chests/pool.json` |
 | Peak crystal KEEP (closed still) | `boltverse-odyssey` `stock/chests/peak-closed.png` |
 | Live Play + heavy media | each player `*.grok.me` |
