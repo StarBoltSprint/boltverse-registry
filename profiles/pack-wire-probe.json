@@ -2,7 +2,7 @@
   "userId": "pack-wire-probe",
   "gateSub": "pack-wire-probe",
   "handle": null,
-  "displayName": "Pack probe",
+  "displayName": "pack-wire-probe",
   "playUrl": "https://boltverse-odysseyyy.grok.me",
   "remixEnabled": false,
   "citadel": {
@@ -22,8 +22,8 @@
     "inventory": []
   },
   "sessionStartedAt": "2026-09-16T08:28:00Z",
-  "lastSeenAt": "2026-09-16T08:28:00Z",
+  "lastSeenAt": "2026-09-17T06:12:46.181Z",
   "playTimeSec": 0,
   "lastRun": null,
-  "updatedAt": "2026-09-16T08:28:00Z"
+  "updatedAt": "2026-09-17T06:12:46.181Z"
 }

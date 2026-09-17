@@ -18,6 +18,15 @@
       "lastSeenAt": "2026-09-16T08:11:16Z",
       "playTimeSec": 0,
       "updatedAt": "2026-09-16T08:11:16Z"
+    },
+    {
+      "userId": "pack-wire-probe",
+      "handle": null,
+      "displayName": "pack-wire-probe",
+      "playUrl": "https://boltverse-odysseyyy.grok.me",
+      "lastSeenAt": "2026-09-17T06:12:46.181Z",
+      "playTimeSec": 0,
+      "updatedAt": "2026-09-17T06:12:46.181Z"
     }
   ]
 }
