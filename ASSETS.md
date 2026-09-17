@@ -3,6 +3,7 @@
 > **HARD LOCK — Pack assets = Grok Imagine cook-rail output ONLY (images / videos).**
 > **Cook asset = Imagine (in the Grok chat app).** Mint `assetId` ONLY when a Grok Imagine cook completes through the Pack / Boltverse cook rail (Imagine in-app — Build hooks / Imagine session attached to gated Live / cook-room path — whatever the Pack wire uses).
 > **Chest surface law** (play / earn / open / put-in-chest) = Grok chat app only — see [CHESTS.md](CHESTS.md). No external Pack website required to cook.
+> **Put-in-chest Pack receipt** = immediate Grok-chat confirmation (Pack-voice + Imagine-plate visual + `assetId` / tier / ownership). Never silent. Soft refuse = Pack-voice + no registry write.
 > **Provenance is automatic.** The server / rail writes it at mint. The player **never** supplies proof.
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim.
 
@@ -161,9 +162,9 @@ Do not put GitHub App private keys, xAI keys, wallets, or tickets in this repo.
 
 At mint: `creatorSub` = Grok `sub` of the cook (gate JWT / Imagine rail — automatic).
 
-At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is in-app (Grok chat or Build).
+At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Soft refuse (off-lore / NSFW / not Imagine mint / not owner) = Pack-voice + **no registry write**.
 
-Full ownership + surface + rarity law: [CHESTS.md](CHESTS.md).
+Full ownership + surface + rarity + receipt law: [CHESTS.md](CHESTS.md).
 
 ## Done criteria
 
@@ -175,5 +176,6 @@ Full ownership + surface + rarity law: [CHESTS.md](CHESTS.md).
 - Same hash = same id; first creator keeps ownership
 - Chest / Hang / forge / biome **reference** — never remint
 - Chest propose only if caller `sub` === `creatorSub` (in-app: Grok chat or Build)
+- Put-in-chest Pack receipt in Grok chat — never silent; refuse = no registry write
 - Grok Imagine only — HARD
-- Chest surface + rarity: [CHESTS.md](CHESTS.md)
+- Chest surface + rarity + receipt: [CHESTS.md](CHESTS.md)

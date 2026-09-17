@@ -3,6 +3,7 @@
 > **HARD LOCK — chest contents = Grok Imagine cook-rail assets ONLY (images / videos).**
 > **HARD LOCK — surface = Grok chat app ONLY (tabs: Chat + Imagine + Build).** Everything chest-related for players and creators is doable **inside the Grok chat app**. No external website. No separate creator portal. No desktop-only tool.
 > **Cook asset** = Imagine (in app). **Play / earn chest / open reveal** = Build game console / in-chat Live preview (in app). **Put asset in chest** = action from Grok chat or Build after mint — still in app.
+> **HARD LOCK — put-in-chest Pack receipt.** Immediate confirmation in the Grok chat app. Never a silent drop. Success = Pack-voice line + Imagine-plate visual + `assetId` chip / tier / ownership. Soft refuse = Pack-voice refuse, no registry write.
 > **v1 creator flow** does **not** require an external Pack website.
 > **Mint happens on the Imagine cook rail** — see [ASSETS.md](ASSETS.md). Chests **reference** an existing `assetId`. They never mint.
 > **Only the creator can put THEIR `assetId` into a chest.** Caller ticket / JWT `sub` MUST match `assetId.creatorSub` — else refuse.
@@ -27,7 +28,7 @@ The **Grok chat app** (Chat + Imagine + Build) is the **only** player/creator UI
 |---|---|
 | Cook asset | **Imagine** (in app) |
 | Play / earn chest / open reveal | **Build** game console / in-chat Live preview (in app) |
-| Put asset in chest | Action from **Grok chat** or **Build** after mint — still in app |
+| Put asset in chest | Action from **Grok chat** or **Build** after mint — still in app. Immediate **Pack receipt** in Grok chat (never silent). |
 
 **HARD BAN (surface):**
 
@@ -44,7 +45,7 @@ The Pack Play Live attached as Build / in-chat Live preview **is** the in-app pl
 - Container skin = Peak crystal KEEP (`boltverse-odyssey` `stock/chests/peak-closed.png`).
 - **Crystal never chrome.** No wood / iron lootbox chrome. No invented closed plate.
 - Closed UX = mystery card / `?` flip (suspense). Reveal = the sealed creator **Grok Imagine** asset — shown in **Build** / in-chat Live preview after the ~6s open.
-- Creators put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint.
+- Creators put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint. Immediate Pack receipt in Grok chat — never a silent drop.
 - Cosmetics / Pack lore only — **never pay-to-win**.
 
 ### Hard bans (product)
@@ -58,6 +59,8 @@ The Pack Play Live attached as Build / in-chat Live preview **is** the in-app pl
 - No chrome / generic lootbox skin
 - No baking one fixed object into a shared open plate for all creators
 - No beauty / pixel / AI aesthetic score as rarity
+- No silent put-in-chest (success or refuse)
+- No kitchen noise (GitHub URLs, API jargon, registry paths) in player/creator-facing chat lines
 
 ## Soft earn
 
@@ -94,9 +97,38 @@ Rarity is **not** a beauty / pixel / AI aesthetic score. Do **not** rank cooks b
 - Never “paste someone else’s URL” as ownership — no external URL entry path anyway
 - v1 = auth + hash + report (no heavy DRM)
 
-Chest propose: **only** reference an existing `assetId` where `creatorSub` matches the caller’s gate `sub` (automatic check). **No** manual ownership claim form. Propose / put-in-chest is an action from **Grok chat** or **Build** after mint — still in the Grok chat app. No creator portal.
+Chest propose: **only** reference an existing `assetId` where `creatorSub` matches the caller’s gate `sub` (automatic check). **No** manual ownership claim form. Propose / put-in-chest is an action from **Grok chat** or **Build** after mint — still in the Grok chat app. No creator portal. Always return a **Pack receipt** in Grok chat (next section). Never silent.
 
 A stolen X video cannot enter because there is **no upload path** — only Imagine rail output enters.
+
+## Put-in-chest Pack receipt (HARD — Grok chat app only)
+
+When a creator puts an asset into a chest, they **MUST** get an **immediate confirmation in the Grok chat app**. Never a silent drop. Receipt lands in **Grok chat** (same turn / same thread) even if the put-in-chest action started from **Build**.
+
+### Success (all three, same chat turn)
+
+1. **Short Pack-voice line (EN only).** Examples (shape, not locked to one string):
+   - `Asset sealed for the Peak chest.`
+   - `Sealed into the Rare pool.`
+   - Common / other tiers: same voice — seal + chest / pool.
+2. **Visual of what they put in.** Attach the cook still or short clip of the asset — the **Imagine plate itself** — in the same chat turn.
+3. **Chips.** Show `assetId` chip + chest tier (`Common` / `Rare` / `Peak`) + `creatorSub` ownership note (`owned by you` / gate `sub`).
+
+Do not skip the visual. Do not skip the chips. Do not speak kitchen instead of Pack-voice.
+
+### Soft refuse (off-lore / NSFW / not a Grok Imagine mint)
+
+- **Pack-voice refuse.** Example: `Not Pack lore — recook in Imagine.`
+- Other refuses (not your asset / not Imagine mint / NSFW) stay Pack-voice + EN only. No silent fail.
+- **No registry write.** Refuse is not a propose. Do not append `chests/pool.json`. Do not flip `chestPool` / `status`.
+
+### Tone (player / creator-facing)
+
+Boltverse **Pack words only**: seal · Peak chest · asset · Resonance · Loom · Pack.
+
+**HARD BAN in spoken / chat receipt lines:** GitHub URLs · API jargon · registry paths · `assets/<id>.json` · `chests/pool.json` · JWT / ticket lectures · kitchen host dumps.
+
+Kitchen may log the refuse reason. The creator sees Pack-voice only.
 
 ## Safety / NSFW (hard)
 
@@ -111,6 +143,8 @@ Every asset must pass **all** layers before it can be live in a chest pool. Fail
 7. **Pack Pass / tips never bypass filters**
 
 v1: Common may auto-seal into the large pool after layers 1–4. Peak / Legendary wait for Pack seal + soft supply cap. A later trust tier may shorten the Peak queue — it does **not** skip layers 1–4 or 7.
+
+Fail any layer at put-in-chest → Pack-voice refuse in Grok chat + **no registry write**. Never silent.
 
 v1 anti-theft is **auth + hash + report** (this file’s ownership block). No heavy DRM.
 
@@ -195,7 +229,7 @@ proposed  →  sealed  →  live
 
 An asset minted on the Imagine rail may stay `proposed` or `sealed` forever and **never** enter a chest. That is fine — the `assetId` still exists.
 
-Common may auto-seal and hang into the large pool after layers 1–4 + creator-only entry. Peak / Legendary: **no** auto-publish `proposed → live` — Pack seal + soft supply cap. Chest entry never remints. Chest entry never accepts a non-creator `sub`. Chest entry is in-app only (Grok chat or Build).
+Common may auto-seal and hang into the large pool after layers 1–4 + creator-only entry. Peak / Legendary: **no** auto-publish `proposed → live` — Pack seal + soft supply cap. Chest entry never remints. Chest entry never accepts a non-creator `sub`. Chest entry is in-app only (Grok chat or Build). Success or refuse always returns a **Pack receipt** in Grok chat — never silent.
 
 ## Odyssey pointer
 
@@ -206,6 +240,7 @@ Odyssey kitchen map should say: chests law = this file; stock KEEP = `stock/ches
 - This file is the chest law; [ASSETS.md](ASSETS.md) is the Imagine-rail mint + automatic-provenance law
 - **Surface HARD:** Grok chat app only (Chat + Imagine + Build) — no external website, no creator portal, no desktop-only tool; v1 creator flow does not require an external Pack website
 - Cook = Imagine (in app). Play / earn / open reveal = Build / in-chat Live preview (in app). Put-in-chest = Grok chat or Build after mint
+- **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
 - `assetId` mints **only** via the Grok Imagine cook rail; chests **reference** only
 - **Only the creator** can put THEIR `assetId` into a chest (`sub` === `creatorSub`)
 - No player manual proof; no external upload / URL entry
