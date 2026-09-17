@@ -26,4 +26,4 @@ Federation write rules (boot + heartbeat): merge-patch only — never wipe `reso
 
 Heavy mp4s stay on the Play host — only pointers here.
 
-Grok asset manifests live in `assets/<assetId>.json` — **profiles stay separate**. **Mint-on-create** (Hang / forge / chest propose / biome plate seal / any Pack entry) — not chest-only. Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id. Chests **reference** the existing `assetId`; they do not remint. Source = `grok-imagine` only. Law: [ASSETS.md](ASSETS.md). Chest product: [CHESTS.md](CHESTS.md).
+Grok asset manifests live in `assets/<assetId>.json` — **profiles stay separate**. **Mint only via the Grok Imagine cook rail** (automatic provenance — never a player proof step). Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id; first creator keeps ownership. Chests **reference** the existing `assetId` and **only** when caller `sub` === `creatorSub`. Source = `grok-imagine` only. **HARD BAN** player file upload / X / Drive / Discord / arbitrary URL. Law: [ASSETS.md](ASSETS.md). Chest product: [CHESTS.md](CHESTS.md).
