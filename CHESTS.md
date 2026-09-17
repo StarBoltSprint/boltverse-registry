@@ -1,12 +1,15 @@
 # CHESTS — Pack SoT for run-earned rewards
 
+> **HARD LOCK — chest contents = Grok Imagine assets ONLY (images / videos).**
+> **HARD BAN:** Spotify, external mp3, non-Grok uploads.
+
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
 
 This file is the **source of truth** for chest law. Odyssey holds the Peak crystal KEEP still only — `StarBoltSprint/boltverse-odyssey` `stock/chests/peak-closed.png`. Do not fork a second law in Odyssey.
 
 Asset identity (mint-on-create, any Pack entry): **[ASSETS.md](ASSETS.md)**. Chests **reference** an existing `assetId` — they do not mint a second id.
 
-**HARD LOCK — chest contents = Grok Imagine assets ONLY (images / videos).** **HARD BAN:** Spotify, external mp3, wallet media, and any non-Grok upload. Creators do not drop files from elsewhere into the pool.
+Creators do not drop files from elsewhere into the pool. Wallet media is also banned (see hard lock).
 
 Profiles stay in `profiles/<userId>.json`. Chest assets are **not** profile fields. A profile may later *point* at `assetId`s; it must not embed the blob.
 

@@ -1,10 +1,13 @@
 # ASSETS — automatic `assetId` (mint-on-create)
 
+> **HARD LOCK — Pack assets = Grok Imagine ONLY (images / videos).**
+> **HARD BAN:** Spotify, external mp3, non-Grok uploads.
+
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
 
 This file is the **source of truth** for Pack asset identity. Chests, Hang, forge, and biome plates **reference** these ids — they do not invent their own.
 
-**HARD LOCK — Pack assets = Grok Imagine ONLY (images / videos).** **HARD BAN:** Spotify, external mp3, wallet media, and any non-Grok upload. Creators do not drop files from elsewhere into Boltverse.
+Creators do not drop files from elsewhere into Boltverse. Wallet media is also banned (see hard lock). Same lock as [CHESTS.md](CHESTS.md).
 
 Profiles stay in `profiles/<userId>.json`. Asset manifests stay in `assets/<assetId>.json`. A profile / hang / chest may *point* at `assetId`s; it must not embed the blob.
 
