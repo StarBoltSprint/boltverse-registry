@@ -37,7 +37,7 @@ Optional thin `/api/pack` on each Live may **proxy** to the central API (same co
 
 **POST `/v1/pack/boot`** (also acceptable alias **POST `/api/pack`** for back-compat)
 
-When: first document load from the Grok app.
+When: first document load from the Grok app (Play Live open — gate JWT). Chat-only **start / play / lance boltverse odyssey** does **not** upsert. Hard `gateSub` write stays on this gated boot, not on Welcome.
 
 Headers: `x-grok-identity` (JWT) and/or `Authorization: Bearer <ticket>`
 
