@@ -8,7 +8,7 @@ See `profiles/smir9.json` for a filled example.
 | gateSub | string \| null | Gate claim `sub`. Filled on first gated boot. Never invent. |
 | handle | string | `@handle` from X/Grok when available |
 | displayName | string | |
-| playUrl | string | Last origin opened (`location.origin`) — federated `*.grok.me`, not a single canonical host |
+| playUrl | string | Last origin opened (`location.origin`) — federated `*.grok.me`. Kitchen Pack Play / central Pack API host = `https://boltverse-odysseyyyy.grok.me` (four y’s). Old three-y `https://boltverse-odysseyyy.grok.me` is superseded — not Beat 3 / not Pack Play. |
 | remixEnabled | boolean | |
 | citadel | object | e.g. `{ \"defaultRoom\": \"frost\" }` |
 | hangs | array | Short list of hung room ids / urls |
@@ -19,6 +19,8 @@ See `profiles/smir9.json` for a filled example.
 | lastSeenAt | string \| null | ISO-8601 last boot/heartbeat. `null` = New (COLD_START) |
 | playTimeSec | number | Accumulated open-Play seconds from heartbeats |
 | updatedAt | string | ISO-8601 |
+
+**Kitchen Pack Play / central Pack API host:** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Beat 3 / not Pack Play.
 
 Federation write rules (boot + heartbeat): merge-patch only — never wipe `resonance` / `starCore` / `cosmetics`. Always set `gateSub`, `playUrl` (from body), `lastSeenAt=now`, `updatedAt=now`. Full wire: [PACK.md](PACK.md).
 
