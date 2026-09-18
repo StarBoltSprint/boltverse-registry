@@ -21,7 +21,7 @@
 >
 > When start / play / lance fires the locked Welcome/Return and a real `sub` is known: **upsert now** `profiles/<sub>.json` + `registry.json` `players[]` on `StarBoltSprint/boltverse-registry` (merge-patch). Existence + `lastSeenAt`. Never invent a `sub`. No `sub` → soft skip write, still show Welcome.
 >
-> **Welcome register = existence + lastSeen. Live open = playTime / heartbeats.**
+> **Welcome register = existence + lastSeen. Live open = playTime / heartbeats.** **Pack wire is automatic — never a player ask.** Players must NEVER tell Grok « install Pack wire / plate views / playTime ». Every new biome / citadel / Sprint Live ships `client/pack.js` or `BOLTVERSE_PACK_ORIGIN` → central + plate dealer stats. Live floor: `boltverse-odyssey` `biome/docs/07-pack-live.md`. Law: [PACK.md](PACK.md).
 
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
@@ -29,7 +29,7 @@ This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey
 
 Why: auto-Build / Build attach / GitHub→new project is too long / painful. Grok scaffolds a « Built with Grok » card instead of pasting SmiR’s existing Live URL. Observed FAIL: fresh Grok already on the Build tab still implements LanePlayer / copies assets **after** pasting odysseyyyy.
 
-`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP** + **name resolve** + **zero spoken improvisation** + **plate silence** + **Welcome register = existence + lastSeen when sub known** + **Live open = playTime / heartbeats**). Registry is source of truth.
+`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP** + **name resolve** + **zero spoken improvisation** + **plate silence** + **Welcome register = existence + lastSeen when sub known** + **Live open = playTime / heartbeats** + **Pack wire automatic — never a player ask**). Registry is source of truth. Live floor: `biome/docs/07-pack-live.md`.
 
 ## Cold-start tools (hard)
 
@@ -300,7 +300,7 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 **Welcome register / Live playTime** (this chat trigger + Live wire):
 
 - **Welcome register** (this chat turn): if a real `sub` is known, merge-patch upsert `profiles/<sub>.json` + `registry.json` `players[]` (`gateSub`, `displayName` / `handle` if known, `lastSeenAt=now`, `updatedAt=now`, `playUrl=https://boltverse-odysseyyyy.grok.me`). Existence + lastSeen. Never invent a `sub`. No `sub` → soft skip, still Welcome. Never wipe `resonance` / `starCore` / `cosmetics`. Do **not** increment `playTimeSec`.
-- **Live open** (still required): gated HTML + `x-grok-identity` + `POST /v1/pack/boot` + heartbeat `POST /v1/pack/heartbeat` updates `playTimeSec` / plate views. Central Pack API. Full wire: [PACK.md](PACK.md).
+- **Live open** (still required, **automatic — never a player ask**): gated HTML + `x-grok-identity` + `POST /v1/pack/boot` + heartbeat `POST /v1/pack/heartbeat` updates `playTimeSec` / plate views. Recipe ships Pack client (`client/pack.js` or `BOLTVERSE_PACK_ORIGIN` → `https://boltverse-odysseyyyy.grok.me`) + plate dealer `assetId` stats. Ban treating Pack wire as a manual Build chore the player briefs. Live floor: Odyssey `biome/docs/07-pack-live.md`. Full wire: [PACK.md](PACK.md).
 - **SUPERSEDED:** « chat-only start / play / lance does not write profiles ». Welcome **writes** when `sub` known.
 - Spoken “Your Pack profile is already here (Grok identity, zero login).” = Grok identity is enough — zero second login / wallet. Welcome register wrote the file when `sub` was known.
 - Spoken `Open Sprint — Pack save, zero login.` = Welcome registered existence; Live open continues Pack save (`playTimeSec`). Do not say stay 30 seconds. Do not invent a `sub`.
@@ -313,7 +313,7 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 - Speak the `{playerCount}` line only. No “registry”, no “GitHub”, no probe talk
 - Count is live. Do not hardcode N in the Welcome block
 
-**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **Welcome register = existence + lastSeen when sub known** + **Live open = playTime / heartbeats** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, and README cold-start blocks. Registry is source of truth.
+**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **Welcome register = existence + lastSeen when sub known** + **Live open = playTime / heartbeats** + **Pack wire automatic — never a player ask** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, README cold-start blocks, and `biome/docs/07-pack-live.md`. Registry is source of truth.
 
 **Sprint / Live identity** (first-reply paste):
 
