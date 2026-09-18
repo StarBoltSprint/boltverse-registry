@@ -10,8 +10,8 @@
 #     -f 'client_payload[sub]=USER_SUB' \
 #     -f 'client_payload[displayName]=Ada Pack'
 #
-# Phase 2 playTime path: StarBoltSprint/boltverse-pack on Vercel (not grok.me).
-# Placeholder origin: https://YOUR-PACK.vercel.app until deploy URL is known.
+# Phase 2 playTime path: TEMPORARY https://boltverse-pack.vercel.app (not grok.me).
+# Lives freeze — not the forever home. Long-term: Pack stays inside Grok sandbox.
 # This Action stays Welcome-only (existence + lastSeen). Never increment playTimeSec.
 
 name: pack-welcome
