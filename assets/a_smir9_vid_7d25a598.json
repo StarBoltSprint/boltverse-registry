@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_7d25a598",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2876203,
+  "source": "grok-imagine",
+  "contentHash": "7d25a5989186748b2f505ba6cef48e39bf90f1b3a81da883ae5fcc394c4f187f",
+  "contentHash8": "7d25a598",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-night.mp4",
+  "playPath": "biome/master/road-night.mp4",
+  "label": "plate-hazard",
+  "role": "night neon action, L+R"
+}

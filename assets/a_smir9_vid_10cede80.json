@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_10cede80",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2866900,
+  "source": "grok-imagine",
+  "contentHash": "10cede80745faaef550a61e9687445b94a41c8a0b546073bee069151c9a617d3",
+  "contentHash8": "10cede80",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-blast.mp4",
+  "playPath": "biome/master/road-blast.mp4",
+  "label": "plate-hazard",
+  "role": "center meteor"
+}

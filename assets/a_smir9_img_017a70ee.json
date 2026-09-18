@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_img_017a70ee",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "img",
+  "mime": "image/jpeg",
+  "bytes": 233073,
+  "source": "grok-imagine",
+  "contentHash": "017a70ee31c772de534e9e2032020b0b08bde684fefedea7f725f2641e1091f3",
+  "contentHash8": "017a70ee",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road.jpg",
+  "playPath": "biome/master/road.jpg",
+  "label": "plate-road",
+  "role": "poster"
+}

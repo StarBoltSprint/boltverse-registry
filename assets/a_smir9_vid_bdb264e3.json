@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_bdb264e3",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2872080,
+  "source": "grok-imagine",
+  "contentHash": "bdb264e3ec8fc27a173fd618e4cb4fbcda1d9d673b4bfcc3420921a796f16501",
+  "contentHash8": "bdb264e3",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-war1.mp4",
+  "playPath": "biome/master/road-war1.mp4",
+  "label": "plate-hazard",
+  "role": "war intro, capital ships vs buildings"
+}

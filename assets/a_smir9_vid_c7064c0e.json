@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_c7064c0e",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2868518,
+  "source": "grok-imagine",
+  "contentHash": "c7064c0e6957efce41766c9c8f187942428faa107f9596d3c932bed339d44ba2",
+  "contentHash8": "c7064c0e",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-gap.mp4",
+  "playPath": "biome/master/road-gap.mp4",
+  "label": "plate-hazard",
+  "role": "L+R cars, center free"
+}

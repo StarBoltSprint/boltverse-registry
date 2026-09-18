@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_2a2926c4",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2619622,
+  "source": "grok-imagine",
+  "contentHash": "2a2926c480d307a50b484043bbc4ff07a05b4fd91e16b00390ff6b88bac9f4d9",
+  "contentHash8": "2a2926c4",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road.mp4",
+  "playPath": "biome/master/road.mp4",
+  "label": "plate-road",
+  "role": "empty dusk road — master clock (5.75 s)"
+}

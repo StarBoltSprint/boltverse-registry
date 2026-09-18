@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_4c57ceb7",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2869654,
+  "source": "grok-imagine",
+  "contentHash": "4c57ceb7f12d0ba4048d37395cf42772157e06fed75422f2d5afc7e93ac8689a",
+  "contentHash8": "4c57ceb7",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-car.mp4",
+  "playPath": "biome/master/road-car.mp4",
+  "label": "plate-hazard",
+  "role": "left-lane futuristic car"
+}

@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_e40f3296",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2878346,
+  "source": "grok-imagine",
+  "contentHash": "e40f329683189c46b94ceaf433c01ac8c14307ecb74e0b214af6b77ae05ccf8b",
+  "contentHash8": "e40f3296",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-gate.mp4",
+  "playPath": "biome/master/road-gate.mp4",
+  "label": "plate-hazard",
+  "role": "dusk → night megacity (sky only, no ground box)"
+}
