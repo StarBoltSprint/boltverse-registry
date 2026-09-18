@@ -42,6 +42,8 @@ Player says **start / play / lance boltverse odyssey** (any close alias).
 
 Chat trigger = Welcome + media + Sprint attach. **Not** a hard register.
 
+**Not this trigger:** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) = Pack voice + `assetId` chips only in **Grok chat** (optional at most ONE header still — never N media). **Focus** one plate (name / role / `assetId`) = that one media attach. Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / Beat 3. Do **not** paint List or Focus on Sprint HUD.
+
 ## Profile (zero login / wallet)
 
 Spoken opener is **`Hey Packmate {name}`**. Packmate stays (immersive).
@@ -164,6 +166,8 @@ Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.m
 
 **Name:** opener is always `Hey Packmate {name}`. Resolve `{name}` in order: Grok profile `displayName` → registry `displayName` → gate/app name → **only then** `runner`. **Hard ban:** if the chat UI / session exposes ANY user name / handle / profile label, never say `runner`. Prefer the visible chat account name over inventing `runner`. Example still `Hey Packmate SmiR 9`. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available. Never `Hey Packmate runner` when a name exists.
 
+**Own plates List vs Focus (not this Welcome trigger):** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) → **own** plates in **Grok chat** (`creatorSub` === gate `sub` / `profiles/<sub>.json`) as Pack words + `assetId` chips only. Short cassette counts (`views` · `players`) OK next to the chip. Optional at most **ONE** header still — never N media for N plates (spam FAIL). **Focus** one plate (name / role / `assetId`) → Pack words + that one `assetId` + fuller cassette stats + attach that plate’s media (mp4 if vid, photo if img) — own `creatorSub` only. Counts are real or `0` — never invent, never pay-to-win. Empty list: `No Pack plates sealed yet — cook in Imagine.` Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / Beat 3. Do **not** paint List or Focus on Sprint HUD. Do **not** dump GitHub / registry paths.
+
 **Hard register / gateSub write** (not the chat trigger):
 
 - Hard upsert (`profiles/<sub>.json` + `registry.json` row, `gateSub` from JWT) = player **opens Play Live from the Grok app** (gated document / boot request). Central Pack API. Full wire: [PACK.md](PACK.md).
@@ -245,6 +249,7 @@ Remix off. Do not scaffold a new `grok.me` / `grok-sandbox.com`. Do not remix in
 - No dropping Packmate from the opener
 - No profile upsert on chat-only start — hard write stays on gated Live open
 - No GitHub / registry lecture — `{playerCount}` is enough
+- `show my plates` (close alias) is **not** Welcome — **List** = Pack voice + `assetId` chips only (never N media); **Focus** one plate = one media attach ([ASSETS.md](ASSETS.md)); no Sprint HUD
 - No fake Pack size
 - No “stay 30 seconds”
 - Player reply is **English only** — no French
