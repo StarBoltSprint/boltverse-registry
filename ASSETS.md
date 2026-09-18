@@ -180,7 +180,7 @@ Hung Imagine kitchen plates already on `StarBoltSprint/boltverse-odyssey` `biome
 
 At mint: `creatorSub` = Grok `sub` of the cook (gate JWT / Imagine rail — automatic).
 
-At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Receipt / pending / open / reward lines = English Pack voice + 1–3 matching emojis (hype, not spam). Law: [CHESTS.md](CHESTS.md). Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link. Creator plates ≠ Pack inventory unless that `assetId` was won via chest or an explicit grant — inventory is `profiles/<sub>.json` `cosmetics.inventory` / `badges[]` (**badges + won assets**; first reward = First Sprint **badge**, not a plate). Law: [CHESTS.md](CHESTS.md) / [SCHEMA.md](SCHEMA.md).
+At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Receipt / pending / open / reward lines = English Pack voice + 1–3 matching emojis (hype, not spam). Law: [CHESTS.md](CHESTS.md). Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link. Creator plates ≠ Pack inventory unless that `assetId` was won via chest or an explicit grant — inventory is `profiles/<sub>.json` `cosmetics.inventory` / `badges[]` (**badges + won assets**; first reward = First Sprint **badge**, not a plate — badge **MUST** have a stock still via `image` / `assetId`; Focus shows that image). Law: [CHESTS.md](CHESTS.md) / [SCHEMA.md](SCHEMA.md).
 
 Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHESTS.md](CHESTS.md).
 
@@ -312,4 +312,4 @@ Odyssey `biome/master/ASSETS.md` stays a **pointer** at this file. Do not fork a
 - **HARD BAN** GitHub / `raw.githubusercontent` / registry-path dumps in List or Focus
 - **HARD BAN** Sprint HUD / overlay chrome as the plate list — chat only
 - Other creators’ assets: never list or attach on these triggers (Pack seal / public live pool = a different ask)
-- Creator plates ≠ Pack inventory unless won via chest or grant — `show my inventory` lists **badges + won assets** ([CHESTS.md](CHESTS.md) / [SCHEMA.md](SCHEMA.md)); first reward = First Sprint **badge**, not a plate
+- Creator plates ≠ Pack inventory unless won via chest or grant — `show my inventory` lists **badges + won assets** ([CHESTS.md](CHESTS.md) / [SCHEMA.md](SCHEMA.md)); first reward = First Sprint **badge**, not a plate; badge Focus = stock still (`image` / `assetId`)

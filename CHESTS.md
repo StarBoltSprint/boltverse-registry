@@ -12,7 +12,7 @@
 > **Only the creator can put THEIR `assetId` into a chest.** Caller ticket / JWT `sub` MUST match `assetId.creatorSub` — else refuse.
 > **Provenance is automatic.** No player proof screenshot, certificate, or ownership-claim form.
 > **HARD LOCK — cosmetics only. Never pay-to-win. Never play-to-win.** Chest rewards = skins / titles / Pack lore looks. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, or wallet boost. Pack Pass / tips / X subs never buy gameplay power — only cosmetic / drop-count soft.
-> **HARD LOCK — first reward = Pack badge (not a plate).** First gated Live touch on `https://boltverse-odysseyyyy.grok.me` (heartbeat `playTimeSec` ≥ ~5s, soft) grants **once** `pack-first-sprint` / First Sprint into `cosmetics.inventory` / `badges[]`. Welcome register alone does **not** grant. Cosmetic only. Idempotent. Law below.
+> **HARD LOCK — first reward = Pack badge (not a plate).** First gated Live touch on `https://boltverse-odysseyyyy.grok.me` (heartbeat `playTimeSec` ≥ ~5s, soft) grants **once** `pack-first-sprint` / First Sprint into `cosmetics.inventory` / `badges[]`. **MUST** carry a reward **still** — `image` and/or `assetId` pointing at Pack stock badge art (Director cooking). Inventory Focus **shows that image**. Welcome register alone does **not** grant. Cosmetic only. Idempotent. Law below.
 > **HARD LOCK — Pack inventory = won rewards on the player profile.** Open a chest → append the won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Inventory List shows **badges + won assets**. Never wipe. Prefer one entry per `assetId` / badge `id`. Creator plates ≠ inventory unless won via chest (or explicit grant). Chat `show my inventory` / `mes gains` / `what I won` = List vs Focus like plates. Law below + [SCHEMA.md](SCHEMA.md).
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL · Spotify · external mp3 · non-Grok uploads · paste-someone-else’s-URL as ownership · external Pack website / creator portal / desktop-only tool as a required player or creator UI · requiring biome / link creators to wire chests.
 
@@ -93,7 +93,9 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - No silent chest-open without an inventory append (once the reward `assetId` is known)
 - No wiping `cosmetics.inventory` / `badges[]` on Welcome / boot / heartbeat / open
 - No granting First Sprint on Welcome register alone (need gated Live touch ~5s)
-- No treating the First Sprint badge as a plate / Imagine attach
+- No treating the First Sprint badge as a creator plate (stock badge still ≠ `show my plates`)
+- No First Sprint badge without a reward still (`image` / `assetId` → stock badge art)
+- No inventing badge art / using a player plate as the badge still
 - No chat-only « Packmate » badge unless SmiR asks (this badge is first Live sprint)
 - No kitchen noise (GitHub URLs, API jargon, registry paths) in player/creator-facing chat lines
 - **No emoji walls / random unrelated emoji** on chest chat lines (pending / seal / open / reward / inventory List)
@@ -346,7 +348,7 @@ When the player opens from **Grok chat** (soft chat open):
 
 ## First Pack badge (HARD — first reward, not a plate)
 
-**First reward = Pack badge. Not a plate. Not an `assetId` cook.**
+**First reward = Pack badge. Not a plate.** Not a player cook. **MUST** have a reward **still**.
 
 When a player first **truly joins play** on SmiR’s Boltverse Live `https://boltverse-odysseyyyy.grok.me`:
 
@@ -363,13 +365,34 @@ When a player first **truly joins play** on SmiR’s Boltverse Live `https://bol
 Write **once** onto that player’s profile. Prefer a `kind: "badge"` row in `cosmetics.inventory` and/or `cosmetics.badges[]` (same object either place). Shape: [SCHEMA.md](SCHEMA.md).
 
 ```json
-{ "kind": "badge", "id": "pack-first-sprint", "title": "First Sprint", "wonAt": "2026-09-18T08:00:00Z", "from": "first-run" }
+{
+  "kind": "badge",
+  "id": "pack-first-sprint",
+  "title": "First Sprint",
+  "wonAt": "2026-09-18T08:00:00Z",
+  "from": "first-run",
+  "image": "stock/badges/pack-first-sprint.png",
+  "assetId": null
+}
 ```
 
 - **Once only.** If `id: "pack-first-sprint"` already exists in `inventory` or `badges[]`, do **not** grant again. Keep the first `wonAt`.
 - **Never wipe** existing `cosmetics` / `inventory` / `badges[]`.
 - **Never pay-to-win / never play-to-win.** Cosmetic only — no speed, Resonance, score, path, Hit, lives, skill, or wallet.
-- Not a plate. Do **not** mint an `assetId`. Do **not** attach Imagine media for this grant.
+- Not a creator plate. Do **not** remint a per-player `assetId`. Do **not** attach a player cook as the badge.
+
+### Reward still (HARD)
+
+The badge **MUST** have a reward **image (still)**. Pointers, not a blob in this repo.
+
+| Field | Law |
+|---|---|
+| `image` | Pack stock badge art path. Kitchen KEEP: `boltverse-odyssey` `stock/badges/pack-first-sprint.png` (**TBD — Director cooking the still now**). Do **not** invent a substitute still. |
+| `assetId` | Optional. Once Director’s cook is minted on the Imagine rail, set this to that **stock** `assetId` (reference). Same id for every player. `null` / omit until minted. |
+
+Need **at least one** of `image` or `assetId` before Focus can attach. Until the Director still lands, grant + List voice still fire; do **not** fake art. When the still exists, **Inventory Focus shows that image.**
+
+**HARD BAN:** player plate as badge art · per-player remint · uploading a still · inventing a demo PNG · attaching the still on List (spam — Focus only, plus optional one attach on the grant turn).
 
 ### Chat (grant + inventory)
 
@@ -377,7 +400,7 @@ English Pack voice + hype emojis (1–3). Same chest chat copy law. Shape, not f
 
 - `🐺⚡ First Sprint — you’re in the Pack.`
 
-Speak that line **when granted** (same turn the Live wire first qualifies). Speak it again as a List row when they ask inventory. **HARD BAN:** emoji walls · kitchen dumps · attaching a plate as the badge.
+Speak that line **when granted** (same turn the Live wire first qualifies). Speak it again as a List row when they ask inventory. Grant turn **may** attach the stock still once it exists (one image). **Inventory Focus MUST attach that still** when `image` / `assetId` is live. **HARD BAN:** emoji walls · kitchen dumps · attaching a creator plate as the badge.
 
 ## Pack inventory (HARD — won rewards)
 
@@ -389,7 +412,7 @@ Inventory = **owned rewards for that player `sub`**: **badges + won assets**. No
 
 1. **Append** to `profiles/<sub>.json` → `cosmetics.inventory` (array). Prefer rich objects.
    - **Won asset** kitchen fields: `assetId` (required) · `wonAt` (ISO-8601, first win) · `fromChest` (`run` / `peak` / chest id / `grant`) · `rarity` (`common` / `rare` / `peak`). Optional `kind: "asset"`.
-   - **Badge** kitchen fields: `kind: "badge"` · `id` · `title` · `wonAt` · `from`. May also live in `cosmetics.badges[]` (same object). Shape: [SCHEMA.md](SCHEMA.md).
+   - **Badge** kitchen fields: `kind: "badge"` · `id` · `title` · `wonAt` · `from` · **`image` and/or `assetId`** (stock badge still — required for Focus). May also live in `cosmetics.badges[]` (same object). Shape: [SCHEMA.md](SCHEMA.md).
 
 ```json
 { "assetId": "a_smir9_vid_aa01ff09", "wonAt": "2026-09-18T07:55:21Z", "fromChest": "run", "rarity": "common" }
@@ -408,7 +431,7 @@ Ask in **Grok chat**: `show my inventory` / `mes gains` / `what I won` / close a
 
 - **List** = English Pack voice + **hype emojis (1–3)** + chips. Show **badges + won assets** (badges first). Badge row: `🐺⚡ First Sprint — you’re in the Pack.` Asset row: optional rarity / fromChest chip (`🎁 Common` · `💎 Peak`) + `assetId` chip. Same chest chat copy law. Optional at most **ONE** header still. **Never** N media for N rewards (spam FAIL — same as plates).
 - **Focus** one **asset** (Pack name / `assetId`) = Pack words + that one `assetId` + **one** media attach (mp4 if vid, photo if img).
-- **Focus** one **badge** = Pack voice + title + hype emojis. **No** Imagine plate attach (badge ≠ plate).
+- **Focus** one **badge** = Pack voice + title + hype emojis + **the reward still** (`image` / stock `assetId`). **MUST** attach that image when it exists. Badge ≠ creator plate — attach stock badge art only.
 - Empty (no badge and no won assets): `No Pack drops yet — open Sprint.` (shape, not frozen). Badge-only is **not** empty.
 
 Examples (shape, not locked):
@@ -418,7 +441,7 @@ Examples (shape, not locked):
 - `🎁 Common drop` + chip
 - `💎 Peak drop` + chip
 
-**HARD BAN:** dumping `cosmetics.inventory` JSON · GitHub / registry paths · attaching every won clip on List · treating `show my plates` as inventory · treating inventory as the creator plate list · treating the First Sprint badge as a plate · emoji walls.
+**HARD BAN:** dumping `cosmetics.inventory` JSON · GitHub / registry paths · attaching every won clip on List · treating `show my plates` as inventory · treating inventory as the creator plate list · treating the First Sprint badge as a creator plate · Focus badge without the stock still once `image` / `assetId` exists · emoji walls.
 
 ### Creator plates ≠ inventory
 
@@ -450,7 +473,7 @@ Common may auto-seal and hang into the large pool after layers 1–4 + creator-o
 
 ## Odyssey pointer
 
-Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = this file (implement, do not fork); stock KEEP = `stock/chests/peak-closed.png`; chest UI = Pack Engine overlay on the canonical Play / Pack client. Do not copy the law into Odyssey. Do not add chest chrome to biome plate recipes.
+Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = this file (implement, do not fork); stock KEEP = `stock/chests/peak-closed.png`; First Sprint badge still = `stock/badges/pack-first-sprint.png` (**TBD — Director cooking**); chest UI = Pack Engine overlay on the canonical Play / Pack client. Do not copy the law into Odyssey. Do not add chest chrome to biome plate recipes. Do not invent badge art.
 
 ## Done criteria
 
@@ -461,8 +484,8 @@ Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = t
 - **Chest chat copy HARD:** pending / seal / open / reward = English Pack voice + **1–3 matching emojis** (stylish / hype, not spam). Shape: ⚡ chest / 💎 Peak ready · ✨ sealed / 🎁 into Common/Rare/Peak · 🔓 opening… + peak-open ~6s · 🏆 / 🎬 reward + `assetId` chip. Inventory List uses the same voice + hype emojis. Examples are shape — not frozen Mandarin. Ban emoji walls / random unrelated emoji
 - **Soft chat open HARD:** same message = open video then reward media. Engine timed gate (~6s) remains **Live-only**
 - **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + matching emojis + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
-- **First Pack badge HARD:** first reward = **badge, not a plate**. First gated Live on `https://boltverse-odysseyyyy.grok.me` / first heartbeat `playTimeSec` ≥ ~5s (soft — not 2 minutes) grants **once** `{ kind:"badge", id:"pack-first-sprint", title:"First Sprint", wonAt, from:"first-run" }` into `cosmetics.inventory` / `badges[]`. Welcome register alone does **not** grant. Chat: `🐺⚡ First Sprint — you’re in the Pack.` Cosmetic only. Idempotent. No chat-only « Packmate » badge unless SmiR asks.
-- **Pack inventory HARD:** chest open (or explicit grant) **appends** won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Legacy string rows stay valid — never wipe. Prefer one entry per `assetId` / badge `id` (keep first `wonAt`). Chat `show my inventory` / `mes gains` / `what I won` = List **badges + won assets** (Pack voice + hype emojis + chips, never N media) / Focus asset → media / Focus badge → voice only. Creator plates ≠ inventory unless won via chest or grant. Schema: [SCHEMA.md](SCHEMA.md)
+- **First Pack badge HARD:** first reward = **badge, not a plate**. First gated Live on `https://boltverse-odysseyyyy.grok.me` / first heartbeat `playTimeSec` ≥ ~5s (soft — not 2 minutes) grants **once** `{ kind:"badge", id:"pack-first-sprint", title:"First Sprint", wonAt, from:"first-run", image, assetId }` into `cosmetics.inventory` / `badges[]`. **MUST** have a reward still — `image` and/or `assetId` → Pack stock badge art (`stock/badges/pack-first-sprint.png`, TBD — Director cooking). Inventory Focus **shows that image**. Welcome register alone does **not** grant. Chat: `🐺⚡ First Sprint — you’re in the Pack.` Cosmetic only. Idempotent. No chat-only « Packmate » badge unless SmiR asks.
+- **Pack inventory HARD:** chest open (or explicit grant) **appends** won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Legacy string rows stay valid — never wipe. Prefer one entry per `assetId` / badge `id` (keep first `wonAt`). Chat `show my inventory` / `mes gains` / `what I won` = List **badges + won assets** (Pack voice + hype emojis + chips, never N media) / Focus asset → media / Focus badge → **stock still**. Creator plates ≠ inventory unless won via chest or grant. Schema: [SCHEMA.md](SCHEMA.md)
 - `assetId` mints **only** via the Grok Imagine cook rail; chests **reference** only
 - **Only the creator** can put THEIR `assetId` into a chest (`sub` === `creatorSub`)
 - No player manual proof; no external upload / URL entry

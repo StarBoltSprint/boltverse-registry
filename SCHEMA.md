@@ -31,10 +31,20 @@ Federation write rules (Welcome register + boot + heartbeat): merge-patch only �
 **First reward = Pack badge (not a plate).** First gated Live on `https://boltverse-odysseyyyy.grok.me` / first heartbeat `playTimeSec` ≥ ~5s (soft) grants **once**:
 
 ```json
-{ "kind": "badge", "id": "pack-first-sprint", "title": "First Sprint", "wonAt": "2026-09-18T08:00:00Z", "from": "first-run" }
+{
+  "kind": "badge",
+  "id": "pack-first-sprint",
+  "title": "First Sprint",
+  "wonAt": "2026-09-18T08:00:00Z",
+  "from": "first-run",
+  "image": "stock/badges/pack-first-sprint.png",
+  "assetId": null
+}
 ```
 
 Write into `inventory` and/or `badges[]`. Idempotent on `id`. Welcome register alone does **not** grant. Cosmetic only. No chat-only « Packmate » badge unless SmiR asks.
+
+**Reward still HARD.** The badge **MUST** point at Pack stock badge art — `image` and/or `assetId`. Kitchen KEEP: `boltverse-odyssey` `stock/badges/pack-first-sprint.png` (**TBD — Director cooking the still now**). Do not invent a substitute. Once Director’s Imagine cook is minted, set `assetId` to that **stock** id (same for every player — reference, never remint per grant). Inventory **Focus shows that image**. List does not attach it (spam). Until the still lands, `image` may be the KEEP path and `assetId` `null`.
 
 **Won assets — prefer rich objects.** Readers also accept a legacy bare `assetId` **string**. Do not wipe old strings to force objects. New writes prefer objects.
 
@@ -48,12 +58,13 @@ Write into `inventory` and/or `badges[]`. Idempotent on `id`. Welcome register a
 | `id` | string | Badge id (e.g. `pack-first-sprint`). Required on badges. |
 | `title` | string \| omit | Badge title (e.g. `First Sprint`). |
 | `from` | string \| omit | Badge source (`first-run`). |
-| `assetId` | string | Won Imagine-rail id. Required on asset rows (or the whole row is this string, legacy). |
+| `image` | string \| omit | Stock badge still path. Required on badges until/alongside `assetId`. First Sprint: `stock/badges/pack-first-sprint.png` (TBD — Director cooking). |
+| `assetId` | string \| null | Won Imagine-rail id on **asset** rows (or the whole row is this string, legacy). On **badges**: optional stock `assetId` for the badge still (shared — not a per-player mint). |
 | `wonAt` | string | ISO-8601 first win. Keep first on dedupe. |
 | `fromChest` | string \| omit | `run` \| `peak` \| chest id \| `grant` (assets) |
 | `rarity` | string \| omit | `common` \| `rare` \| `peak` (alias `legendary`) |
 
-Missing `inventory` / `badges` → treat as `[]`. Do not invent wins or badges. Chat `show my inventory` / `mes gains` / `what I won` lists **badges + won assets** (Pack voice + hype emojis + chips; Focus asset → media; Focus badge → voice only, no plate). Not `show my plates`.
+Missing `inventory` / `badges` → treat as `[]`. Do not invent wins or badges. Chat `show my inventory` / `mes gains` / `what I won` lists **badges + won assets** (Pack voice + hype emojis + chips; Focus asset → media; Focus badge → **stock still** via `image` / `assetId`). Not `show my plates`.
 
 Heavy mp4s stay on the Play host — only pointers here.
 
