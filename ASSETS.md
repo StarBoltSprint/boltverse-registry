@@ -211,7 +211,7 @@ Kitchen may store the raw counters. Player chat uses Pack words (`views` · `pla
 
 Two asks. Both reply **IN CHAT** (Grok chat app). English Pack voice. Own `creatorSub` only.
 
-This is **not** Welcome. Do **not** fire [COLD_START.md](COLD_START.md) three-beats. Do **not** attach the citadel teaser as the list. Do **not** open Sprint / Build as the list.
+This is **not** Welcome. Do **not** fire [COLD_START.md](COLD_START.md) first-reply Welcome / teaser / URL paste. Do **not** attach the citadel teaser as the list. Do **not** open Sprint / Build as the list.
 
 **HARD BAN:** in-game Sprint HUD / overlay chrome for List or Focus. Chat only. Do not paint plates onto the lane. Do not invent list UI on the biome plate.
 

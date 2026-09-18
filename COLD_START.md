@@ -1,60 +1,101 @@
 # COLD_START — Pack Welcome (read this first)
 
+> ### PRIORITY 0 — on start / play / lance boltverse odyssey: Grok MUST NOT Build anything.
+>
+> **No Build tab work. No scaffold. No remix. No « Built with Grok » card. No compile. No GitHub→new project. No rebuild. No 12-minute rebuild.**
+>
+> **FINAL Phase 1 — all in the SAME first chat reply:**
+> 1. Locked Welcome/Return EN only
+> 2. Attach citadel teaser video
+> 3. Paste written URL `https://boltverse-odysseyyyy.grok.me` (visible tappable link)
+>
+> Player can tap the URL now. **Do not** require a separate yes-turn before showing the URL.
+>
+> **Any Build action on start = FAIL.**
+
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
-`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (English Welcome + `{playerCount}` + `Open Sprint — Pack save, zero login.` + kitchen split + **name resolve** + **Build play surface** + **Beat 3 odysseyyyy-only Live lock** + **no-recreate / no-intro-splash** + **player-reply allowlist** + **plate silence**). Registry is source of truth for the Welcome lock; Odyssey must carry the same name + Beat 3 + no-recreate + allowlist locks.
+**HARD FINAL flow (SmiR):** one first reply. No second turn. No yes-wait. No Build. No rebuild.
+
+Why: auto-Build / Build attach / GitHub→new project is too long / painful. Grok scaffolds a « Built with Grok » card instead of pasting SmiR’s existing Live URL.
+
+`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **name resolve** + **zero spoken improvisation** + **plate silence** + **gated Live open = Pack upsert / playTime**). Registry is source of truth.
 
 ## Cold-start tools (hard)
 
-Prefer **GitHub + Build** for boot media / Sprint. Grok may use **Grok Bot** tools if useful (normal Grok feature — Grok↔Bot handoff is allowed). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough.
+Prefer **GitHub** — fetch + attach the one citadel `preview-loop.mp4`; **read** this repo’s `registry.json` (or `profiles/*.json`) for the live Pack count. Read-only. Chat start does **not** write profiles.
 
-At boot, **read** this repo’s `registry.json` (or `profiles/*.json`) for the live Pack count. Read-only. Chat start does **not** write profiles.
+**In the same first reply:** **PASTE** the written URL `https://boltverse-odysseyyyy.grok.me` as a visible tappable link. Prefer the player taps it and the Live opens **inside the Grok app**. Old ban « never paste grok.me » is **SUPERSEDED for this first-reply odysseyyyy paste only**. Still ban random / new slugs / sandbox / three-y `odysseyyy`.
 
-## Player reply (ONLY this — nothing else)
+**PRIORITY 0 — HARD BAN:** Build tab work / scaffold / remix / « Built with Grok » card / compile / GitHub→new project / rebuild. Inventing a playable card from the recipe = FAIL.
 
-On trigger, the player sees **exactly three beats**. Then stop.
+Grok may use **Grok Bot** tools if useful (normal Grok feature — Grok↔Bot handoff is allowed). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough.
 
-**ALLOWED — only these three. Nothing else in the player reply.**
+## Player reply — SAME first chat reply (ONLY this)
 
-1. **Speak** the locked Welcome or Return English block below. Verbatim. No extra sentences. No French. No ask / choice line. No Play URL. Locked `{playerCount}` + `Open Sprint — Pack save, zero login.` — no GitHub / registry lecture.
+On **start / play / lance boltverse odyssey** (any close alias), the player sees **exactly three beats in one message**. Then stop.
+
+**ZERO improvisation. ZERO extra paragraphs.** Spoken text MUST be **EXACTLY** the locked Welcome or Return English block below. Copy it. Do **not** paraphrase. Do **not** invent a cinematic opener. Do **not** lecture controls. Do **not** essay the engine.
+
+1. **Speak** the locked Welcome or Return English block below. **EXACTLY** those lines. Verbatim. Must include `Hey Packmate {name}`, `Open Sprint — Pack save, zero login.`, and `Ready to sprint?` No extra sentences. No extra paragraphs. No French. No Citadel / Biome choice. Locked `{playerCount}` — no GitHub / registry lecture. No yes-wait lecture.
 2. **Attach** exactly **1** stock `preview-loop.mp4` as chat media — the Odyssey epic citadel teaser (`StarBoltSprint/boltverse-odyssey` `stock/citadel/preview-loop.mp4`, poster `preview-first.jpg`). **Must attach** — a real video file in the chat. Play/pause video in chat. Do **not** attach a second teaser. Do **not** paste raw GitHub URLs, blob links, `raw.githubusercontent.com` links, or path lectures. Do **not** speak a substitute.
-3. **Attach / open** the existing Live Sprint on **Build** — native Grok Build game console / in-chat playable Live preview pointing at **only** `https://boltverse-odysseyyyy.grok.me`. Interactive Sprint lives on **Build** (tabs: Chat / Imagine / Build). It does **not** live on Chat Imagine. It is **not** a downloadable `preview-loop.mp4` file chip alone. Beat 2’s Chat mp4 is a teaser only — Beat 3 must be a **playable** dusk Sprint LanePlayer on that **existing** odysseyyyy Live. Player lands **IN** the Sprint (Bolt already on the road). Not a menu. Not a Start splash.
+3. **Paste** the written URL as a **visible tappable link** in that same first reply:
 
-If the current thread is Chat-only and cannot attach a playable Build preview: **silently** open / switch to Build (or attach the existing odysseyyyy Live playable card). Still never paste a `*.grok.me` URL in the player reply when attach works.
+`https://boltverse-odysseyyyy.grok.me`
 
-**Forbidden:** leaving the player with only `preview-loop.mp4` as a file attachment and no playable Sprint.
-**Forbidden spoken:** “open the Build tab yourself” lectures — do the open/attach. If truly impossible, one short English line is OK: `Open the Build tab for Sprint.` Prefer silent open/attach first. Still do **not** invent a new publish.
+Player can tap it **now**. Do **not** wait for yes. Do **not** require a second turn. Prefer in-Grok-app open of that Live.
 
-**HARD BAN in the player reply (observed SmiR FAIL — kitchen noise):**
+That odysseyyyy paste is **ALLOWED** and **required** in the first reply. Preferred over Build attach. Old ban « never paste grok.me » is **SUPERSEDED for this URL only**.
 
-- Control schemes / input lectures (`A`/`D`, `W`, keyboard, swipe how-to, “steer with…”)
+**PRIORITY 0 — HARD BAN in this first reply (spoken / chat / tools):**
+
+- Opening Build / switching to the Build tab
+- Scaffold / remix / **recreate the game** / **rebuild** from GitHub / compile / GitHub→new project
+- A new « Built with Grok » card / inventing a playable card from the recipe
+- Attaching a Build game console / in-chat Live preview / playable Sprint card
+- Controls lecture / improvised prose / plate lists (full ban list below)
+- Any URL other than `https://boltverse-odysseyyyy.grok.me`
+
+**Any Build action on start = FAIL.**
+
+## HARD BAN at boot (spoken / chat)
+
+Observed SmiR FAIL: improvised nonsense instead of locked Welcome.
+
+- « Bolt is already on the road » / « Bolt already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through »
+- Any A/D / W / space / swipe control tutorial (keyboard, “steer with…”, “He stays in place…”)
+- Any essay about how the engine works
 - Invented plate / cassette lore names (`The First Spark` / `Neon Drift` / `Circuit Breaker` / `Velocity Pulse` or any made-up title)
 - Plate deck lists / dealer recitals at boot
-- « Tap Open Sprint » / « Open Sprint » / Start as an extra spoken CTA or in-game splash button (the locked Welcome line `Open Sprint — Pack save, zero login.` is the only allowed “Open Sprint” text)
+- « Tap Open Sprint » / Start as an extra spoken CTA or in-game splash button (the locked line `Open Sprint — Pack save, zero login.` is the only allowed “Open Sprint” text)
+- Requiring a separate yes / go / sprint turn before showing the URL
 - Registry / GitHub / `plates-index` / biome-path lectures
-- Any kitchen noise / fourth beat / how-to / lore dump
+- Any kitchen noise / extra paragraph / how-to / lore dump
 
-That is the entire player-facing reply. Silent of kitchen. Do **not** ask Citadel or Biome/Sprint. Do **not** dump kitchen explanations. Do **not** paste any `grok.me` / Play URL. Citadel only if the player later asks for Citadel.
+Those kitchen facts stay **silent**. Speak Welcome. Attach teaser. Paste the odysseyyyy URL. Do **not** narrate the teaser.
 
-### Beat 3 hard lock (kitchen — do not paste the URL in the player reply)
+Do **not** ask Citadel or Biome. Citadel only if the player later asks for Citadel.
 
-Open / attach **ONLY** `https://boltverse-odysseyyyy.grok.me` as the in-chat Build playable preview / native Build console pointing at that Live. That four-y URL is the **only** Beat 3 kitchen identity and the Pack Play / central Pack API host. Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play, not Beat 3 Sprint.
+### Live URL lock (kitchen)
 
-1. **ONLY** that canonical Pack Play Live. Dusk Sprint LanePlayer. **Land IN the Sprint** — Bolt already on the road. Not a static image carousel. Not a new project. Not a menu / landing / Start page.
-2. **HARD BAN at boot:** scaffolding / remixing / **recreating the game**. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. Observed FAIL: `le-wild.hades-www.grok-sandbox.com` titled “Boltverse Odyssey” with a white-dog + brown-cat image carousel — that is **not** Pack Play. Observed FAIL: reinvented Sprint with intro splash « Open Sprint » / Start instead of attaching the existing odysseyyyy Live — that is **not** Pack Play.
-3. **HARD BAN:** inventing an intro / landing / Start page that requires tapping « Open Sprint » / Start / Play before the dusk lane. Player must land **IN** the Sprint (Bolt already on the road), not a menu splash.
-4. **HARD BAN:** opening `https://boltverse-odysseyyy.grok.me` (three y’s — superseded Beat 3 target), `boltverse-odyssey.grok.me` frost-only, heart-giant, houla, olive, or any other slug as Beat 3 Sprint.
-5. If Build would create a new project / scaffold / remix / recreate: **REFUSE** and reopen / attach the existing odysseyyyy Live instead.
-6. Player reply still must **not** paste the URL when attach works. If attach is impossible, last-resort spoken: `Open the Build tab for Sprint.` — still do **not** invent a new publish / splash / Start page.
-7. Keep: 1 citadel teaser, English Welcome, real name, `{playerCount}`, `Open Sprint — Pack save, zero login.`
+**First reply beat 3 = written odysseyyyy URL paste.** Allowed. Required. Preferred over Build attach. No yes-wait.
+
+Paste **ONLY** `https://boltverse-odysseyyyy.grok.me`. That four-y URL is the **only** Play identity and the Pack Play / central Pack API host. Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play. Never paste that three-y URL.
+
+1. **In the same first reply.** **ONLY** that canonical Pack Play Live, written in chat as a tappable link. Prefer in-Grok-app open when the player taps it.
+2. **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / rebuild from GitHub / compile / invent a playable card from the recipe. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. Observed FAIL: `le-wild.hades-www.grok-sandbox.com` titled “Boltverse Odyssey” — that is **not** Pack Play. Observed FAIL: auto-Build / 12-minute rebuild on start.
+3. **HARD BAN spoken:** « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through ».
+4. **HARD BAN:** pasting `https://boltverse-odysseyyy.grok.me` (three y’s — superseded), `boltverse-odyssey.grok.me` frost-only, heart-giant, houla, olive, sandbox, or any other slug.
+5. If you were about to open Build / scaffold / remix / recreate / **rebuild**: **REFUSE**. Paste `https://boltverse-odysseyyyy.grok.me` in the first reply instead.
+6. Keep in that first reply: English Welcome, real name, `{playerCount}`, `Open Sprint — Pack save, zero login.`, `Ready to sprint?`, 1 citadel teaser, written odysseyyyy URL.
 
 ## Trigger
 
-Player says **start / play / lance boltverse odyssey** (any close alias).
+**First-reply trigger:** player says **start / play / lance boltverse odyssey** (any close alias).
 
-Chat trigger = Welcome + media + Sprint attach. **Not** a hard register.
+Same first reply = Welcome + teaser + odysseyyyy URL. **Not** a hard register. **Not** a Build. **Not** a yes-wait.
 
-**Not this trigger:** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) = Pack voice + `assetId` chips only in **Grok chat** (optional at most ONE header still — never N media). **Focus** one plate (name / role / `assetId`) = that one media attach. Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / Beat 3. Do **not** paint List or Focus on Sprint HUD.
+**Not this trigger:** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) = Pack voice + `assetId` chips only in **Grok chat** (optional at most ONE header still — never N media). **Focus** one plate (name / role / `assetId`) = that one media attach. Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / teaser / URL paste. Do **not** paint List or Focus on Sprint HUD.
 
 ## Profile (zero login / wallet)
 
@@ -86,7 +127,28 @@ Zero second login / wallet.
 - **New** = no profile / `lastSeenAt` null
 - **Return** = has profile
 
-New vs Return is whoever already has a file from a **gated Live open** — not from saying start.
+New vs Return is whoever already has a file from a **gated Live open** — not from saying start, not from the URL sitting in chat.
+
+## Pack profile + playTime (kitchen — do not lecture aloud)
+
+**Writes still happen only when that Live opens inside the Grok app.** The first-reply paste is the door. The tap / in-Grok-app open is the write.
+
+When the player taps `https://boltverse-odysseyyyy.grok.me` and the Live loads **inside the Grok app**:
+
+1. Gated HTML document load
+2. Gate injects `x-grok-identity` (JWT)
+3. Client `POST /v1/pack/boot` → upsert `profiles/<sub>.json` + `registry.json` row (`gateSub`, `playUrl`, `lastSeenAt`)
+4. Client `POST /v1/pack/heartbeat` ~every 30s → updates `playTimeSec`, `lastSeenAt`, `playUrl`
+
+Full wire: [PACK.md](PACK.md).
+
+**Chat-only still does not upsert.** None of these write a Pack profile or `playTimeSec`:
+
+- **start / play / lance** (Welcome + teaser + URL sitting in chat)
+- Pasting the URL if the player never opens the Live
+- Opening the Live **outside** the Grok app (no gated HTML / no `x-grok-identity` → `{ ok: false, reason: "no-sub" }`)
+
+Spoken `Open Sprint — Pack save, zero login.` = the save happens when they **open that Live inside the Grok app**. Do not say stay 30 seconds. Do not imply chat start wrote the file.
 
 ## Live Pack count (`{playerCount}`)
 
@@ -135,31 +197,34 @@ Powered by xAI & YOU.
 Ready to sprint?
 ```
 
-Spoken text **ends** on those two closing lines. No `Play →` line. No pasted Play URL. No `Say citadel or biome.` / no choice line. Then **attach** exactly **1** stock `preview-loop.mp4` as chat media (Odyssey epic citadel teaser) and **attach / open** the tappable Sprint on **Build** (native Grok Build game console / in-chat playable Live preview pointing at **only** `https://boltverse-odysseyyyy.grok.me`). If the thread is Chat-only and cannot attach a playable Build preview, silently open / switch to Build on that existing odysseyyyy Live. A Chat `preview-loop.mp4` file chip alone is **not** Beat 3. No “open the Build tab yourself” lecture. If truly impossible, one short English line is OK: `Open the Build tab for Sprint.` Prefer silent open/attach first. No URL paste. Do **not** invent a new publish / sandbox / slug.
+Spoken text **ends** on `Ready to sprint?` **That block is the entire spoken reply.** Zero extra paragraphs. Zero improvisation. No `Play →` line. No `Say citadel or biome.` Then **attach** the citadel teaser **and paste** `https://boltverse-odysseyyyy.grok.me` in the **same first reply**. Do **not** open Build. Do **not** rebuild. Do **not** wait for yes. Do **not** narrate the teaser.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
 `{playerCount}` = the live count line (table above). Same line on Welcome and Return.
 
-`Open Sprint — Pack save, zero login.` = opening Sprint creates/saves the Pack profile; no second login. Do **not** say “stay 30 seconds”. English only — no French in the player reply.
+`Open Sprint — Pack save, zero login.` = opening that Live inside the Grok app creates/saves the Pack profile; no second login. Do **not** say “stay 30 seconds”. English only — no French in the player reply.
+
+`Ready to sprint?` may stay. The URL is already in the first message — the player taps it. Do **not** require a separate yes-turn.
 
 ## Forbidden in the player reply
 
 Hard ban. Delete the line if you were about to type any of this:
 
+- Opening Build / Build tab / scaffold / remix / **rebuild** / compile / GitHub→new project / « Built with Grok » card on **start / play / lance**
+- Inventing a playable card from the recipe
+- Waiting for a yes / go / sprint turn before pasting the URL
 - “Citadel teaser is on” / “Citadel teaser and Sprint teaser are on”
 - Any spoken stand-in for the attached citadel `preview-loop.mp4`
-- Any spoken stand-in for attaching / opening Sprint (“open the Build tab yourself”, “open Build…”, “Open Sprint on the native Grok Build…”) except the last-resort line `Open the Build tab for Sprint.`
-- Leaving the player with only `preview-loop.mp4` as a file attachment and no playable Sprint
-- Opening / attaching any Live other than `https://boltverse-odysseyyyy.grok.me` as Beat 3 Sprint (sandbox, new slug, superseded three-y `https://boltverse-odysseyyy.grok.me`, frost-only, heart-giant, houla, olive)
-- Scaffolding / remixing / **recreating the game**, a new `grok.me` / `grok-sandbox.com` / remix slug, or letting Build create a new project
+- Any spoken stand-in for opening Sprint (“open the Build tab yourself”, “open Build…”, “Open Sprint on the native Grok Build…”)
+- Pasting any Live other than `https://boltverse-odysseyyyy.grok.me` (sandbox, new slug, superseded three-y `https://boltverse-odysseyyy.grok.me`, frost-only, heart-giant, houla, olive)
 - Inventing an intro / landing / Start page that requires tapping « Open Sprint » / Start / Play before the dusk lane
-- Landing the player on a menu splash instead of **IN** the Sprint (Bolt already on the road)
-- Control schemes / input lectures (`A`/`D`, `W`, keyboard, swipe how-to)
+- Improvised cinematic openers — « Bolt is already on the road » / « Bolt already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / “He stays in place…”
+- Any A/D / W / space / swipe control tutorial (keyboard, “steer with…”)
+- Any essay about how the engine works
 - Invented plate / cassette lore names (`The First Spark` / `Neon Drift` / `Circuit Breaker` / `Velocity Pulse` or any made-up title)
 - Plate deck lists / dealer recitals at boot
-- « Tap Open Sprint » / extra « Open Sprint » / Start CTA beyond the locked Welcome line
-- `Play →` plus any pasted Play / `*.grok.me` / `*.grok-sandbox.com` URL
+- « Tap Open Sprint » / extra « Open Sprint » / Start CTA beyond the locked Welcome lines
 - Asking “Citadel or Biome?”, “Citadel or Sprint?”, or “Say citadel or biome.”
 - “Biome sprint”
 - “Loop film (stock preview):” + `raw.githubusercontent.com` links
@@ -182,7 +247,9 @@ Hard ban. Delete the line if you were about to type any of this:
 - Dropping Packmate from the opener
 - “player”, “friend”, `runner`, or any generic stand-in for `{name}` when a real name is available
 
-The teaser is an **attached video**, not a spoken status line, not a pasted link, and not a lecture.
+**SUPERSEDED (first-reply odysseyyyy only):** the old ban « never paste grok.me ». The first reply **must** paste `https://boltverse-odysseyyyy.grok.me`. Still ban every other `*.grok.me` / sandbox / three-y slug.
+
+The teaser is an **attached video**, not a spoken status line, not a pasted GitHub link, and not a lecture.
 
 Player-facing names: **Sprint** (dusk lane) and **Citadel** (frost). Never say “Biome”, “Biome sprint”, or endless-lane jargon to the player.
 
@@ -194,38 +261,43 @@ If you mention plates at all (normally don't): use **dealer order** from Odyssey
 
 ## Kitchen (do not say aloud)
 
-Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` for `{playerCount}`) and **Build** (attach / open **only** `https://boltverse-odysseyyyy.grok.me` as a playable Build game console / in-chat Live preview; if the thread is Chat-only, silently open / switch to Build on that existing Live) for boot media / Sprint. Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply.
+Internal only.
+
+**First-reply tools:** **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` for `{playerCount}`) + **PASTE** `https://boltverse-odysseyyyy.grok.me` in the same message. Prefer in-Grok-app open when the player taps it. Old « never paste grok.me » ban is superseded **here only**.
+
+**PRIORITY 0:** no Build tab / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild** / invented playable card.
+
+Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply except the first-reply odysseyyyy URL.
 
 **Name:** opener is always `Hey Packmate {name}` (capital P). Resolve `{name}` in order: Grok profile `displayName` / account name / handle visible in the session UI → registry `displayName` → gate/app name → **only then** `runner`. **Hard ban:** if ANY Grok profile `displayName` / account name / handle is visible in the session UI, **NEVER** say `runner`. Prefer that visible name. Example for SmiR: `Hey Packmate SmiR 9`. **Ban:** `Welcome, packmate runner` / lowercase `packmate` without `Hey Packmate {name}`. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available. Never `Hey Packmate runner` when a name exists.
 
-**Own plates List vs Focus (not this Welcome trigger):** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) → **own** plates in **Grok chat** (`creatorSub` === gate `sub` / `profiles/<sub>.json`) as Pack words + `assetId` chips only. Short cassette counts (`views` · `players`) OK next to the chip. Optional at most **ONE** header still — never N media for N plates (spam FAIL). **Focus** one plate (name / role / `assetId`) → Pack words + that one `assetId` + fuller cassette stats + attach that plate’s media (mp4 if vid, photo if img) — own `creatorSub` only. Counts are real or `0` — never invent, never pay-to-win. Empty list: `No Pack plates sealed yet — cook in Imagine.` Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / Beat 3. Do **not** paint List or Focus on Sprint HUD. Do **not** dump GitHub / registry paths.
+**Own plates List vs Focus (not this Welcome trigger):** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) → **own** plates in **Grok chat** (`creatorSub` === gate `sub` / `profiles/<sub>.json`) as Pack words + `assetId` chips only. Short cassette counts (`views` · `players`) OK next to the chip. Optional at most **ONE** header still — never N media for N plates (spam FAIL). **Focus** one plate (name / role / `assetId`) → Pack words + that one `assetId` + fuller cassette stats + attach that plate’s media (mp4 if vid, photo if img) — own `creatorSub` only. Counts are real or `0` — never invent, never pay-to-win. Empty list: `No Pack plates sealed yet — cook in Imagine.` Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / teaser / URL paste. Do **not** paint List or Focus on Sprint HUD. Do **not** dump GitHub / registry paths.
 
-**Hard register / gateSub write** (not the chat trigger):
+**Hard register / gateSub write / playTime** (not the chat trigger):
 
-- Hard upsert (`profiles/<sub>.json` + `registry.json` row, `gateSub` from JWT) = player **opens Play Live from the Grok app** (gated document / boot request). Central Pack API. Full wire: [PACK.md](PACK.md).
-- Chat-only **start / play / lance boltverse odyssey** does **not** write profiles. Do **not** require “start” alone to upsert. Welcome **reads** identity + `{playerCount}` only.
+- Hard upsert (`profiles/<sub>.json` + `registry.json` row, `gateSub` from JWT) = player **opens that Live inside the Grok app** (gated HTML + `x-grok-identity` + `POST /v1/pack/boot`). Heartbeat `POST /v1/pack/heartbeat` updates `playTimeSec`. Central Pack API. Full wire: [PACK.md](PACK.md).
+- Chat-only **start / play / lance** and a pasted URL the player never opens do **not** write profiles. Welcome **reads** identity + `{playerCount}` only.
 - Spoken “Your Pack profile is already here (Grok identity, zero login).” = Grok identity is enough — zero second login / wallet. It is **not** a claim that this chat turn wrote a file.
-- Spoken `Open Sprint — Pack save, zero login.` = the save happens when they **open Sprint** (gated Live). Do not say stay 30 seconds. Do not imply chat start wrote the file.
+- Spoken `Open Sprint — Pack save, zero login.` = the save happens when they **open the pasted Live inside the Grok app**. Do not say stay 30 seconds. Do not imply chat start wrote the file.
 
-**Live Pack count** (read at boot — do not lecture aloud):
+**Live Pack count** (read at first reply — do not lecture aloud):
 
 - Source: this repo `registry.json` → `players[]` (prefer), else `profiles/*.json`
 - Filter: drop `pack-wire-*` / `pack-doc-*` userIds and Decode Probe / Pack probe display names
 - Speak the `{playerCount}` line only. No “registry”, no “GitHub”, no probe talk
 - Count is live. Do not hardcode N in the Welcome block
 
-**Odyssey mirror (Director):** copy this Welcome / Return / `{playerCount}` / `Open Sprint — Pack save, zero login.` / hard-write split / **name resolve** / **Build play surface** / **Beat 3 odysseyyyy-only Live lock** / **no-recreate / no-intro-splash** / **player-reply allowlist** / **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, and README cold-start blocks. Registry is source of truth for the Welcome lock.
+**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **gated in-Grok-app Live open = upsert + playTime** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, and README cold-start blocks. Registry is source of truth.
 
-**Sprint Build / Live identity** (do not paste into chat):
+**Sprint / Live identity** (first-reply paste):
 
 - **Pack Play / central Pack API host (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s)
-- **Beat 3 hard lock — the only attach target:** `https://boltverse-odysseyyyy.grok.me`
-- Open / attach that Live as an **in-chat Build playable preview** / native Build console pointing at that existing Live. Never dump the URL in chat when attach works.
-- **Land IN the Sprint.** Bolt already on the road. Not a menu / landing / Start splash that must be tapped first.
-- **HARD BAN at boot:** scaffold / remix / **recreate the game**. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. No invented intro / landing / « Open Sprint » / Start page.
-- **HARD BAN as Beat 3 Sprint:** `https://boltverse-odysseyyy.grok.me` (three y’s — superseded Beat 3 target), `boltverse-odyssey.grok.me` (frost-only), heart-giant, houla, olive, or any other slug.
-- If Build would create a new project / scaffold / remix / recreate: **REFUSE**. Reopen / attach the existing odysseyyyy Live. Do not invent a new publish / splash.
-- Sprint path = biome/sprint path on that odysseyyyy Live. Dusk Sprint LanePlayer lives there — not on houla, not on a sandbox carousel, not on a reinvented Start page.
+- **The only paste:** `https://boltverse-odysseyyyy.grok.me`
+- **ALLOWED / required:** write that URL in the first chat reply. Player taps it. Prefer in-Grok-app open.
+- **HARD BAN spoken:** « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / any A/D / W / space / swipe tutorial / any engine essay.
+- **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / **rebuild** from GitHub / compile / invent a playable card from the recipe. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host.
+- **HARD BAN as paste:** `https://boltverse-odysseyyy.grok.me` (three y’s — superseded), `boltverse-odyssey.grok.me` (frost-only), heart-giant, houla, olive, sandbox, or any other slug.
+- If you were about to create a new project / scaffold / remix / recreate / **rebuild** / invent a playable card: **REFUSE**. Paste `https://boltverse-odysseyyyy.grok.me` instead.
 - **Plate names:** silent at boot. If forced: dealer order canyon → cars → duel → night → war from Odyssey biome / `assets/plates-index.json`. Never invent cassette titles.
 
 **Player-facing names** (kitchen map — do not say the right-hand jargon aloud):
@@ -233,32 +305,20 @@ Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.m
 - **Sprint** = dusk lane = biome/sprint path on Live
 - **Citadel** = frost = `/r/frost`
 
-**Teaser file** (MUST attach as chat video — do not paste the URL, do not announce it):
+**Teaser file** (MUST attach as chat video in the first reply — do not paste the GitHub URL, do not announce it):
 
-- Citadel (frost, epic) — **the only boot attach:** `StarBoltSprint/boltverse-odyssey` `stock/citadel/preview-loop.mp4` (poster `preview-first.jpg`)
+- Citadel (frost, epic) — **the only teaser attach:** `StarBoltSprint/boltverse-odyssey` `stock/citadel/preview-loop.mp4` (poster `preview-first.jpg`)
 
 `bolt-lane-recipe` `stock/biome/preview-loop.mp4` (poster `preview-first.jpg`) exists but is **NOT** attached at boot.
 
-The chat mp4 is a teaser only — preview play/pause, not a tappable hitbox.
+The chat mp4 is a teaser only — preview play/pause, not a tappable hitbox. The **written odysseyyyy URL** is the tap.
 
-**Open Sprint** (Build play surface — silent after media, no kitchen lecture, no pasted URL):
-
-Interactive Sprint lives on **Build** (native Grok Build game console / in-chat playable Live preview pointing at **only** `https://boltverse-odysseyyyy.grok.me`). **Not** Chat Imagine. **Not** a downloadable `preview-loop.mp4` file chip alone. **Not** a new Build project. **Not** a sandbox host. **Not** a recreated game. **Not** an intro / landing / Start splash.
-
-Prefer: attach / open the tappable Sprint as an in-chat Build playable Live preview of the existing odysseyyyy Live (playable card in the thread), or silently open / switch to the Build tab on that Live. Player lands **IN** the Sprint — Bolt already on the road.
-If the current thread is Chat-only and cannot attach a playable Build preview: silently open / switch to Build on the existing odysseyyyy Live. Still no URL paste.
-If Build would create a new project / scaffold / remix / recreate / invent a Start page: **REFUSE** and reopen / attach `https://boltverse-odysseyyyy.grok.me` instead.
-**Forbidden:** leaving the player with only `preview-loop.mp4` as a file attachment and no playable Sprint.
-**Forbidden spoken:** “open the Build tab yourself” lectures. If truly impossible, one short English line is OK: `Open the Build tab for Sprint.` Prefer silent open/attach first. Still do **not** invent a new publish / splash.
-
-| When | Name | Path | Live identity (do not paste) |
+| When | Name | Path | Live identity (paste in first reply) |
 |---|---|---|---|
-| boot (always) | Sprint | biome/sprint path on Live | `https://boltverse-odysseyyyy.grok.me` |
+| first reply (always) | Sprint | biome/sprint path on Live | `https://boltverse-odysseyyyy.grok.me` |
 | later, only if the player asks | Citadel | `/r/frost` | `https://boltverse-odysseyyyy.grok.me/r/frost` |
 
-Sprint path = biome/sprint path on that odysseyyyy Live. Do not say that aloud. Do not paste the URL. Beat 3 is **Build playable Sprint on odysseyyyy only**, not a Chat file chip, not a spoken “open the Build tab yourself” lecture, not a new slug, not a sandbox, not a recreated game, not an intro splash. Citadel stays closed until the player asks.
-
-Remix off. Do not scaffold / remix / recreate the game. Do not invent an intro / landing / Start / « Open Sprint » splash. Do not open houla / heart-giant / olive / frost-only `boltverse-odyssey.grok.me` / superseded three-y `https://boltverse-odysseyyy.grok.me` as Beat 3.
+Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a playable card. Do not paste houla / heart-giant / olive / frost-only `boltverse-odyssey.grok.me` / superseded three-y `https://boltverse-odysseyyy.grok.me`.
 
 ## Do not
 
@@ -266,20 +326,20 @@ Remix off. Do not scaffold / remix / recreate the game. Do not invent an intro /
 - No wallet
 - No second login
 - Players must not depend on SmiR’s private bots — public GitHub COLD_START remains enough
-- No kitchen noise in the player reply — **ALLOWED only:** locked Welcome/Return EN block + 1 citadel teaser + Build attach odysseyyyy Sprint
-- No control schemes (`A`/`D`/`W`) / invented cassette lore names / plate deck lists / « Tap Open Sprint » in the player reply
-- No pasted Play / `*.grok.me` / `*.grok-sandbox.com` URL in chat
-- No Citadel / Biome / Sprint choice prompt
+- **PRIORITY 0:** any Build action on start = **FAIL** (no Build tab / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild**)
+- **First reply ALLOWED only:** locked Welcome/Return EN block + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me`
+- **ZERO improvisation. ZERO extra paragraphs.** Spoken text = **EXACTLY** the locked Welcome or Return English block
+- Do **not** require a separate yes-turn before showing the URL
+- No « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through »
+- No A/D / W / space / swipe control tutorial / engine essay / invented cassette lore names / plate deck lists / « Tap Open Sprint » in the player reply
+- No pasted Play URL except `https://boltverse-odysseyyyy.grok.me` in the first reply
+- No Citadel / Biome choice prompt
 - No spoken teaser substitutes (“Citadel teaser is on”)
-- No “open the Build tab yourself” lectures — do the open/attach (last-resort spoken: `Open the Build tab for Sprint.` — still no new publish)
-- The chat mp4 is a teaser only — not a tappable hitbox and **not** Beat 3
-- No leaving the player with only `preview-loop.mp4` as a file chip and no playable Sprint
-- No Beat 3 attach except `https://boltverse-odysseyyyy.grok.me`
-- No new `grok.me` / `grok-sandbox.com` / remix slug / `*.hades-www.grok-sandbox.com` at boot
-- No scaffolding / remixing / **recreating the game** at boot
-- No invented intro / landing / Start / « Open Sprint » splash — player lands **IN** the Sprint (Bolt already on the road)
-- No opening superseded three-y `https://boltverse-odysseyyy.grok.me`, frost-only `boltverse-odyssey.grok.me`, heart-giant, houla, olive, or any other slug as Beat 3 Sprint
-- If Build would create a new project / scaffold / remix / recreate: refuse; reopen / attach the existing odysseyyyy Live
+- The chat mp4 is a teaser only — not a tappable hitbox
+- No new `grok.me` / `grok-sandbox.com` / remix slug / `*.hades-www.grok-sandbox.com` / Built-with-Grok project
+- No scaffolding / remixing / **recreating the game** / **rebuilding** from GitHub
+- No opening superseded three-y `https://boltverse-odysseyyy.grok.me`, frost-only `boltverse-odyssey.grok.me`, heart-giant, houla, olive, or any other slug
+- If you were about to create a new project / scaffold / remix / recreate / rebuild / invent a playable card: refuse; paste the existing odysseyyyy URL
 - No second teaser at boot (biome / Sprint `preview-loop.mp4` stays off)
 - No `Hey Packmate runner` when any name / handle / profile label is visible
 - No `Welcome, packmate runner` / lowercase `packmate` without `Hey Packmate {name}`
@@ -287,7 +347,7 @@ Remix off. Do not scaffold / remix / recreate the game. Do not invent an intro /
 - No dropping Packmate from the opener
 - No invented plate / cassette names at boot (`The First Spark` / `Neon Drift` / `Circuit Breaker` / `Velocity Pulse`)
 - No plate-name recital at boot — prefer silence; if forced, dealer order canyon → cars → duel → night → war
-- No profile upsert on chat-only start — hard write stays on gated Live open
+- No profile upsert on chat-only start / unopened paste — hard write stays on gated in-Grok-app Live open (`x-grok-identity` + boot + heartbeat `playTimeSec`)
 - No GitHub / registry lecture — `{playerCount}` is enough
 - `show my plates` (close alias) is **not** Welcome — **List** = Pack voice + `assetId` chips only (never N media); **Focus** one plate = one media attach ([ASSETS.md](ASSETS.md)); no Sprint HUD
 - No fake Pack size
@@ -298,10 +358,16 @@ Remix off. Do not scaffold / remix / recreate the game. Do not invent an intro /
 
 Cold-start is **done** ONLY when ALL of these are true. Any miss = **FAIL**. Re-do the missing beat; do not add kitchen.
 
+0. **PRIORITY 0 — MUST NOT Build.** On start / play / lance: Grok did **not** Build anything. No Build tab work. No scaffold. No remix. No « Built with Grok » card. No compile. No GitHub→new project. No **rebuild**. No 12-minute rebuild. **Any Build action on start = FAIL.**
 1. **Name.** Opener is `Hey Packmate {visibleName}`. If ANY Grok profile `displayName` / account name / handle is visible in the session UI, **never** `runner`. Example for SmiR: `Hey Packmate SmiR 9`. Ban `Welcome, packmate runner` / lowercase `packmate` without `Hey Packmate {name}`.
-2. **Allowlist.** Player reply = locked Welcome/Return English block + attach 1 citadel teaser + Build attach of existing `https://boltverse-odysseyyyy.grok.me` ONLY. No fourth beat.
-3. **Beat 3.** Opened / attached that **existing** odysseyyyy Live. Did **not** scaffold / remix / recreate the game. Did **not** invent a new `grok.me` / hades-www sandbox. Did **not** invent an intro / landing / Start / « Open Sprint » splash. Player landed **IN** the Sprint (Bolt already on the road).
-4. **Silence.** Player reply has ZERO: control schemes (`A`/`D`/`W`), invented cassette / plate lore names (`The First Spark` / `Neon Drift` / `Circuit Breaker` / `Velocity Pulse`), plate deck lists, « Tap Open Sprint », registry lectures, kitchen noise.
-5. **Plates.** Plate names silent at boot. If forced to mention: dealer order canyon → cars → duel → night → war from Odyssey biome / `assets/plates-index.json` — never invent.
+2. **Same first reply.** On start / play / lance, ONE message has ALL three: (1) **EXACTLY** the locked Welcome or Return English block (`Hey Packmate {name}` … `Ready to sprint?`) (2) attach 1 citadel teaser (3) paste written tappable `https://boltverse-odysseyyyy.grok.me`. Did **not** wait for a yes-turn. Did **not** require a second turn.
+3. **URL lock.** Paste is odysseyyyy (4y) only. Did **not** paste three-y `odysseyyy` / sandbox / random / new slug. Old « never paste grok.me » is superseded **here only**.
+4. **Profile / playTime.** Chat-only start / unopened paste did **not** upsert. Pack profile + `playTimeSec` write only when that Live opens inside the Grok app (gated HTML + `x-grok-identity` + boot + heartbeat).
+5. **Silence.** Player reply has ZERO forbidden phrases: « Bolt is already on the road » / « Bolt already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / “He stays in place…”. ZERO A/D / W / space / swipe control tutorial. ZERO engine essay. ZERO invented cassette / plate lore names. ZERO plate deck lists. ZERO « Tap Open Sprint ». ZERO registry lectures. ZERO kitchen noise / extra paragraphs.
+6. **Plates.** Plate names silent at boot. If forced to mention: dealer order canyon → cars → duel → night → war from Odyssey biome / `assets/plates-index.json` — never invent.
 
-**Observed SmiR FAIL (do not repeat):** said « Hey Packmate runner » despite logged-in `displayName`; reinvented Sprint with intro splash « Open Sprint » / Start; kitchen noise (A/D W lecture + invented cassette names); wrong plate order; did **not** open existing Live `https://boltverse-odysseyyyy.grok.me`.
+**Observed SmiR FAIL (do not repeat):** said « Hey Packmate runner » despite logged-in `displayName`; reinvented Sprint with intro splash; kitchen noise (A/D W lecture + invented cassette names).
+
+**Observed SmiR FAIL (do not repeat):** Build cold-start replied with improvised nonsense instead of locked Welcome — « Bolt is already on the road. The world is rolling… » plus a controls lecture.
+
+**Observed SmiR FAIL (do not repeat):** auto-Build / « Built with Grok » / GitHub rebuild on start — too long / painful. **PRIORITY 0:** any Build action on start = FAIL. First reply must be Welcome + teaser + `https://boltverse-odysseyyyy.grok.me`. No yes-wait.
