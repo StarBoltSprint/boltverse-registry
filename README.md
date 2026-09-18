@@ -48,6 +48,7 @@ Cloud save (GitHub) — **not** `localStorage`. Keyed by Grok `userId`.
 | Grok asset manifests (`assetId` Imagine-rail mint) | this repo [ASSETS.md](ASSETS.md) — `assets/<assetId>.json` |
 | Chest pool (references existing `assetId`s) | this repo [CHESTS.md](CHESTS.md) — optional `chests/pool.json` |
 | Peak crystal KEEP (closed still) | `boltverse-odyssey` `stock/chests/peak-closed.png` |
+| First Sprint badge KEEP (9:16, Common `guaranteedFirst`) | `boltverse-odyssey` `stock/badges/first-sprint-9x16.png` — first chest after Live ~5s+ |
 | Live Play + heavy media | each player `*.grok.me` |
 | Cook / Hang laws | `boltverse-odyssey` + `bolt-lane-recipe` |
 

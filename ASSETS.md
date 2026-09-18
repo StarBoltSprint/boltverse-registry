@@ -180,7 +180,7 @@ Hung Imagine kitchen plates already on `StarBoltSprint/boltverse-odyssey` `biome
 
 At mint: `creatorSub` = Grok `sub` of the cook (gate JWT / Imagine rail — automatic).
 
-At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link.
+At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Receipt / pending / open / reward lines = English Pack voice + 1–3 matching emojis (hype, not spam). Law: [CHESTS.md](CHESTS.md). Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link. Creator plates ≠ Pack inventory unless that `assetId` was won via chest or an explicit grant — inventory is `profiles/<sub>.json` `cosmetics.inventory` / `badges[]` (**badges + won assets**; first reward = First Sprint **badge**, not a plate — Common **`guaranteedFirst`** 9:16 stock `stock/badges/first-sprint-9x16.png`; first chest after Live ~5s+ always includes it; Focus shows that image). Law: [CHESTS.md](CHESTS.md) / [SCHEMA.md](SCHEMA.md).
 
 Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHESTS.md](CHESTS.md).
 
@@ -211,7 +211,7 @@ Kitchen may store the raw counters. Player chat uses Pack words (`views` · `pla
 
 Two asks. Both reply **IN CHAT** (Grok chat app). English Pack voice. Own `creatorSub` only.
 
-This is **not** Welcome. Do **not** fire [COLD_START.md](COLD_START.md) first-reply Welcome / teaser / URL paste. Do **not** attach the citadel teaser as the list. Do **not** open Sprint / Build as the list.
+This is **not** Welcome. Do **not** fire [COLD_START.md](COLD_START.md) first-reply Welcome / teaser / URL paste. Do **not** attach the citadel teaser as the list. Do **not** open Sprint / Build as the list. **Not this ask:** `show my inventory` / `mes gains` / `what I won` — that is Pack inventory ([CHESTS.md](CHESTS.md)), not the plate list.
 
 **HARD BAN:** in-game Sprint HUD / overlay chrome for List or Focus. Chat only. Do not paint plates onto the lane. Do not invent list UI on the biome plate.
 
@@ -312,3 +312,4 @@ Odyssey `biome/master/ASSETS.md` stays a **pointer** at this file. Do not fork a
 - **HARD BAN** GitHub / `raw.githubusercontent` / registry-path dumps in List or Focus
 - **HARD BAN** Sprint HUD / overlay chrome as the plate list — chat only
 - Other creators’ assets: never list or attach on these triggers (Pack seal / public live pool = a different ask)
+- Creator plates ≠ Pack inventory unless won via chest or grant — `show my inventory` lists **badges + won assets** ([CHESTS.md](CHESTS.md) / [SCHEMA.md](SCHEMA.md)); first reward = First Sprint **badge** (`guaranteedFirst` in first chest, 9:16 `stock/badges/first-sprint-9x16.png`); Focus = that still

@@ -5,12 +5,15 @@
 > **HARD LOCK — engine overlay / creator zero wire.** Chests appear in Play **WITHOUT** the biome / link creator doing anything. Chest UI + earn + open = **Pack Engine layer** (canonical Play / Pack client), **NOT** the creator’s biome plate recipe. Engine watches Resonance / Peak run thresholds → overlays Pack stock Peak chest (closed still) in-picture on whatever biome is playing. Tap = Pack stock open video (~6s closed→empty glow) → engine reveals sealed `assetId`. Federated `*.grok.me` / hung-biome creator: **ZERO code, ZERO UI, ZERO wire.** Optional only: put-in-chest. Ignoring put-in-chest still means players earn Pack pool chests on that link.
 > **HARD BAN — creator plate / chrome / host duty.** Do **not** require creators to bake chests into plates, host open videos, or add Open Chest chrome.
 > **Cook asset** = Imagine (in app). **Play / earn chest / open reveal** = Pack Engine overlay inside **Build** game console / in-chat Live preview (in app). **Put asset in chest** = optional action from Grok chat or Build after mint — still in app.
-> **HARD LOCK — put-in-chest Pack receipt.** Immediate confirmation in the Grok chat app. Never a silent drop. Success = Pack-voice line + Imagine-plate visual + `assetId` chip / tier / ownership. Soft refuse = Pack-voice refuse, no registry write.
+> **HARD LOCK — put-in-chest Pack receipt.** Immediate confirmation in the Grok chat app. Never a silent drop. Success = Pack-voice line + matching emojis (1–3) + Imagine-plate visual + `assetId` chip / tier / ownership. Soft refuse = Pack-voice refuse, no registry write.
+> **HARD LOCK — chest chat copy = English Pack voice + matching emojis.** When Grok speaks chest lines in chat (pending / seal / open / reward): stay English Pack voice. Add fitting emojis next to the meaning — stylish / hype, not spam (**1–3 per short line**). Examples are **shape**, not frozen strings (no locked Mandarin / FR). **HARD BAN:** emoji walls · random unrelated emoji. **Soft chat open** = **same message**: open video then reward media. Engine timed gate (~6s) remains **Live-only**.
 > **v1 creator flow** does **not** require an external Pack website.
 > **Mint happens on the Imagine cook rail** — see [ASSETS.md](ASSETS.md). Chests **reference** an existing `assetId`. They never mint.
 > **Only the creator can put THEIR `assetId` into a chest.** Caller ticket / JWT `sub` MUST match `assetId.creatorSub` — else refuse.
 > **Provenance is automatic.** No player proof screenshot, certificate, or ownership-claim form.
 > **HARD LOCK — cosmetics only. Never pay-to-win. Never play-to-win.** Chest rewards = skins / titles / Pack lore looks. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, or wallet boost. Pack Pass / tips / X subs never buy gameplay power — only cosmetic / drop-count soft.
+> **HARD LOCK — first reward = Pack badge (not a plate).** **KEEP.** First Sprint is stock **9:16** in the **Common** pool as **`guaranteedFirst`**. After first gated Live play (~5s+), **any first chest** auto-includes the First Sprint badge asset as a **direct reward**. Image: `boltverse-odyssey` `stock/badges/first-sprint-9x16.png`. Inventory Focus **shows that image**. Welcome register alone does **not** grant. Cosmetic only. Idempotent. Law below.
+> **HARD LOCK — Pack inventory = won rewards on the player profile.** Open a chest → append the won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Inventory List shows **badges + won assets**. Never wipe. Prefer one entry per `assetId` / badge `id`. Creator plates ≠ inventory unless won via chest (or explicit grant). Chat `show my inventory` / `mes gains` / `what I won` = List vs Focus like plates. Law below + [SCHEMA.md](SCHEMA.md).
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL · Spotify · external mp3 · non-Grok uploads · paste-someone-else’s-URL as ownership · external Pack website / creator portal / desktop-only tool as a required player or creator UI · requiring biome / link creators to wire chests.
 
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
@@ -32,6 +35,7 @@ The **Grok chat app** (Chat + Imagine + Build) is the **only** player/creator UI
 | Cook asset | **Imagine** (in app) |
 | Play / earn chest / open reveal | **Pack Engine overlay** in **Build** game console / in-chat Live preview (in app). Not the biome plate. |
 | Put asset in chest | **Optional.** Action from **Grok chat** or **Build** after mint — still in app. Immediate **Pack receipt** in Grok chat (never silent). Skipping this does **not** stop Pack pool chests on the creator’s link. |
+| Show inventory / what I won | **Grok chat.** List vs Focus of `cosmetics.inventory` + `badges[]` (**badges + won assets** for that player `sub`). Not the creator plate list. First row is often the First Sprint badge. |
 
 **HARD BAN (surface):**
 
@@ -67,7 +71,7 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - Container skin = Peak crystal KEEP (`boltverse-odyssey` `stock/chests/peak-closed.png`).
 - **Crystal never chrome.** No wood / iron lootbox chrome. No invented closed plate.
 - Closed UX = mystery card / `?` flip (suspense). Reveal = the sealed creator **Grok Imagine** asset — shown by the **engine** in **Build** / in-chat Live preview after the ~6s open.
-- Creators **may** put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint. Immediate Pack receipt in Grok chat — never a silent drop. This is **optional**. Skipping it does not remove Pack pool overlays from their federated link.
+- Creators **may** put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint. Immediate Pack receipt in Grok chat — never a silent drop. Receipt line = English Pack voice + 1–3 matching emojis. This is **optional**. Skipping it does not remove Pack pool overlays from their federated link.
 - Cosmetics / Pack lore only — **never pay-to-win / never play-to-win** (see Soft earn).
 
 ### Hard bans (product)
@@ -86,7 +90,16 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - No baking one fixed object into a shared open plate for all creators
 - No beauty / pixel / AI aesthetic score as rarity
 - No silent put-in-chest (success or refuse)
+- No silent chest-open without an inventory append (once the reward `assetId` is known)
+- No wiping `cosmetics.inventory` / `badges[]` on Welcome / boot / heartbeat / open
+- No granting First Sprint on Welcome register alone (need gated Live ~5s+ **then** first chest)
+- No first chest that omits `guaranteedFirst` (First Sprint badge asset) after Live ~5s+
+- No treating the First Sprint badge as a creator plate (stock 9:16 still ≠ `show my plates`)
+- No First Sprint badge without the KEEP still (`image` / `assetId` → `stock/badges/first-sprint-9x16.png`)
+- No inventing badge art / using a player plate as the badge still
+- No chat-only « Packmate » badge unless SmiR asks (this badge is first Live sprint)
 - No kitchen noise (GitHub URLs, API jargon, registry paths) in player/creator-facing chat lines
+- **No emoji walls / random unrelated emoji** on chest chat lines (pending / seal / open / reward / inventory List)
 
 ## Soft earn
 
@@ -98,6 +111,8 @@ Day clock = **player local calendar day** (Europe-friendly: the day rolls at the
 
 Cap is a **run-earn** throttle. **Not** a daily login reward. **Not** an AFK wall-clock. Sitting in picture without a Peak arm does not mint a chest.
 
+When a Run / Peak chest arms, Grok speaks a **pending** ready line in chat (⚡ chest / 💎 Peak — chest chat copy). Do not stay silent.
+
 | Knob | v1 law |
 |---|---|
 | Soft daily cap | **max 2 chests / calendar day** (player local) |
@@ -108,10 +123,11 @@ Cap is a **run-earn** throttle. **Not** a daily login reward. **Not** an AFK wal
 
 - Earn on a federated `*.grok.me` / hung biome uses the **same** Pack pool + engine overlay + these numbers. The link creator does not wire a local chest.
 - Loom / Resonance / tips / low supply may **signal Rare** (see rarity). They do not invent a beauty score. Tips never buy a bypass or a third chest.
+- **`guaranteedFirst` KEEP:** after first gated Live play (~5s+), the player’s **first chest** (Run or Peak — whichever arms first) **always** includes the First Sprint badge asset as a **direct reward**. Common pool. Not a random roll. Not skippable.
 
 ### Cosmetics (HARD — never pay-to-win / never play-to-win)
 
-Chest rewards = **cosmetics only**: skins, titles, Pack lore looks.
+Chest rewards = **cosmetics only**: skins, titles, Pack lore looks, **Pack badges**. Won `assetId`s land in that player’s **Pack inventory** (`cosmetics.inventory`). **First reward** = First Sprint **badge** (not a plate) — Common **`guaranteedFirst`**, stock 9:16, auto in any first chest after Live ~5s+. Badges + won assets both list in inventory.
 
 **Never** grant:
 
@@ -132,11 +148,12 @@ Rarity is **not** a beauty / pixel / AI aesthetic score. Do **not** rank cooks b
 
 | Tier | Law |
 |---|---|
-| **Common** | Auto seal. Large pool. |
+| **Common** | Auto seal. Large pool. Stock First Sprint badge is **`guaranteedFirst`** here (9:16 KEEP). |
 | **Rare** | Loom / Resonance / tips / low supply signals. |
 | **Peak / Legendary** | Pack seal + soft supply cap. |
 
-- Common: after safety layers 1–4 + creator-only chest entry (`sub` === `creatorSub`), **auto seal** and may hang into the **large** live pool. No Pack-seal wait.
+- Common: after safety layers 1–4 + creator-only chest entry (`sub` === `creatorSub`), **auto seal** and may hang into the **large** live pool. No Pack-seal wait. **KEEP:** First Sprint stock badge (`guaranteedFirst`) lives in this pool — first chest after Live ~5s+ always includes it.
+- **`guaranteedFirst`:** kitchen flag / pool field. First chest for an eligible player **always** pays this asset as a **direct reward**. Not rolled. Not omitable. v1 = First Sprint badge.
 - Rare: signaled by Loom / Resonance / tips / low supply — still must pass layers 1–4 (and 7). Tips never buy a bypass.
 - Peak / Legendary: **Pack seal** required + **soft supply cap** before live. No auto-publish.
 - Optional kitchen field: `rarity` = `common` \| `rare` \| `peak` (alias `legendary`). Set by the rails from the table above — never from a beauty model.
@@ -152,11 +169,50 @@ Rarity is **not** a beauty / pixel / AI aesthetic score. Do **not** rank cooks b
 - Never “paste someone else’s URL” as ownership — no external URL entry path anyway
 - v1 = auth + hash + report (no heavy DRM)
 
-Chest propose: **only** reference an existing `assetId` where `creatorSub` matches the caller’s gate `sub` (automatic check). **No** manual ownership claim form. Propose / put-in-chest is an **optional** action from **Grok chat** or **Build** after mint — still in the Grok chat app. No creator portal. Always return a **Pack receipt** in Grok chat (next section). Never silent.
+Chest propose: **only** reference an existing `assetId` where `creatorSub` matches the caller’s gate `sub` (automatic check). **No** manual ownership claim form. Propose / put-in-chest is an **optional** action from **Grok chat** or **Build** after mint — still in the Grok chat app. No creator portal. Always return a **Pack receipt** in Grok chat (receipt section). Never silent.
 
 A stolen X video cannot enter because there is **no upload path** — only Imagine rail output enters.
 
 Put-in-chest is how a creator **adds their cook to the Pack pool**. It is **not** how chests appear on their link. Appearance = engine overlay (previous section). A creator who never put-in-chest still hosts Pack pool overlays when players run on their federated Live.
+
+## Chest chat copy (HARD — pending / seal / open / reward)
+
+When Grok speaks chest lines in **Grok chat** (pending ready, Pack receipt / seal, open, reward, **First Sprint badge**, inventory):
+
+- **English Pack voice still.** Pack words. EN only. Examples below are **shape**, not frozen strings. Do **not** lock Mandarin / FR / any other language as the spoken line.
+- **Matching emojis** next to the meaning — stylish / hype, not spam. **1–3 per short line.**
+- Emoji sits **beside the meaning** it marks. Do not decorate every noun. Do not invent a second caption.
+
+| Beat | Meaning | Emoji next to it (shape) |
+|---|---|---|
+| **Pending** — Peak / Run chest ready | chest armed / waiting | ⚡ chest · 💎 Peak |
+| **Sealed / Pack receipt** | seal + into tier | ✨ sealed · 🎁 into Common / Rare / Peak |
+| **Open** | opening beat | 🔓 opening… then attach peak-open ~6s |
+| **Reward** | asset reveal | 🏆 · 🎬 + `assetId` chip |
+| **First Sprint badge** | `guaranteedFirst` in first chest (9:16 stock, not a plate) | 🐺⚡ First Sprint — you’re in the Pack. First-chest + Focus attach `stock/badges/first-sprint-9x16.png` |
+
+**Soft chat open vs Live timed gate:**
+
+- **Soft chat open** = **same message**: Pack-voice 🔓 line + attach the peak-open ~6s stock video **then** the reward media (🏆 / 🎬 asset + `assetId` chip). No chat-side wait. Do **not** hold the reward for a second turn. Do **not** simulate a 6s gate in chat.
+- **Engine timed gate** (~6s closed→empty glow before reveal) remains **Live-only** — Pack Engine overlay in **Build** / in-chat Live preview. Chat does not time the gate.
+
+**HARD BAN:** emoji walls · stacked sticker dumps · random unrelated emoji (no 🔥😂🚀 spam) · kitchen noise in the same line · frozen Mandarin as the receipt / pending / open / reward line.
+
+## Pending chest (HARD — Grok chat)
+
+When a **Run** or **Peak** chest is earned and still pending (profile `pendingChests[]` / engine overlay armed — ready, not opened):
+
+Speak a **short Pack-voice ready line** in Grok chat. English. 1–3 matching emojis. Same turn.
+
+Examples (shape, not locked):
+
+- `⚡ Run chest ready.`
+- `💎 Peak chest ready.`
+- `⚡ Chest armed — 💎 Peak is lit.`
+
+Do **not** dump `pendingChests` JSON. Do **not** lecture the grant reason / Director stand-in. Do **not** attach the open video until the player opens. Closed still optional (one Peak crystal) — never N media.
+
+Pending is the **ready** beat. Open / reward follows when the player opens (soft chat open or Live engine).
 
 ## Put-in-chest Pack receipt (HARD — Grok chat app only)
 
@@ -164,26 +220,29 @@ When a creator puts an asset into a chest, they **MUST** get an **immediate conf
 
 ### Success (all three, same chat turn)
 
-1. **Short Pack-voice line (EN only).** Examples (shape, not locked to one string):
-   - `Asset sealed for the Peak chest.`
-   - `Sealed into the Rare pool.`
-   - Common / other tiers: same voice — seal + chest / pool.
+1. **Short Pack-voice line (EN only) + matching emojis (1–3).** Examples (shape, not locked to one string — not frozen Mandarin):
+   - `✨ Asset sealed for the 💎 Peak chest.`
+   - `✨ Sealed — 🎁 into the Rare pool.`
+   - `✨ Sealed — 🎁 into Common.`
+   - Other tiers: same voice — ✨ sealed + 🎁 into chest / pool.
 2. **Visual of what they put in.** Attach the cook still or short clip of the asset — the **Imagine plate itself** — in the same chat turn.
 3. **Chips.** Show `assetId` chip + chest tier (`Common` / `Rare` / `Peak`) + `creatorSub` ownership note (`owned by you` / gate `sub`).
 
-Do not skip the visual. Do not skip the chips. Do not speak kitchen instead of Pack-voice.
+Do not skip the visual. Do not skip the chips. Do not speak kitchen instead of Pack-voice. Do not drop the emojis. Do not replace the line with an emoji wall.
 
 ### Soft refuse (off-lore / NSFW / not a Grok Imagine mint)
 
 - **Pack-voice refuse.** Example: `Not Pack lore — recook in Imagine.`
-- Other refuses (not your asset / not Imagine mint / NSFW) stay Pack-voice + EN only. No silent fail.
+- Other refuses (not your asset / not Imagine mint / NSFW) stay Pack-voice + EN only. No silent fail. Emoji optional on refuse (0–1, only if it marks the refuse — never a joke dump).
 - **No registry write.** Refuse is not a propose. Do not append `chests/pool.json`. Do not flip `chestPool` / `status`.
 
 ### Tone (player / creator-facing)
 
 Boltverse **Pack words only**: seal · Peak chest · asset · Resonance · Loom · Pack.
 
-**HARD BAN in spoken / chat receipt lines:** GitHub URLs · API jargon · registry paths · `assets/<id>.json` · `chests/pool.json` · JWT / ticket lectures · kitchen host dumps.
+**Matching emojis** (1–3) sit next to those words on pending / seal / open / reward lines. Stylish / hype. Not spam.
+
+**HARD BAN in spoken / chat receipt lines:** GitHub URLs · API jargon · registry paths · `assets/<id>.json` · `chests/pool.json` · JWT / ticket lectures · kitchen host dumps · emoji walls · random unrelated emoji · frozen Mandarin / FR as the spoken line.
 
 Kitchen may log the refuse reason. The creator sees Pack-voice only.
 
@@ -248,11 +307,17 @@ chests/pool.json          # live chest index — references existing assetIds on
 {
   "version": 1,
   "railsVersion": "odyssey-chests-1",
+  "guaranteedFirst": {
+    "id": "pack-first-sprint",
+    "image": "stock/badges/first-sprint-9x16.png",
+    "pool": "common",
+    "aspect": "9:16"
+  },
   "live": ["a_smir9_img_3f8c1a2b"]
 }
 ```
 
-Only `status: live` ids belong in `live[]`. `proposed` / `sealed` / `dropped` stay out.
+Only `status: live` ids belong in `live[]`. `proposed` / `sealed` / `dropped` stay out. `guaranteedFirst` is **not** a `live[]` roll — it is the stock First Sprint badge forced into **every first chest** after Live ~5s+.
 
 When a chest proposes / seals / hangs an already-minted asset: **refuse** unless caller ticket / JWT `sub` === `creatorSub`. Then set `chestPool` on the **existing** manifest and/or append the same `assetId` to `live[]`. Never write `assets/a_…-2.json`.
 
@@ -272,6 +337,139 @@ Do not put GitHub App private keys, xAI keys, wallets, or tickets in this repo.
 
 `boltverse-odyssey` `stock/chests/peak-open.png` is TBD — do not invent an open plate. The ~6s open video is the shared empty-glow beat; the won asset is engine-composited after.
 
+### Chat open / reward (HARD — same message)
+
+When the player opens from **Grok chat** (soft chat open):
+
+1. **Open line** — short Pack English + 🔓. Example (shape): `🔓 Opening…`
+2. **Attach** Pack stock peak-open (~6s closed→empty glow) in that **same** message.
+3. **Then** (still the **same** message — no second turn, no chat wait): **reward** line + media.
+   - Shape: `🏆 Peak drop.` / `🎬 Asset reveal.`
+   - Attach the won Imagine asset (`img` or `mp4`) + `assetId` chip.
+
+**Soft chat open = same message: open video then reward media.** Chat does **not** hold the reward behind a 6s timer.
+
+**Engine timed gate remains Live-only.** The ~6s closed→empty glow **before** the reveal is the Pack Engine overlay in **Build** / in-chat Live preview. Do not port that gate into chat turns.
+
+**HARD BAN:** splitting open video and reward across two chat turns · emoji walls on the open / reward lines · kitchen dumps (`pendingChests`, registry paths) · speaking the reward before the open attach in chat.
+
+**Inventory write (same open):** after the reward is known, **append** the won `assetId` to that player’s `profiles/<sub>.json` → `cosmetics.inventory`. Never wipe. Prefer one entry per `assetId`. Same write if the open happened on the Live engine overlay. Full law: inventory section. If this is the player’s **first chest** after Live ~5s+, the open **MUST** also pay **`guaranteedFirst`** — First Sprint badge (next section).
+
+## First Pack badge (HARD — KEEP, guaranteedFirst)
+
+**First reward = Pack badge. Not a plate.** Stock **9:16**. In the **Common** pool as **`guaranteedFirst`**. Auto in **any first chest** — **direct reward**.
+
+When a player first **truly joins play** on SmiR’s Boltverse Live `https://boltverse-odysseyyyy.grok.me` (~5s+), their **first chest** always includes this badge asset.
+
+### Trigger (eligibility + first chest)
+
+- **Eligible when:** first **gated** Live open / first heartbeat with `playTimeSec` ≥ **~5s** (soft). Opening the link and actually playing a few seconds is enough.
+- **Grant when:** they open their **first chest** (Run or Peak — whichever comes first). **Auto. Direct reward.** Not a roll.
+- **`guaranteedFirst`:** first chest **always** includes the First Sprint badge asset. Do not omit. Do not replace with a random Common.
+- **HARD BAN:** requiring ~2 minutes / a Peak-only path. First **any** chest after Live ~5s+ is enough.
+- **Welcome register alone does NOT grant** (chat start without Live). Existence + `lastSeenAt` is not a Live touch. Live ~5s+ without a chest does **not** skip `guaranteedFirst` — the badge waits for that first chest.
+- Opening Live **outside** the Grok app (no gated HTML / no `x-grok-identity`) does **not** grant.
+- This badge is **first Live sprint** on odysseyyyy. Optional later: a chat-only « Packmate » badge — **do NOT add unless SmiR asks.**
+
+### Grant (once, idempotent)
+
+Write **once** onto that player’s profile on first-chest open. Prefer a `kind: "badge"` row in `cosmetics.inventory` and/or `cosmetics.badges[]` (same object either place). Shape: [SCHEMA.md](SCHEMA.md).
+
+```json
+{
+  "kind": "badge",
+  "id": "pack-first-sprint",
+  "title": "First Sprint",
+  "wonAt": "2026-09-18T08:00:00Z",
+  "from": "first-chest",
+  "fromChest": "guaranteedFirst",
+  "rarity": "common",
+  "image": "stock/badges/first-sprint-9x16.png",
+  "assetId": null,
+  "aspect": "9:16"
+}
+```
+
+- **Once only.** If `id: "pack-first-sprint"` already exists in `inventory` or `badges[]`, do **not** grant again. Keep the first `wonAt`.
+- **Never wipe** existing `cosmetics` / `inventory` / `badges[]`.
+- **Never pay-to-win / never play-to-win.** Cosmetic only — no speed, Resonance, score, path, Hit, lives, skill, or wallet.
+- Not a creator plate. Do **not** remint a per-player `assetId`. Do **not** attach a player cook as the badge.
+- Pool: **Common**. Kitchen: `chests/pool.json` → `guaranteedFirst`.
+
+### Reward still (HARD — KEEP 9:16)
+
+The badge **MUST** have a reward **image (still)**. Pointers, not a blob in this repo.
+
+| Field | Law |
+|---|---|
+| `image` | Pack stock badge art. **KEEP:** `boltverse-odyssey` `stock/badges/first-sprint-9x16.png` (**9:16**). Do **not** invent a substitute still. Do not use the old `pack-first-sprint.png` stem. |
+| `assetId` | Optional. Once the stock still is minted on the Imagine rail, set this to that **stock** `assetId` (reference). Same id for every player. `null` / omit until minted. |
+| `aspect` | `9:16` KEEP. |
+
+Need **at least one** of `image` or `assetId` before Focus can attach. Until the KEEP file is on Odyssey, grant + List voice still fire on first chest; do **not** fake art. When the still exists, **Inventory Focus shows that image.** First-chest open (soft chat / Live) treats the badge still as the **direct reward** media (with or beside any other Common drop).
+
+**HARD BAN:** player plate as badge art · per-player remint · uploading a still · inventing a demo PNG · attaching the still on List (spam — Focus + first-chest reward attach only).
+
+### Chat (first chest + inventory)
+
+English Pack voice + hype emojis (1–3). Same chest chat copy law. Shape, not frozen:
+
+- `🐺⚡ First Sprint — you’re in the Pack.`
+
+Speak that line **when the first chest pays `guaranteedFirst`**. Speak it again as a List row when they ask inventory. First-chest open **attaches** the 9:16 stock still once it exists (direct reward). **Inventory Focus MUST attach that still** when `image` / `assetId` is live. **HARD BAN:** emoji walls · kitchen dumps · attaching a creator plate as the badge.
+
+## Pack inventory (HARD — won rewards)
+
+When a player **opens a chest** and receives an `assetId` reward, Pack **MUST** persist it on **that player’s** profile.
+
+Inventory = **owned rewards for that player `sub`**: **badges + won assets**. Not the creator cook list. First reward is often the First Sprint **badge** (previous section).
+
+### Write (profile)
+
+1. **Append** to `profiles/<sub>.json` → `cosmetics.inventory` (array). Prefer rich objects.
+   - **Won asset** kitchen fields: `assetId` (required) · `wonAt` (ISO-8601, first win) · `fromChest` (`run` / `peak` / chest id / `grant`) · `rarity` (`common` / `rare` / `peak`). Optional `kind: "asset"`.
+   - **Badge** kitchen fields: `kind: "badge"` · `id` · `title` · `wonAt` · `from` · **`image` and/or `assetId`** (stock badge still — required for Focus). May also live in `cosmetics.badges[]` (same object). Shape: [SCHEMA.md](SCHEMA.md).
+
+```json
+{ "assetId": "a_smir9_vid_aa01ff09", "wonAt": "2026-09-18T07:55:21Z", "fromChest": "run", "rarity": "common" }
+```
+
+2. **Legacy strings.** If an old row is a bare `assetId` string, **keep it**. Do not wipe or rewrite the whole array to force objects. New writes prefer rich objects. Readers accept `string | object`.
+3. **Never wipe** existing inventory / `badges[]`. Welcome / boot / heartbeat merge-patch must **not** replace `cosmetics`, `inventory`, or `badges[]`. Append / merge-add only. Heartbeat (~5s+) marks First Sprint **eligibility** only — the badge writes on **first-chest open** (`guaranteedFirst`). Still no wipe.
+4. **Dedupe:** prefer **one entry per `assetId`** and **one entry per badge `id`**. If already present, keep the **first `wonAt`** — do not clone a second row. Optional later stack note — not v1 default.
+5. **When:** First Sprint badge = **first chest** after gated Live ~5s+ (`guaranteedFirst` — previous section). Other chest assets = chest open (chat or Live engine) **or** an explicit Pack grant. Do **not** auto-copy a creator’s plates into inventory because they cooked them.
+
+Same `sub` as the opener / grantee. Never invent a `sub`. Never write someone else’s inventory.
+
+### Chat — List vs Focus (same rules as plates)
+
+Ask in **Grok chat**: `show my inventory` / `mes gains` / `what I won` / close alias. **Not** Welcome. **Not** `show my plates`.
+
+- **List** = English Pack voice + **hype emojis (1–3)** + chips. Show **badges + won assets** (badges first). Badge row: `🐺⚡ First Sprint — you’re in the Pack.` Asset row: optional rarity / fromChest chip (`🎁 Common` · `💎 Peak`) + `assetId` chip. Same chest chat copy law. Optional at most **ONE** header still. **Never** N media for N rewards (spam FAIL — same as plates).
+- **Focus** one **asset** (Pack name / `assetId`) = Pack words + that one `assetId` + **one** media attach (mp4 if vid, photo if img).
+- **Focus** one **badge** = Pack voice + title + hype emojis + **the reward still** (`image` / stock `assetId`). **MUST** attach that image when it exists. Badge ≠ creator plate — attach stock badge art only.
+- Empty (no badge and no won assets): `No Pack drops yet — open Sprint.` (shape, not frozen). Badge-only is **not** empty.
+
+Examples (shape, not locked):
+
+- `🏆 Pack inventory`
+- `🐺⚡ First Sprint — you’re in the Pack.`
+- `🎁 Common drop` + chip
+- `💎 Peak drop` + chip
+
+**HARD BAN:** dumping `cosmetics.inventory` JSON · GitHub / registry paths · attaching every won clip on List · treating `show my plates` as inventory · treating inventory as the creator plate list · treating the First Sprint badge as a creator plate · Focus badge without the stock still once `image` / `assetId` exists · emoji walls.
+
+### Creator plates ≠ inventory
+
+A plate the player **cooked** (`creatorSub` === their `sub`) is **not** inventory unless that `assetId` was **won via chest** or an **explicit grant**. The First Sprint badge is **not** a plate.
+
+| Ask | Source | Whose |
+|---|---|---|
+| `show my plates` | Imagine-rail manifests where `creatorSub` === gate `sub` | cooks they made |
+| `show my inventory` | `profiles/<sub>.json` `cosmetics.inventory` + `badges[]` | badges + rewards they **won** |
+
+Law for plates: [ASSETS.md](ASSETS.md). Do not merge the two lists.
+
 ## Status machine
 
 ```
@@ -287,11 +485,11 @@ proposed  →  sealed  →  live
 
 An asset minted on the Imagine rail may stay `proposed` or `sealed` forever and **never** enter a chest. That is fine — the `assetId` still exists.
 
-Common may auto-seal and hang into the large pool after layers 1–4 + creator-only entry. Peak / Legendary: **no** auto-publish `proposed → live` — Pack seal + soft supply cap. Chest entry never remints. Chest entry never accepts a non-creator `sub`. Chest entry is in-app only (Grok chat or Build) and **optional**. Success or refuse always returns a **Pack receipt** in Grok chat — never silent.
+Common may auto-seal and hang into the large pool after layers 1–4 + creator-only entry. Peak / Legendary: **no** auto-publish `proposed → live` — Pack seal + soft supply cap. Chest entry never remints. Chest entry never accepts a non-creator `sub`. Chest entry is in-app only (Grok chat or Build) and **optional**. Success or refuse always returns a **Pack receipt** in Grok chat — never silent. Receipt / pending / open / reward = English Pack voice + matching emojis (chest chat copy).
 
 ## Odyssey pointer
 
-Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = this file (implement, do not fork); stock KEEP = `stock/chests/peak-closed.png`; chest UI = Pack Engine overlay on the canonical Play / Pack client. Do not copy the law into Odyssey. Do not add chest chrome to biome plate recipes.
+Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = this file (implement, do not fork); stock KEEP = `stock/chests/peak-closed.png`; First Sprint badge KEEP = `stock/badges/first-sprint-9x16.png` (9:16, Common `guaranteedFirst`); chest UI = Pack Engine overlay on the canonical Play / Pack client. Do not copy the law into Odyssey. Do not add chest chrome to biome plate recipes. Do not invent badge art.
 
 ## Done criteria
 
@@ -299,7 +497,11 @@ Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = t
 - **Surface HARD:** Grok chat app only (Chat + Imagine + Build) — no external website, no creator portal, no desktop-only tool; v1 creator flow does not require an external Pack website
 - Cook = Imagine (in app). Play / earn / open reveal = Pack Engine overlay in Build / in-chat Live preview (in app). Put-in-chest = **optional** Grok chat or Build after mint
 - **Engine overlay + creator zero wire HARD:** chests appear in Play without the biome / link creator doing anything. Chest UI + earn + open = Pack Engine layer, not the biome plate. Engine watches Resonance / Peak thresholds → overlays Pack stock Peak closed still in-picture → tap plays ~6s stock open video → engine reveals sealed `assetId`. Federated `*.grok.me` / hung-biome creator: ZERO code, ZERO UI, ZERO wire. Ignoring put-in-chest still means Pack pool chests on that link. Ban baking chests into plates, hosting open videos, or adding Open Chest chrome
-- **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
+- **Chest chat copy HARD:** pending / seal / open / reward = English Pack voice + **1–3 matching emojis** (stylish / hype, not spam). Shape: ⚡ chest / 💎 Peak ready · ✨ sealed / 🎁 into Common/Rare/Peak · 🔓 opening… + peak-open ~6s · 🏆 / 🎬 reward + `assetId` chip. Inventory List uses the same voice + hype emojis. Examples are shape — not frozen Mandarin. Ban emoji walls / random unrelated emoji
+- **Soft chat open HARD:** same message = open video then reward media. Engine timed gate (~6s) remains **Live-only**
+- **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + matching emojis + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
+- **First Pack badge HARD — KEEP:** first reward = **badge, not a plate**. Stock **9:16** in **Common** as **`guaranteedFirst`**. After first gated Live on `https://boltverse-odysseyyyy.grok.me` (`playTimeSec` ≥ ~5s, soft), **any first chest** auto-includes the First Sprint badge as a **direct reward**. Write once `{ kind:"badge", id:"pack-first-sprint", title:"First Sprint", wonAt, from:"first-chest", fromChest:"guaranteedFirst", image, assetId }` into `cosmetics.inventory` / `badges[]`. Still = `stock/badges/first-sprint-9x16.png`. Inventory Focus **shows that image**. Welcome register alone does **not** grant. Chat: `🐺⚡ First Sprint — you’re in the Pack.` Cosmetic only. Idempotent. No chat-only « Packmate » badge unless SmiR asks.
+- **Pack inventory HARD:** chest open (or explicit grant) **appends** won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Legacy string rows stay valid — never wipe. Prefer one entry per `assetId` / badge `id` (keep first `wonAt`). Chat `show my inventory` / `mes gains` / `what I won` = List **badges + won assets** (Pack voice + hype emojis + chips, never N media) / Focus asset → media / Focus badge → **stock still**. Creator plates ≠ inventory unless won via chest or grant. Schema: [SCHEMA.md](SCHEMA.md)
 - `assetId` mints **only** via the Grok Imagine cook rail; chests **reference** only
 - **Only the creator** can put THEIR `assetId` into a chest (`sub` === `creatorSub`)
 - No player manual proof; no external upload / URL entry
@@ -311,4 +513,4 @@ Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = t
 - **Rarity HARD:** Common = auto seal, large pool; Rare = Loom / Resonance / tips / low supply signals; Peak / Legendary = Pack seal + soft supply cap. **Not** a beauty / pixel AI score
 - Shared Peak open video ~6s closed→empty glow; engine then shows won `assetId`
 - **Soft earn NUMBERS HARD (v1):** player-local calendar day (Europe-friendly local midnight). Soft daily cap **max 2**. Run chest = 1st armed Peak (~45–60s bone picture-time + `m` for Peak arm), max **1 / day**, Common/Rare pool. Peak chest = 2nd higher threshold same day (stronger `m` / Legendary lean), max **1 / day**, Peak/Legendary path. Total soft max **1–2 / day**. Not daily login. Not AFK wall-clock. Optional Pack Pass later = +1 soft drop, cosmetic only
-- **Cosmetics HARD — never pay-to-win / never play-to-win:** skins / titles / Pack lore looks only. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, wallet boost. Pack Pass / tips / X subs never buy gameplay power
+- **Cosmetics HARD — never pay-to-win / never play-to-win:** skins / titles / Pack lore looks / **badges** only. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, wallet boost. Pack Pass / tips / X subs never buy gameplay power. Won looks + badges persist in `cosmetics.inventory` / `badges[]` — still cosmetic only
