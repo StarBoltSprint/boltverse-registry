@@ -2,6 +2,9 @@
   "version": 1,
   "railsVersion": "odyssey-chests-1",
   "live": [
+    "a_smir9_img_8babfc66",
     "a_smir9_vid_2a2926c4"
-  ]
+  ],
+  "guaranteedFirst": "a_smir9_img_8babfc66",
+  "notes": "First Sprint badge is guaranteed first chest reward for new Pack players after first Live play (~5s+)."
 }
