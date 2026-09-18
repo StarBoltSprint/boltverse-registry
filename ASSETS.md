@@ -2,14 +2,15 @@
 
 > **HARD LOCK — Pack assets = Grok Imagine cook-rail output ONLY (images / videos).**
 > **Cook asset = Imagine (in the Grok chat app).** Mint `assetId` ONLY when a Grok Imagine cook completes through the Pack / Boltverse cook rail (Imagine in-app — Build hooks / Imagine session attached to gated Live / cook-room path — whatever the Pack wire uses).
+> **HARD LOCK — own-plates list = Grok chat app ONLY.** Ask in chat (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / any close alias) → reply **in Grok chat** with the player’s own `creatorSub` rows + `assetId` chips + visuals. **Never** Sprint HUD / overlay chrome for this list.
 > **Chest surface law** (play / earn / open / put-in-chest) = Grok chat app only — see [CHESTS.md](CHESTS.md). No external Pack website required to cook.
 > **Chest overlay = Pack Engine, not the biome plate.** Chests, Hang, forge, and biome plates **reference** `assetId`s. They do **not** host chest UI. Federated `*.grok.me` / hung-biome creators: ZERO chest wire. Put-in-chest is optional.
 > **Provenance is automatic.** The server / rail writes it at mint. The player **never** supplies proof.
-> **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim.
+> **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim · GitHub / `raw.githubusercontent` / registry-path dumps in the player plate list · Sprint HUD as the plate list.
 
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
 
-This file is the **source of truth** for Pack asset identity. Chests, Hang, forge, and biome plates **reference** these ids — they do not invent their own. Biome plates do **not** implement chest UI; overlay + earn + open = Pack Engine ([CHESTS.md](CHESTS.md) engine overlay / creator zero wire).
+This file is the **source of truth** for Pack asset identity **and** the player chat list of own plates. Chests, Hang, forge, and biome plates **reference** these ids — they do not invent their own. Biome plates do **not** implement chest UI; overlay + earn + open = Pack Engine ([CHESTS.md](CHESTS.md) engine overlay / creator zero wire). The own-plates list lives in **Grok chat**, not on the Sprint HUD.
 
 Creators do not drop files from elsewhere into Boltverse. Wallet media is also banned (see hard lock). Same lock as [CHESTS.md](CHESTS.md).
 
@@ -115,7 +116,10 @@ Store on `assets/<assetId>.json` at mint (Imagine cook complete — rail writes 
 | `status` | string | `proposed` \| `sealed` \| `live` \| `dropped` |
 | `chestPool` | string \| omit | Set later if a chest references this id. Omit until then. |
 | `tags` | string[] | Allowlist only (`bolt`, `biome`, `citadel`, `cosmetic`, `pack-lore`) |
-| `url` | string \| omit | Pointer to the Imagine **rail** blob / Play host. Never a player-pasted external URL. Heavy bytes stay off this repo. |
+| `url` | string \| omit | Pointer to the Imagine **rail** blob / Play host. Never a player-pasted external URL. Heavy bytes stay off this repo. **Kitchen only** — never dump this URL in the player plate list. |
+| `label` | string \| omit | Optional kitchen short name (e.g. `plate-road`). Chat may map it to a Pack label. Never speak the kitchen stem alone. |
+| `role` | string \| omit | Optional one-line role. Chat may show this as the row’s extra line. |
+| `playPath` | string \| omit | Optional hung path (e.g. `biome/master/road.mp4`). **Kitchen only** — never dump to the player. |
 
 Sketch:
 
@@ -171,6 +175,77 @@ At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` �
 
 Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHESTS.md](CHESTS.md).
 
+## Player chat list (HARD — Grok chat app only)
+
+When a player asks in **Grok chat** to see their plates / creations / biomes / hung films (any close alias: `show my plates`, `mes plaques`, `list my assets`, `what did I cook`…):
+
+This is **not** Welcome. Do **not** fire [COLD_START.md](COLD_START.md) three-beats. Do **not** attach the citadel teaser as the list. Do **not** open Sprint / Build as the list.
+
+### 1. Resolve owner
+
+Gate `sub` / Pack `userId` — same stem as `profiles/<sub>.json`. From `x-grok-identity` / gate JWT / session. Never invent a sub. Never ask the player to paste a `userId`.
+
+### 2. Filter — own `creatorSub` only
+
+List **ONLY** assets where `creatorSub` === that `sub`.
+
+Kitchen sources (read; never dump paths to the player):
+
+- `assets/<assetId>.json` rows in this repo
+- and/or [`assets/plates-index.json`](assets/plates-index.json) **filtered by ownership** (resolve each `assetId` → manifest `creatorSub`, keep matches only)
+
+**Default = own `creatorSub` only.** Other creators’ assets: **never** list unless the player asks for a **Pack seal** / **public live pool**. That is a different ask. This trigger = own plates.
+
+Skip `dropped` rows. Kitchen probes are not plates.
+
+### 3. Reply in Grok chat (Pack voice + visuals)
+
+Reply **IN CHAT** (Grok chat app). English Pack voice for player-facing lines.
+
+Attach visuals when possible (thumb / Imagine plate still) — **never** a silent text dump of kitchen paths only.
+
+**HARD BAN:** in-game Sprint HUD / overlay chrome for this list. Chat only. Do not paint plates onto the lane. Do not invent list UI on the biome plate.
+
+### 4. Each row
+
+Same chat turn, one row per owned asset:
+
+1. Short **Pack label** (e.g. `Peak road plate` / `Bolt cutout`) — Pack words, not kitchen filenames
+2. `assetId` chip (`a_<sub>_…`)
+3. kind `img` \| `vid`
+4. Optional one-line **role** from the manifest (`role`, or a Pack reading of `label`)
+
+Do not skip the chip. Do not skip the visual when a still / thumb can attach.
+
+### 5. Empty
+
+No owned rows → Pack-voice, this line:
+
+```
+No Pack plates sealed yet — cook in Imagine.
+```
+
+Then stop. Do not lecture GitHub. Do not fire Welcome.
+
+### 6. HARD BAN (player-facing)
+
+Kitchen may read GitHub. The player sees **Pack words + `assetId` + visuals**.
+
+**Never** dump to the player:
+
+- GitHub URLs
+- `raw.githubusercontent.com`
+- registry paths (`assets/<id>.json`, `assets/plates-index.json`, `biome/master/…`)
+- kitchen noise (`playPath`, `contentHash`, `mintedVia`, `railsVersion`, JWT / ticket lectures)
+
+### Tone
+
+Boltverse **Pack words only**: plate · Peak · Bolt cutout · asset · cook · Imagine · Pack.
+
+**HARD BAN in spoken / chat list lines:** GitHub URLs · API jargon · registry paths · `assets/<id>.json` · `plates-index.json` · `biome/master/` · JWT / ticket lectures · kitchen host dumps.
+
+Odyssey `biome/master/ASSETS.md` stays a **pointer** at this file. Do not fork a second chat-list law there.
+
 ## Done criteria
 
 - `assetId` mints **only** when a Grok Imagine cook completes through the Pack / Boltverse cook rail
@@ -183,3 +258,8 @@ Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHE
 - Chest propose only if caller `sub` === `creatorSub` (in-app: Grok chat or Build)
 - Grok Imagine only — HARD
 - Chest surface + rarity + engine overlay / creator zero wire: [CHESTS.md](CHESTS.md)
+- Ask in **Grok chat** (`show my plates` / close alias) → **own** plates list (`creatorSub` === gate `sub`) with `assetId` chips + visuals **in the Grok chat app**
+- Empty list = `No Pack plates sealed yet — cook in Imagine.`
+- **HARD BAN** GitHub / `raw.githubusercontent` / registry-path dumps in the player list
+- **HARD BAN** Sprint HUD / overlay chrome as the plate list — chat only
+- Other creators’ assets: never list on this trigger (Pack seal / public live pool = a different ask)

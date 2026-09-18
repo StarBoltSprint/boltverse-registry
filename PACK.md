@@ -9,6 +9,7 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 - **Identity** = Grok gate `sub`, not the URL
 - **`playUrl`** = whatever origin they opened (`location.origin`)
 - Same `sub` on a second Live → **same** `profiles/<sub>.json`, `playUrl` updated
+- Same `sub` / `userId` lists **own** plates in **Grok chat** when the player asks (`show my plates` / close alias) — `creatorSub` === that sub. Law: [ASSETS.md](ASSETS.md). Chat only — not Sprint HUD.
 - **Pack Play / central Pack API host (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play, not the central host.
 
 ## Hard bans
@@ -89,6 +90,8 @@ Updates `lastSeenAt`, `playTimeSec`, `playUrl`, `updatedAt` on `profiles/<sub>.j
 **GET `/v1/pack/me`** (optional)
 
 Bearer ticket → current profile JSON (for chat Welcome stage/peak).
+
+Chat ask `show my plates` (any close alias) uses the **same** gate `sub` to list own `creatorSub` assets in **Grok chat** — [ASSETS.md](ASSETS.md). Not a profile write. Not Sprint HUD.
 
 ## Server verify rules (copy from working heart-giant fix)
 

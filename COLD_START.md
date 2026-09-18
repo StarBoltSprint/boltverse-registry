@@ -42,6 +42,8 @@ Player says **start / play / lance boltverse odyssey** (any close alias).
 
 Chat trigger = Welcome + media + Sprint attach. **Not** a hard register.
 
+**Not this trigger:** `show my plates` / `mes plaques` / `list my assets` / `what did I cook` (any close alias) = own-plates list in **Grok chat** — [ASSETS.md](ASSETS.md). Do **not** fire Welcome / Beat 3. Do **not** paint the list on Sprint HUD.
+
 ## Profile (zero login / wallet)
 
 Spoken opener is **`Hey Packmate {name}`**. Packmate stays (immersive).
@@ -164,6 +166,8 @@ Internal only. Prefer **GitHub** (fetch + attach the one citadel `preview-loop.m
 
 **Name:** opener is always `Hey Packmate {name}`. Resolve `{name}` in order: Grok profile `displayName` → registry `displayName` → gate/app name → **only then** `runner`. **Hard ban:** if the chat UI / session exposes ANY user name / handle / profile label, never say `runner`. Prefer the visible chat account name over inventing `runner`. Example still `Hey Packmate SmiR 9`. Never drop Packmate. Never say `Hey Packmate` alone when a real name is available. Never `Hey Packmate runner` when a name exists.
 
+**Own plates list (not this Welcome trigger):** player asks `show my plates` / `mes plaques` / `list my assets` / `what did I cook` (any close alias) → list **own** plates in **Grok chat** (`creatorSub` === gate `sub` / `profiles/<sub>.json`). Pack words + `assetId` chip + visuals. Empty: `No Pack plates sealed yet — cook in Imagine.` Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / Beat 3. Do **not** paint the list on Sprint HUD. Do **not** dump GitHub / registry paths.
+
 **Hard register / gateSub write** (not the chat trigger):
 
 - Hard upsert (`profiles/<sub>.json` + `registry.json` row, `gateSub` from JWT) = player **opens Play Live from the Grok app** (gated document / boot request). Central Pack API. Full wire: [PACK.md](PACK.md).
@@ -245,6 +249,7 @@ Remix off. Do not scaffold a new `grok.me` / `grok-sandbox.com`. Do not remix in
 - No dropping Packmate from the opener
 - No profile upsert on chat-only start — hard write stays on gated Live open
 - No GitHub / registry lecture — `{playerCount}` is enough
+- `show my plates` (close alias) is **not** Welcome — own-plates list in Grok chat only ([ASSETS.md](ASSETS.md)); no Sprint HUD list
 - No fake Pack size
 - No “stay 30 seconds”
 - Player reply is **English only** — no French
