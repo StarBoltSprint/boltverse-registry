@@ -12,6 +12,7 @@
   "mintedVia": "imagine-cook-backfill",
   "railsVersion": "odyssey-r38",
   "status": "live",
+  "chestPool": "common",
   "tags": [
     "biome"
   ],
