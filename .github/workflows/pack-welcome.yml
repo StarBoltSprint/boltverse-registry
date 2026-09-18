@@ -10,7 +10,9 @@
 #     -f 'client_payload[sub]=USER_SUB' \
 #     -f 'client_payload[displayName]=Ada Pack'
 #
-# Phase 2 durable playTime Worker (boltverse-pack, not grok.me): HOLD.
+# Phase 2 playTime path: StarBoltSprint/boltverse-pack on Vercel (not grok.me).
+# Placeholder origin: https://YOUR-PACK.vercel.app until deploy URL is known.
+# This Action stays Welcome-only (existence + lastSeen). Never increment playTimeSec.
 
 name: pack-welcome
 

@@ -21,9 +21,9 @@
 >
 > When start / play / lance fires the locked Welcome/Return and a real `sub` is known: **fire GitHub Action `pack-welcome` now** (`scripts/pack-welcome.mjs` — merge-patch `profiles/<sub>.json` + `registry.json` `players[]`). Existence + `lastSeenAt`. Never invent a `sub`. No `sub` → soft skip write (Action not required), still show Welcome.
 >
-> **HARD: Welcome write host = this GitHub Action — NOT `https://boltverse-odysseyyyy.grok.me` Pack API — NOT any `*.grok.me`.** Ban treating a grok.me Live as the Welcome register. Live `/v1/pack/boot` is **optional** for playTime later. Welcome **must succeed even if Live 404**. Phase 2 durable playTime Worker (`boltverse-pack`, not grok.me) = **HOLD**.
+> **HARD: Welcome write host = this GitHub Action — NOT `https://boltverse-odysseyyyy.grok.me` Pack API — NOT any `*.grok.me`.** Ban treating a grok.me Live as the Welcome register **or** the playTime host. Welcome **must succeed even if Live 404 / frozen**. **Phase 2 playTime path** = durable host `StarBoltSprint/boltverse-pack` on Vercel (placeholder `https://YOUR-PACK.vercel.app`) — **not HOLD**. Lives set `window.BOLTVERSE_PACK_ORIGIN` to that origin and load `/client/pack.js`. **HARD BAN:** four-y / any Live as the central Pack API (Lives freeze; four-y 404s Pack routes).
 >
-> **Welcome register = existence + lastSeen (GitHub Action). Live open = optional playTime / heartbeats later.** **Pack wire is automatic — never a player ask.** Players must NEVER tell Grok « install Pack wire / plate views / playTime ». Every new biome / citadel / Sprint Live ships `client/pack.js` or `BOLTVERSE_PACK_ORIGIN` → Live / later Worker + plate dealer stats. Live floor: `boltverse-odyssey` `biome/docs/07-pack-live.md`. Law: [PACK.md](PACK.md).
+> **Welcome register = existence + lastSeen (GitHub Action). playTime / heartbeats = boltverse-pack (Phase 2).** **Pack wire is automatic — never a player ask.** Players must NEVER tell Grok « install Pack wire / plate views / playTime ». Every new biome / citadel / Sprint Live sets `BOLTVERSE_PACK_ORIGIN` → boltverse-pack + plate dealer stats. Live floor: `boltverse-odyssey` `biome/docs/07-pack-live.md`. Law: [PACK.md](PACK.md).
 
 > ### HARD LOCK — Pack Den (official player chat) = this X join URL
 >
@@ -41,7 +41,7 @@ This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey
 
 Why: auto-Build / Build attach / GitHub→new project is too long / painful. Grok scaffolds a « Built with Grok » card instead of pasting SmiR’s existing Live URL. Observed FAIL: fresh Grok already on the Build tab still implements LanePlayer / copies assets **after** pasting odysseyyyy.
 
-`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP** + **name resolve** + **zero spoken improvisation** + **plate silence** + **Welcome register = GitHub Action pack-welcome (existence + lastSeen when sub known; NOT *.grok.me)** + **Live open = optional playTime / heartbeats later** + **Pack wire automatic — never a player ask**). Registry is source of truth. Live floor: `biome/docs/07-pack-live.md`.
+`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP** + **name resolve** + **zero spoken improvisation** + **plate silence** + **Welcome register = GitHub Action pack-welcome (existence + lastSeen when sub known; NOT *.grok.me)** + **playTime = boltverse-pack Phase 2 (not Live)** + **Pack wire automatic — never a player ask**). Registry is source of truth. Live floor: `biome/docs/07-pack-live.md`.
 
 ## Cold-start tools (hard)
 
@@ -51,7 +51,7 @@ Prefer **GitHub** — fetch + attach the one citadel `preview-loop.mp4`; **read*
 gh workflow run pack-welcome.yml -f sub=USER_SUB -f displayName='…' -f handle='…'
 ```
 
-or `repository_dispatch` type `pack-welcome` with `client_payload` `{ sub, displayName, handle, playUrl }`. Existence + `lastSeenAt` only. Never invent a `sub`. No `sub` → soft skip write (Action not required), still show Welcome. **HARD BAN:** `POST` Live `/v1/pack/boot` (or any `*.grok.me` Pack API) as the Welcome write. Welcome must succeed even if Live 404. This GitHub Action write is **not** a Build file-edit. **SUPERSEDED:** « Chat start does not write profiles » / « Welcome writes through grok.me ».
+or `repository_dispatch` type `pack-welcome` with `client_payload` `{ sub, displayName, handle, playUrl }`. Existence + `lastSeenAt` only. Never invent a `sub`. No `sub` → soft skip write (Action not required), still show Welcome. **HARD BAN:** `POST` Live `/v1/pack/boot` (or any `*.grok.me` Pack API) as the Welcome write **or** as the playTime host. Welcome must succeed even if Live 404 / frozen. playTime = `StarBoltSprint/boltverse-pack` ([PACK.md](PACK.md)). This GitHub Action write is **not** a Build file-edit. **SUPERSEDED:** « Chat start does not write profiles » / « Welcome writes through grok.me » / « Live is the central Pack API ».
 
 **In the same first reply:** **PASTE** the written URL `https://boltverse-odysseyyyy.grok.me` as a visible tappable link. Prefer the player taps it and the Live opens **inside the Grok app**. Old ban « never paste grok.me » is **SUPERSEDED for this first-reply odysseyyyy paste only**. Still ban random / new slugs / sandbox / three-y `odysseyyy`.
 
@@ -109,7 +109,7 @@ Do **not** ask Citadel or Biome. Citadel only if the player later asks for Citad
 
 **First reply beat 3 = written odysseyyyy URL paste.** Allowed. Required. Preferred over Build attach. No yes-wait.
 
-Paste **ONLY** `https://boltverse-odysseyyyy.grok.me`. That four-y URL is the **only** Play identity (paste / tap). **It is not the Welcome register host** — Welcome writes via GitHub Action `pack-welcome`. Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play. Never paste that three-y URL.
+Paste **ONLY** `https://boltverse-odysseyyyy.grok.me`. That four-y URL is the **only** Play identity (paste / tap). **It is not the Welcome register host** — Welcome writes via GitHub Action `pack-welcome`. **It is not the Pack API / playTime host** — those Lives freeze; four-y currently 404s Pack routes. playTime = `StarBoltSprint/boltverse-pack` on Vercel (placeholder `https://YOUR-PACK.vercel.app`). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play. Never paste that three-y URL.
 
 1. **In the same first reply.** **ONLY** that canonical Pack Play Live, written in chat as a tappable link. Prefer in-Grok-app open when the player taps it.
 2. **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / rebuild from GitHub / compile / invent a playable card from the recipe / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. Observed FAIL: `le-wild.hades-www.grok-sandbox.com` titled “Boltverse Odyssey” — that is **not** Pack Play. Observed FAIL: auto-Build / 12-minute rebuild on start. Observed FAIL: fresh Grok on Build tab implements LanePlayer / copies assets after pasting odysseyyyy.
@@ -166,25 +166,26 @@ New vs Return is whoever already has a file. Welcome register creates the file o
 
 **SUPERSEDED:** « chat start does not upsert » / « Welcome reads only » / « Chat-only still does not upsert ».
 
-**HARD LOCK — Welcome = Pack register.** Welcome register = existence + lastSeen via GitHub Action `pack-welcome` (not `*.grok.me`). Live open = optional playTime / heartbeats later.
+**HARD LOCK — Welcome = Pack register.** Welcome register = existence + lastSeen via GitHub Action `pack-welcome` (not `*.grok.me`). playTime / heartbeats = Phase 2 `StarBoltSprint/boltverse-pack` on Vercel (not any Live).
 
 When the player says **start / play / lance boltverse odyssey** (any close alias) and Grok sends the locked Welcome/Return:
 
 1. **Resolve identity.** Prefer gate `sub` / Grok identity JWT `sub` if available in the session; else the stable Grok account id used for profiles. `displayName` from the Grok profile (same name resolve as spoken `{name}`).
 2. **If a real `sub` / `userId` is known:** fire GitHub Action **`pack-welcome` now** (`gh workflow run pack-welcome.yml -f sub=…` or `repository_dispatch` type `pack-welcome`). Merge-patch `profiles/<sub>.json` + `registry.json` `players[]`. Set `userId`=`gateSub`=`sub`, `displayName` / `handle` if known, `lastSeenAt=now`, `updatedAt=now`, `playUrl=https://boltverse-odysseyyyy.grok.me` (canonical). Do **NOT** invent a `sub`. If no `sub` → **soft skip write** (Action not required), still show Welcome (may use `displayName` only). **NOT** a `*.grok.me` Pack API call.
-3. **Never wipe** `resonance` / `starCore` / `cosmetics` (incl. inventory / badges) / `pendingChests`. `playTimeSec` only increases via Live heartbeat later (optional; Phase 2 Worker HOLD) — Welcome register does **not** fake playTime. Welcome succeeds if Live 404.
+3. **Never wipe** `resonance` / `starCore` / `cosmetics` (incl. inventory / badges) / `pendingChests`. `playTimeSec` only increases via boltverse-pack heartbeat (Phase 2; placeholder `https://YOUR-PACK.vercel.app`) — Welcome register does **not** fake playTime. Welcome succeeds if Live 404 / frozen. Never invent a `sub`.
 4. **Return** (profile already exists before this write): speak Welcome **Return** block (welcome back, Core `{stage}`, last peak).
 5. **New** (no profile / `lastSeenAt` null before this write): speak Welcome **New** block.
 6. `{playerCount}` includes this player after upsert when the write succeeded.
 
-**Live Pack wire is optional later** for `playTimeSec` / plate views stats. Welcome already registered existence on GitHub. When the player taps `https://boltverse-odysseyyyy.grok.me` and the Live loads **inside the Grok app** (if that Live is up):
+**Phase 2 playTime path** = `StarBoltSprint/boltverse-pack` on Vercel (or similar) for `playTimeSec` / plate views. Placeholder origin `https://YOUR-PACK.vercel.app` until the deploy URL is known. Welcome already registered existence on GitHub. When the player taps `https://boltverse-odysseyyyy.grok.me` and the Live loads **inside the Grok app**:
 
 1. Gated HTML document load
 2. Gate injects `x-grok-identity` (JWT)
-3. Client `POST /v1/pack/boot` → optional Live merge-patch (`gateSub`, `playUrl` from `location.origin`, `lastSeenAt`) — **not** the Welcome register
-4. Client `POST /v1/pack/heartbeat` ~every 30s → updates `playTimeSec`, `lastSeenAt`, `playUrl`
+3. Live sets `window.BOLTVERSE_PACK_ORIGIN` to the boltverse-pack origin and loads `/client/pack.js`
+4. Client `POST ${BOLTVERSE_PACK_ORIGIN}/v1/pack/boot` → playTime merge-patch (`gateSub`, `playUrl` from Live `location.origin`, `lastSeenAt`) — **not** the Welcome register, **not** a Live Pack API
+5. Client `POST ${BOLTVERSE_PACK_ORIGIN}/v1/pack/heartbeat` ~every 30s → updates `playTimeSec`, `lastSeenAt`, `playUrl`
 
-Live 404 → skip playTime; Welcome still landed. Phase 2 HOLD: durable playTime Worker from `boltverse-pack` (not grok.me). Full wire: [PACK.md](PACK.md).
+Live 404 / frozen → skip playTime on that surface; Welcome still landed. **HARD BAN:** posting boot / heartbeat to four-y / any Live (those routes 404; Lives freeze). Full wire: [PACK.md](PACK.md).
 
 **Still does not write `playTimeSec`:**
 
@@ -192,7 +193,7 @@ Live 404 → skip playTime; Welcome still landed. Phase 2 HOLD: durable playTime
 - Pasting the URL if the player never opens the Live
 - Opening the Live **outside** the Grok app (no gated HTML / no `x-grok-identity` → `{ ok: false, reason: "no-sub" }`)
 
-Spoken `Open Sprint — Pack save, zero login.` = Grok identity is enough (zero wallet). Welcome already registered existence when `sub` was known; opening that Live inside the Grok app continues Pack save (`playTimeSec`). Do not say stay 30 seconds. Do not invent a `sub`.
+Spoken `Open Sprint — Pack save, zero login.` = Grok identity is enough (zero wallet). Welcome already registered existence when `sub` was known; opening that Live inside the Grok app continues Pack save (`playTimeSec`) via boltverse-pack, not a Live Pack API. Do not say stay 30 seconds. Do not invent a `sub`.
 
 ## Live Pack count (`{playerCount}`)
 
@@ -248,7 +249,7 @@ Spoken text **ends** on `Ready to sprint?` **That block is the entire spoken rep
 
 `{playerCount}` = the live count line (table above). Same line on Welcome and Return.
 
-`Open Sprint — Pack save, zero login.` = Grok identity is enough (zero wallet / no second login). Welcome already registered existence when `sub` was known; opening that Live inside the Grok app continues Pack save (`playTimeSec`). Do **not** say “stay 30 seconds”. English only — no French in the player reply.
+`Open Sprint — Pack save, zero login.` = Grok identity is enough (zero wallet / no second login). Welcome already registered existence when `sub` was known; opening that Live inside the Grok app continues Pack save (`playTimeSec`) via boltverse-pack. Do **not** say “stay 30 seconds”. English only — no French in the player reply.
 
 `Ready to sprint?` may stay. The URL is already in the first message — the player taps it. Do **not** require a separate yes-turn.
 
@@ -309,7 +310,7 @@ If you mention plates at all (normally don't): use **dealer order** from Odyssey
 
 Internal only.
 
-**First-reply tools:** **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` / `profiles/*.json` for New vs Return + `{playerCount}`; **fire Action `pack-welcome`** when a real `sub` is known — `gh workflow run pack-welcome.yml -f sub=…` or `repository_dispatch` type `pack-welcome`; existence + lastSeen; never invent a `sub`; **never** POST `*.grok.me` `/v1/pack/boot` for Welcome) + **PASTE** `https://boltverse-odysseyyyy.grok.me` in the same message. Then **STOP**. Prefer in-Grok-app open when the player taps it. Welcome succeeds if that Live 404s. Old « never paste grok.me » ban is superseded **here only** (paste = Play URL, not the register host). Old « chat start does not upsert » is **SUPERSEDED**. No Build tools. No LanePlayer / Sprint file edits for boot. Welcome Action write is **allowed** and is **not** a Build file-edit.
+**First-reply tools:** **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` / `profiles/*.json` for New vs Return + `{playerCount}`; **fire Action `pack-welcome`** when a real `sub` is known — `gh workflow run pack-welcome.yml -f sub=…` or `repository_dispatch` type `pack-welcome`; existence + lastSeen; never invent a `sub`; **never** POST `*.grok.me` `/v1/pack/boot` for Welcome) + **PASTE** `https://boltverse-odysseyyyy.grok.me` in the same message. Then **STOP**. Prefer in-Grok-app open when the player taps it. Welcome succeeds if that Live 404s / is frozen. playTime is **not** this paste host — Phase 2 `boltverse-pack` ([PACK.md](PACK.md)). Old « never paste grok.me » ban is superseded **here only** (paste = Play URL, not the register host / not the Pack API). Old « chat start does not upsert » is **SUPERSEDED**. No Build tools. No LanePlayer / Sprint file edits for boot. Welcome Action write is **allowed** and is **not** a Build file-edit.
 
 **PRIORITY 0:** no Build tab / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild** / invented playable card / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. **Even on the Build tab:** three chat beats then **STOP**. Any Build / tooling after those beats = FAIL.
 
@@ -321,13 +322,13 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 
 **Pack Den (not this Welcome trigger):** official player-to-player chat = X group join `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`. On ask (den / Pack chat / player chat / X chat / where players talk) → one short EN Pack line + that exact URL. Welcome may optionally say `Pack Den is on X.` in one short EN line — **never** the long URL on every Welcome. Do **not** invent Discord / Telegram. Do **not** claim chat is inside Grok 1:1 or the Live iframe. v1 = open X (native). Law: [PACK.md](PACK.md).
 
-**Welcome register / Live playTime** (this chat trigger + optional Live wire):
+**Welcome register / Phase 2 playTime** (this chat trigger + boltverse-pack wire):
 
 - **Welcome register** (this chat turn): if a real `sub` is known, fire GitHub Action `pack-welcome` (`gh workflow run pack-welcome.yml -f sub=…` **or** `repository_dispatch` type `pack-welcome`). Merge-patch `profiles/<sub>.json` + `registry.json` `players[]` (`userId`=`gateSub`=`sub`, `displayName` / `handle` if known, `lastSeenAt=now`, `updatedAt=now`, `playUrl=https://boltverse-odysseyyyy.grok.me`). Existence + lastSeen. Never invent a `sub`. No `sub` → soft skip (Action not required), still Welcome. Never wipe `resonance` / `starCore` / `cosmetics` / `pendingChests`. Do **not** increment `playTimeSec`. **HARD: write host = GitHub Action — never any `*.grok.me`.**
-- **Live open** (optional later for playTime; **automatic — never a player ask**): gated HTML + `x-grok-identity` + `POST /v1/pack/boot` + heartbeat `POST /v1/pack/heartbeat` may update `playTimeSec` / plate views **when Live is up**. Welcome must succeed if Live 404. Recipe ships Pack client (`client/pack.js` or `BOLTVERSE_PACK_ORIGIN`) + plate dealer `assetId` stats. Ban treating Pack wire as a manual Build chore the player briefs. **Phase 2 HOLD:** durable playTime Worker from `boltverse-pack` (not grok.me) — do not build it here. Live floor: Odyssey `biome/docs/07-pack-live.md`. Full wire: [PACK.md](PACK.md).
-- **SUPERSEDED:** « chat-only start / play / lance does not write profiles » / « Welcome writes through the odysseyyyy Pack API ». Welcome **writes via GitHub Action** when `sub` known.
+- **playTime** (Phase 2 path; **automatic — never a player ask**): Live sets `window.BOLTVERSE_PACK_ORIGIN` to `StarBoltSprint/boltverse-pack` on Vercel (placeholder `https://YOUR-PACK.vercel.app`) and loads `/client/pack.js`. Gated HTML + `x-grok-identity` + `POST ${BOLTVERSE_PACK_ORIGIN}/v1/pack/boot` + heartbeat updates `playTimeSec` / plate views. Welcome must succeed if Live 404 / frozen. **HARD BAN:** four-y / any Live as the Pack API. Thin same-origin Live proxy later is allowed; registry writes must not depend on Live secrets or Live uptime. Ban treating Pack wire as a manual Build chore the player briefs. Do not build boltverse-pack in this repo. Live floor: Odyssey `biome/docs/07-pack-live.md`. Full wire: [PACK.md](PACK.md).
+- **SUPERSEDED:** « chat-only start / play / lance does not write profiles » / « Welcome writes through the odysseyyyy Pack API » / « Phase 2 playTime Worker HOLD » / « Live is the central Pack API ». Welcome **writes via GitHub Action** when `sub` known. playTime **writes via boltverse-pack**.
 - Spoken “Your Pack profile is already here (Grok identity, zero login).” = Grok identity is enough — zero second login / wallet. Welcome register wrote the file when `sub` was known.
-- Spoken `Open Sprint — Pack save, zero login.` = Welcome registered existence; Live open continues Pack save (`playTimeSec`) later if Live is up. Do not say stay 30 seconds. Do not invent a `sub`.
+- Spoken `Open Sprint — Pack save, zero login.` = Welcome registered existence; Live open continues Pack save (`playTimeSec`) via boltverse-pack. Do not say stay 30 seconds. Do not invent a `sub`.
 
 **Live Pack count** (read at first reply — do not lecture aloud):
 
@@ -337,11 +338,11 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 - Speak the `{playerCount}` line only. No “registry”, no “GitHub”, no probe talk
 - Count is live. Do not hardcode N in the Welcome block
 
-**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **Welcome register = GitHub Action pack-welcome (existence + lastSeen when sub known; NOT *.grok.me)** + **Live open = optional playTime / heartbeats later** + **Pack wire automatic — never a player ask** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, README cold-start blocks, and `biome/docs/07-pack-live.md`. Registry is source of truth.
+**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **Welcome register = GitHub Action pack-welcome (existence + lastSeen when sub known; NOT *.grok.me)** + **playTime = boltverse-pack Phase 2 (not Live; BOLTVERSE_PACK_ORIGIN)** + **Pack wire automatic — never a player ask** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, README cold-start blocks, and `biome/docs/07-pack-live.md`. Registry is source of truth.
 
 **Sprint / Live identity** (first-reply paste):
 
-- **Pack Play paste (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s). Welcome register host = GitHub Action `pack-welcome` — not this Live.
+- **Pack Play paste (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s). Welcome register host = GitHub Action `pack-welcome` — not this Live. playTime host = `StarBoltSprint/boltverse-pack` — **HARD BAN** this Live as the Pack API (Lives freeze; four-y 404s Pack routes).
 - **The only paste:** `https://boltverse-odysseyyyy.grok.me`
 - **ALLOWED / required:** write that URL in the first chat reply. Player taps it. Prefer in-Grok-app open.
 - **HARD BAN spoken:** « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / any A/D / W / space / swipe tutorial / any engine essay.
@@ -397,7 +398,7 @@ Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a pla
 - No dropping Packmate from the opener
 - No invented plate / cassette names at boot (`The First Spark` / `Neon Drift` / `Circuit Breaker` / `Velocity Pulse`)
 - No plate-name recital at boot — prefer silence; if forced, dealer order canyon → cars → duel → night → war
-- No invented `sub` on Welcome register — fire Action `pack-welcome` only when a real `sub` is known; no fake `playTimeSec` on Welcome (heartbeats only, later). Unopened paste still does not write playTime. No `*.grok.me` Welcome register host.
+- No invented `sub` on Welcome register — fire Action `pack-welcome` only when a real `sub` is known; no fake `playTimeSec` on Welcome (heartbeats only, on boltverse-pack). Unopened paste still does not write playTime. No `*.grok.me` Welcome register host. No `*.grok.me` playTime / Pack API host.
 - No GitHub / registry lecture — `{playerCount}` is enough
 - `show my plates` (close alias) is **not** Welcome — **List** = Pack voice + `assetId` chips only (never N media); **Focus** one plate = one media attach ([ASSETS.md](ASSETS.md)); no Sprint HUD
 - No invented Discord / Telegram / Slack / other player-chat links — official chat = **Pack Den** only ([PACK.md](PACK.md))
@@ -415,7 +416,7 @@ Cold-start is **done** ONLY when ALL of these are true. Any miss = **FAIL**. Re-
 1. **Name.** Opener is `Hey Packmate {visibleName}`. If ANY Grok profile `displayName` / account name / handle is visible in the session UI, **never** `runner`. Example for SmiR: `Hey Packmate SmiR 9`. Ban `Welcome, packmate runner` / lowercase `packmate` without `Hey Packmate {name}`.
 2. **Same first reply.** On start / play / lance, ONE message has ALL three: (1) **EXACTLY** the locked Welcome or Return English block (`Hey Packmate {name}` … `Ready to sprint?`) (2) attach 1 citadel teaser (3) paste written tappable `https://boltverse-odysseyyyy.grok.me`. Then **STOP**. Did **not** wait for a yes-turn. Did **not** require a second turn. Did **not** keep going into Build / LanePlayer / asset copy / file edits.
 3. **URL lock.** Paste is odysseyyyy (4y) only. Did **not** paste three-y `odysseyyy` / sandbox / random / new slug. Old « never paste grok.me » is superseded **here only**.
-4. **Profile / playTime.** Welcome register fired GitHub Action `pack-welcome` when a real `sub` was known (existence + lastSeen; merge-patch; never wipe `resonance` / `starCore` / `cosmetics` / `pendingChests`; never invent a `sub`; no `sub` → soft skip, Action not required). Did **not** call any `*.grok.me` Pack API for Welcome. Did **not** fake `playTimeSec`. `{playerCount}` includes this player after a successful write / dispatch. Welcome succeeded even if Live 404. Live Pack wire is **optional later** for `playTimeSec` / plate views (gated in-Grok-app open + boot + heartbeat). Phase 2 Worker HOLD.
+4. **Profile / playTime.** Welcome register fired GitHub Action `pack-welcome` when a real `sub` was known (existence + lastSeen; merge-patch; never wipe `resonance` / `starCore` / `cosmetics` / `pendingChests`; never invent a `sub`; no `sub` → soft skip, Action not required). Did **not** call any `*.grok.me` Pack API for Welcome. Did **not** fake `playTimeSec`. `{playerCount}` includes this player after a successful write / dispatch. Welcome succeeded even if Live 404 / frozen. playTime path = **Phase 2 `boltverse-pack`** (`BOLTVERSE_PACK_ORIGIN`, placeholder `https://YOUR-PACK.vercel.app`) — **not** four-y / any Live Pack API.
 5. **Silence.** Player reply has ZERO forbidden phrases: « Bolt is already on the road » / « Bolt already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / “He stays in place…”. ZERO A/D / W / space / swipe control tutorial. ZERO engine essay. ZERO invented cassette / plate lore names. ZERO plate deck lists. ZERO « Tap Open Sprint ». ZERO registry lectures. ZERO kitchen noise / extra paragraphs.
 6. **Plates.** Plate names silent at boot. If forced to mention: dealer order canyon → cars → duel → night → war from Odyssey biome / `assets/plates-index.json` — never invent.
 
