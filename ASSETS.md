@@ -108,7 +108,7 @@ Store on `assets/<assetId>.json` at mint (Imagine cook complete — rail writes 
 | `contentHash` | string | sha256 of Imagine rail output bytes |
 | `contentHash8` | string | First 8 hex used in the id |
 | `createdAt` | string | ISO-8601 — mint time (rail) |
-| `mintedVia` | string | Always `imagine-cook` (Pack / Boltverse cook rail) |
+| `mintedVia` | string | Live rail = `imagine-cook`. One-shot hung-plate kitchen mint = `imagine-cook-backfill` (see below). |
 | `cookId` | string \| omit | Optional. Rail stamp. |
 | `threadId` | string \| omit | Optional. Rail stamp. |
 | `railsVersion` | string | Pack / Odyssey rails pin at mint — rail stamp |
@@ -148,13 +148,18 @@ Sketch:
 Profiles stay separate.
 
 ```
-assets/<assetId>.json     # one manifest per minted Imagine-rail cook
-chests/pool.json          # optional index of live chest assetIds (references only)
+assets/<assetId>.json       # one manifest per minted Imagine-rail cook
+assets/plates-index.json    # hung biome/master/ path → assetId (Odyssey / Engine)
+chests/pool.json            # optional index of live chest assetIds (references only)
 ```
 
 Do not put Grok Imagine binaries in this repo. Pointers + hashes only.
 
 Do not put GitHub App private keys, xAI keys, wallets, or tickets in this repo.
+
+## Kitchen backfill (once)
+
+Hung Imagine kitchen plates already on `StarBoltSprint/boltverse-odyssey` `biome/master/` were minted **once** (`mintedVia: imagine-cook-backfill`) — they never got live rail manifests. Index: [`assets/plates-index.json`](assets/plates-index.json). Future cooks mint live on the Imagine rail (`mintedVia: imagine-cook`). Same `contentHash` → reuse the same `assetId`. Do not remint.
 
 ## Ownership (chest entry)
 

@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_7d2d8c53",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2866146,
+  "source": "grok-imagine",
+  "contentHash": "7d2d8c5390c7bf1ab65a01e1a3536726c1c69d7d456d496f1cf0bf974b976d80",
+  "contentHash8": "7d2d8c53",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-war2.mp4",
+  "playPath": "biome/master/road-war2.mp4",
+  "label": "plate-hazard",
+  "role": "war city on fire"
+}

@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_3526d1c3",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2870802,
+  "source": "grok-imagine",
+  "contentHash": "3526d1c3fbe72920be8c16703337aafd1840f6131397cd79b8ff9dbd9eabeb68",
+  "contentHash8": "3526d1c3",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-bar.mp4",
+  "playPath": "biome/master/road-bar.mp4",
+  "label": "plate-hazard",
+  "role": "center jersey"
+}

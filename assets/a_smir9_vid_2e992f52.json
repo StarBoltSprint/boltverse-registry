@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_2e992f52",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2862315,
+  "source": "grok-imagine",
+  "contentHash": "2e992f527eb31c9be5ad1570e1d7fbe97dbd060d7a96bb0083b33abe354c196f",
+  "contentHash8": "2e992f52",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-duel.mp4",
+  "playPath": "biome/master/road-duel.mp4",
+  "label": "plate-hazard",
+  "role": "distant dogfight, wreck L+C"
+}

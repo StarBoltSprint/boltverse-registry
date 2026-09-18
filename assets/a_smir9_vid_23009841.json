@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_23009841",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 2867627,
+  "source": "grok-imagine",
+  "contentHash": "23009841a0cc11ee242b0d48cd2af16a2bf2c84e78fe230dcdd1908214f08b19",
+  "contentHash8": "23009841",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-war3.mp4",
+  "playPath": "biome/master/road-war3.mp4",
+  "label": "plate-hazard",
+  "role": "war debris, left lane"
+}

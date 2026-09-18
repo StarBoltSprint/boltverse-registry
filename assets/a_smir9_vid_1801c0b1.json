@@ -1,0 +1,23 @@
+{
+  "assetId": "a_smir9_vid_1801c0b1",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 423026,
+  "source": "grok-imagine",
+  "contentHash": "1801c0b1dd48f9479812b41f8866f5abcd2df3a68c8891bf0cdae92195f4f1e0",
+  "contentHash8": "1801c0b1",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome",
+    "bolt"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/bolt.mp4",
+  "playPath": "biome/master/bolt.mp4",
+  "label": "plate-bolt",
+  "role": "Bolt green-screen gallop"
+}

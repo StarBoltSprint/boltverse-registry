@@ -1,0 +1,22 @@
+{
+  "assetId": "a_smir9_vid_7a4e2704",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "vid",
+  "mime": "video/mp4",
+  "bytes": 3087799,
+  "source": "grok-imagine",
+  "contentHash": "7a4e2704ea864b0d739176758bb7380e7ed3b914bf7b5256949de47375b61bc1",
+  "contentHash8": "7a4e2704",
+  "createdAt": "2026-09-18T05:12:29.000Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-r38",
+  "status": "live",
+  "tags": [
+    "biome"
+  ],
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/biome/master/road-show.mp4",
+  "playPath": "biome/master/road-show.mp4",
+  "label": "plate-hazard",
+  "role": "dusk spectacle (cars + ships)"
+}
