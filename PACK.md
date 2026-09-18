@@ -40,7 +40,7 @@ Optional thin `/api/pack` on each Live may **proxy** to the central API (same co
 
 **POST `/v1/pack/boot`** (also acceptable alias **POST `/api/pack`** for back-compat)
 
-When: first document load from the Grok app (Play Live open **inside the Grok app** — gated HTML + `x-grok-identity` / gate JWT). Chat-only **start / play / lance boltverse odyssey**, chat-only **yes / go / sprint**, and a Phase 2 pasted URL the player never opens do **not** upsert. Hard `gateSub` write + `playTimeSec` heartbeat stay on this gated in-app Live open, not on Welcome, not on the yes line, not on the paste sitting in chat. Cold-start Phase 2 **pastes** `https://boltverse-odysseyyyy.grok.me` so the player can tap it; the write happens when that Live actually opens in-app. Law: [COLD_START.md](COLD_START.md).
+When: first document load from the Grok app (Play Live open **inside the Grok app** — gated HTML + `x-grok-identity` / gate JWT). Chat-only **start / play / lance boltverse odyssey** and a pasted URL the player never opens do **not** upsert. Hard `gateSub` write + `playTimeSec` heartbeat stay on this gated in-app Live open, not on Welcome, not on the paste sitting in chat. Cold-start first reply **pastes** `https://boltverse-odysseyyyy.grok.me` (same message as Welcome + teaser — no yes-wait) so the player can tap it; the write happens when that Live actually opens in-app. Law: [COLD_START.md](COLD_START.md).
 
 Headers: `x-grok-identity` (JWT) and/or `Authorization: Bearer <ticket>`
 
