@@ -1,0 +1,33 @@
+{
+  "assetId": "a_smir9_img_8babfc66",
+  "creatorSub": "smir9",
+  "userId": "smir9",
+  "kind": "img",
+  "mime": "image/png",
+  "bytes": 1098091,
+  "source": "grok-imagine",
+  "contentHash": "8babfc66be7a39be81f25a47c03f17187073775939602eeb242c37c995e0cc79",
+  "contentHash8": "8babfc66",
+  "createdAt": "2026-09-18T08:08:07Z",
+  "mintedVia": "imagine-cook-backfill",
+  "railsVersion": "odyssey-chests-1",
+  "status": "live",
+  "chestPool": "common",
+  "tags": [
+    "pack-lore",
+    "cosmetic",
+    "badge"
+  ],
+  "label": "badge-first-sprint",
+  "role": "First Sprint Pack badge \u2014 guaranteed first chest reward",
+  "kindReward": "badge",
+  "badgeId": "pack-first-sprint",
+  "title": "First Sprint",
+  "url": "https://raw.githubusercontent.com/StarBoltSprint/boltverse-odyssey/main/stock/badges/first-sprint-9x16.png",
+  "playPath": "stock/badges/first-sprint-9x16.png",
+  "stats": {
+    "views": 0,
+    "playTimeSec": 0,
+    "players": 0
+  }
+}
