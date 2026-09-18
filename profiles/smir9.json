@@ -22,9 +22,20 @@
     "inventory": []
   },
   "sessionStartedAt": "2026-09-17T07:47:07.490Z",
-  "lastSeenAt": "2026-09-17T07:47:07.490Z",
+  "lastSeenAt": "2026-09-18T07:55:21Z",
   "playTimeSec": 0,
   "lastRun": null,
-  "updatedAt": "2026-09-17T07:47:07.490Z",
-  "notes": "Ship Play canonical Live is boltverse-odysseyyyy.grok.me (boltverse-odysseyyy three-y superseded Beat 3; heart-giant-plum-lotus superseded; olive publish stuck). gateSub filled on Welcome register when sub known, or first gated boot. Welcome register = existence + lastSeen; Live heartbeat = playTimeSec."
+  "updatedAt": "2026-09-18T07:55:21Z",
+  "notes": "Ship Play canonical Live is boltverse-odysseyyyy.grok.me (boltverse-odysseyyy three-y superseded Beat 3; heart-giant-plum-lotus superseded; olive publish stuck). gateSub filled on Welcome register when sub known, or first gated boot. Welcome register = existence + lastSeen; Live heartbeat = playTimeSec.",
+  "pendingChests": [
+    {
+      "id": "chest_run_20260918",
+      "tier": "run",
+      "rarity": "common",
+      "status": "pending",
+      "earnedAt": "2026-09-18T07:55:21Z",
+      "reason": "manual Pack grant \u2014 Director (soft earn stand-in until Live wire)",
+      "pool": "common"
+    }
+  ]
 }
