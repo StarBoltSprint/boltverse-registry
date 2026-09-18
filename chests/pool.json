@@ -1,6 +1,13 @@
 {
   "version": 1,
   "railsVersion": "odyssey-chests-1",
+  "guaranteedFirst": {
+    "id": "pack-first-sprint",
+    "title": "First Sprint",
+    "image": "stock/badges/first-sprint-9x16.png",
+    "pool": "common",
+    "aspect": "9:16"
+  },
   "live": [
     "a_smir9_vid_2a2926c4"
   ]
