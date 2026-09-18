@@ -4,10 +4,11 @@ Kitchen + implementer contract. Silent of player chat. No secrets in this repo.
 
 ## Goal
 
-Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **automatically and instantly** to central Pack profiles.
+Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **automatically and instantly** to central Pack profiles. Chat **start / play / lance** is also a Pack register when a real `sub` is known.
 
-- **Identity** = Grok gate `sub`, not the URL
-- **`playUrl`** = whatever origin they opened (`location.origin`)
+- **Identity** = Grok gate `sub` / Grok identity JWT `sub` / stable Grok account id used for profiles — never invent
+- **Welcome register** (chat start) = existence + `lastSeenAt`. Canonical `playUrl=https://boltverse-odysseyyyy.grok.me`. Does **not** increment `playTimeSec`.
+- **Live open** (`/v1/pack/boot` + heartbeat) = `playTimeSec` / plate views. `playUrl` = whatever origin they opened (`location.origin`)
 - Same `sub` on a second Live → **same** `profiles/<sub>.json`, `playUrl` updated
 - Same `sub` / `userId` lists **own** plates in **Grok chat** when the player asks (`show my plates` / close alias) — `creatorSub` === that sub. **List** = Pack voice + `assetId` chips only (never N media). **Focus** one plate = one media attach. Law: [ASSETS.md](ASSETS.md). Chat only — not Sprint HUD.
 - **Pack Play / central Pack API host (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play, not the central host.
@@ -24,6 +25,12 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 ## Architecture
 
 ```
+Welcome / chat start (start / play / lance + locked Welcome)
+  resolve gate sub / Grok identity JWT sub / stable Grok account id
+    → GitHub merge-patch StarBoltSprint/boltverse-registry
+       upsert profiles/<sub>.json + registry.json players[]
+       lastSeenAt=now  playUrl=canonical odysseyyyy  (NOT playTimeSec)
+
 Any Live (*.grok.me)
   boot → client Pack snippet
     playUrl = location.origin
@@ -32,15 +39,31 @@ Any Live (*.grok.me)
             verify x-grok-identity (decode sub; trust x-forwarded-host *.grok.me; JWKS optional)
             GitHub App → StarBoltSprint/boltverse-registry
             upsert profiles/<sub>.json + registry.json row
+            heartbeat → playTimeSec
 ```
 
 Optional thin `/api/pack` on each Live may **proxy** to the central API (same contract) so same-origin cookies/headers work — but registry writes must not depend on a single Live’s secrets.
+
+## Welcome register (chat start)
+
+**SUPERSEDES** « chat start does not upsert » / « Welcome reads only ». Law: [COLD_START.md](COLD_START.md).
+
+When Grok sends the locked Welcome/Return on **start / play / lance boltverse odyssey** (any close alias):
+
+1. Resolve identity: prefer gate `sub` / Grok identity JWT `sub` if available in session; else the stable Grok account id used for profiles. `displayName` from the Grok profile.
+2. If a real `sub` / `userId` is known: **upsert now** `profiles/<sub>.json` + `registry.json` `players[]` (merge-patch). Set `gateSub`, `displayName` / `handle` if known, `lastSeenAt=now`, `updatedAt=now`, `playUrl=https://boltverse-odysseyyyy.grok.me` (canonical).
+3. Do **NOT** invent a `sub`. If no `sub` → soft skip write, still show Welcome (may use `displayName` only).
+4. Never wipe `resonance` / `starCore` / `cosmetics`. Do **not** increment `playTimeSec` — Welcome register does not fake playTime.
+5. Return (profile exists before this write) → Welcome **Return** block. First visit → Welcome **New** block.
+6. `{playerCount}` includes this player after upsert when the write succeeded.
+
+**Welcome register = existence + lastSeen. Live open = playTime / heartbeats.** Live Pack wire is still required for `playTimeSec` / plate views stats.
 
 ## Routes (central Pack API)
 
 **POST `/v1/pack/boot`** (also acceptable alias **POST `/api/pack`** for back-compat)
 
-When: first document load from the Grok app (Play Live open **inside the Grok app** — gated HTML + `x-grok-identity` / gate JWT). Chat-only **start / play / lance boltverse odyssey** and a pasted URL the player never opens do **not** upsert. Hard `gateSub` write + `playTimeSec` heartbeat stay on this gated in-app Live open, not on Welcome, not on the paste sitting in chat. Cold-start first reply **pastes** `https://boltverse-odysseyyyy.grok.me` (same message as Welcome + teaser — no yes-wait) so the player can tap it; the write happens when that Live actually opens in-app. Law: [COLD_START.md](COLD_START.md).
+When: first document load from the Grok app (Play Live open **inside the Grok app** — gated HTML + `x-grok-identity` / gate JWT). Welcome register already wrote existence + `lastSeenAt` when a real `sub` was known on chat start. This boot is the **Live** merge-patch (`gateSub` from JWT, `playUrl` from `location.origin`). Heartbeat is the only `playTimeSec` increment. An unopened paste still does **not** write playTime. Opening Live **outside** the Grok app → `{ ok: false, reason: "no-sub" }` — never invent a `sub`. Cold-start first reply still **pastes** `https://boltverse-odysseyyyy.grok.me` (same message as Welcome + teaser — no yes-wait). Law: [COLD_START.md](COLD_START.md).
 
 Headers: `x-grok-identity` (JWT) and/or `Authorization: Bearer <ticket>`
 
@@ -106,12 +129,14 @@ Chat ask `show my plates` (any close alias) uses the **same** gate `sub` to **Li
 ## GitHub write shape
 
 - Path: `profiles/<sub>.json` (`userId` === `gateSub` === filename stem)
-- Merge-patch: never wipe `resonance` / `starCore` / `cosmetics` on heartbeat
-- Always set: `gateSub`, `playUrl` (from body), `lastSeenAt=now`, `updatedAt=now`
+- Merge-patch: never wipe `resonance` / `starCore` / `cosmetics` on Welcome register, boot, or heartbeat
+- Always set: `gateSub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now`
+- Welcome register `playUrl` = canonical `https://boltverse-odysseyyyy.grok.me`
+- Boot / heartbeat `playUrl` = client `location.origin` (federation)
+- Welcome register does **not** increment `playTimeSec`
 - `registry.json` `players[]`: upsert by `userId`; fields `userId`, `displayName`, `playUrl`, `lastSeenAt`, `playTimeSec`, `updatedAt`
-- `playUrl` on every boot/heartbeat = client `location.origin` (federation)
 
-Do not put GitHub App private keys, xAI keys, or tickets in this repo.
+Do not put GitHub App private keys, xAI keys, or tickets in this repo. No wallet. No player API keys.
 
 ## Client snippet (recipe floor — every Live)
 
@@ -138,6 +163,8 @@ No wallet UI. Fail soft if central is down (Play still works).
 
 ## Done criteria
 
-Open Live from Grok app ~30s → new or updated `profiles/<sub>.json` with `gateSub` + `playUrl` = that origin + `lastSeenAt`.
+start / Welcome with a known `sub` → `profiles/<sub>.json` exists (or is merge-patched) with `gateSub` + canonical `playUrl=https://boltverse-odysseyyyy.grok.me` + `lastSeenAt=now`. `playTimeSec` unchanged. `{playerCount}` includes this player after a successful write.
+
+Open Live from Grok app ~30s → same file updated: `playUrl` = that origin + `playTimeSec` increased via heartbeat.
 
 Second Live, different URL, same `sub` → same file, `playUrl` updated.
