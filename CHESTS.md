@@ -5,7 +5,8 @@
 > **HARD LOCK — engine overlay / creator zero wire.** Chests appear in Play **WITHOUT** the biome / link creator doing anything. Chest UI + earn + open = **Pack Engine layer** (canonical Play / Pack client), **NOT** the creator’s biome plate recipe. Engine watches Resonance / Peak run thresholds → overlays Pack stock Peak chest (closed still) in-picture on whatever biome is playing. Tap = Pack stock open video (~6s closed→empty glow) → engine reveals sealed `assetId`. Federated `*.grok.me` / hung-biome creator: **ZERO code, ZERO UI, ZERO wire.** Optional only: put-in-chest. Ignoring put-in-chest still means players earn Pack pool chests on that link.
 > **HARD BAN — creator plate / chrome / host duty.** Do **not** require creators to bake chests into plates, host open videos, or add Open Chest chrome.
 > **Cook asset** = Imagine (in app). **Play / earn chest / open reveal** = Pack Engine overlay inside **Build** game console / in-chat Live preview (in app). **Put asset in chest** = optional action from Grok chat or Build after mint — still in app.
-> **HARD LOCK — put-in-chest Pack receipt.** Immediate confirmation in the Grok chat app. Never a silent drop. Success = Pack-voice line + Imagine-plate visual + `assetId` chip / tier / ownership. Soft refuse = Pack-voice refuse, no registry write.
+> **HARD LOCK — put-in-chest Pack receipt.** Immediate confirmation in the Grok chat app. Never a silent drop. Success = Pack-voice line + matching emojis (1–3) + Imagine-plate visual + `assetId` chip / tier / ownership. Soft refuse = Pack-voice refuse, no registry write.
+> **HARD LOCK — chest chat copy = English Pack voice + matching emojis.** When Grok speaks chest lines in chat (pending / seal / open / reward): stay English Pack voice. Add fitting emojis next to the meaning — stylish / hype, not spam (**1–3 per short line**). Examples are **shape**, not frozen strings (no locked Mandarin / FR). **HARD BAN:** emoji walls · random unrelated emoji. **Soft chat open** = **same message**: open video then reward media. Engine timed gate (~6s) remains **Live-only**.
 > **v1 creator flow** does **not** require an external Pack website.
 > **Mint happens on the Imagine cook rail** — see [ASSETS.md](ASSETS.md). Chests **reference** an existing `assetId`. They never mint.
 > **Only the creator can put THEIR `assetId` into a chest.** Caller ticket / JWT `sub` MUST match `assetId.creatorSub` — else refuse.
@@ -67,7 +68,7 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - Container skin = Peak crystal KEEP (`boltverse-odyssey` `stock/chests/peak-closed.png`).
 - **Crystal never chrome.** No wood / iron lootbox chrome. No invented closed plate.
 - Closed UX = mystery card / `?` flip (suspense). Reveal = the sealed creator **Grok Imagine** asset — shown by the **engine** in **Build** / in-chat Live preview after the ~6s open.
-- Creators **may** put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint. Immediate Pack receipt in Grok chat — never a silent drop. This is **optional**. Skipping it does not remove Pack pool overlays from their federated link.
+- Creators **may** put **only their own** Grok Imagine cook-rail assets into chests: images or videos (ultra quality). No other source. Cook in **Imagine** (in app). Put-in-chest from **Grok chat** or **Build** after mint. Immediate Pack receipt in Grok chat — never a silent drop. Receipt line = English Pack voice + 1–3 matching emojis. This is **optional**. Skipping it does not remove Pack pool overlays from their federated link.
 - Cosmetics / Pack lore only — **never pay-to-win / never play-to-win** (see Soft earn).
 
 ### Hard bans (product)
@@ -87,6 +88,7 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - No beauty / pixel / AI aesthetic score as rarity
 - No silent put-in-chest (success or refuse)
 - No kitchen noise (GitHub URLs, API jargon, registry paths) in player/creator-facing chat lines
+- **No emoji walls / random unrelated emoji** on chest chat lines (pending / seal / open / reward)
 
 ## Soft earn
 
@@ -97,6 +99,8 @@ Chest drops from **run thresholds** — Resonance / peak / picture-time / Loom �
 Day clock = **player local calendar day** (Europe-friendly: the day rolls at the player’s local midnight — e.g. Europe/Paris `00:00`. Do **not** use a UTC-only day that resets mid-morning for Europe). Kitchen date key = `YYYY-MM-DD` in that local zone.
 
 Cap is a **run-earn** throttle. **Not** a daily login reward. **Not** an AFK wall-clock. Sitting in picture without a Peak arm does not mint a chest.
+
+When a Run / Peak chest arms, Grok speaks a **pending** ready line in chat (⚡ chest / 💎 Peak — chest chat copy). Do not stay silent.
 
 | Knob | v1 law |
 |---|---|
@@ -152,11 +156,49 @@ Rarity is **not** a beauty / pixel / AI aesthetic score. Do **not** rank cooks b
 - Never “paste someone else’s URL” as ownership — no external URL entry path anyway
 - v1 = auth + hash + report (no heavy DRM)
 
-Chest propose: **only** reference an existing `assetId` where `creatorSub` matches the caller’s gate `sub` (automatic check). **No** manual ownership claim form. Propose / put-in-chest is an **optional** action from **Grok chat** or **Build** after mint — still in the Grok chat app. No creator portal. Always return a **Pack receipt** in Grok chat (next section). Never silent.
+Chest propose: **only** reference an existing `assetId` where `creatorSub` matches the caller’s gate `sub` (automatic check). **No** manual ownership claim form. Propose / put-in-chest is an **optional** action from **Grok chat** or **Build** after mint — still in the Grok chat app. No creator portal. Always return a **Pack receipt** in Grok chat (receipt section). Never silent.
 
 A stolen X video cannot enter because there is **no upload path** — only Imagine rail output enters.
 
 Put-in-chest is how a creator **adds their cook to the Pack pool**. It is **not** how chests appear on their link. Appearance = engine overlay (previous section). A creator who never put-in-chest still hosts Pack pool overlays when players run on their federated Live.
+
+## Chest chat copy (HARD — pending / seal / open / reward)
+
+When Grok speaks chest lines in **Grok chat** (pending ready, Pack receipt / seal, open, reward):
+
+- **English Pack voice still.** Pack words. EN only. Examples below are **shape**, not frozen strings. Do **not** lock Mandarin / FR / any other language as the spoken line.
+- **Matching emojis** next to the meaning — stylish / hype, not spam. **1–3 per short line.**
+- Emoji sits **beside the meaning** it marks. Do not decorate every noun. Do not invent a second caption.
+
+| Beat | Meaning | Emoji next to it (shape) |
+|---|---|---|
+| **Pending** — Peak / Run chest ready | chest armed / waiting | ⚡ chest · 💎 Peak |
+| **Sealed / Pack receipt** | seal + into tier | ✨ sealed · 🎁 into Common / Rare / Peak |
+| **Open** | opening beat | 🔓 opening… then attach peak-open ~6s |
+| **Reward** | asset reveal | 🏆 · 🎬 + `assetId` chip |
+
+**Soft chat open vs Live timed gate:**
+
+- **Soft chat open** = **same message**: Pack-voice 🔓 line + attach the peak-open ~6s stock video **then** the reward media (🏆 / 🎬 asset + `assetId` chip). No chat-side wait. Do **not** hold the reward for a second turn. Do **not** simulate a 6s gate in chat.
+- **Engine timed gate** (~6s closed→empty glow before reveal) remains **Live-only** — Pack Engine overlay in **Build** / in-chat Live preview. Chat does not time the gate.
+
+**HARD BAN:** emoji walls · stacked sticker dumps · random unrelated emoji (no 🔥😂🚀 spam) · kitchen noise in the same line · frozen Mandarin as the receipt / pending / open / reward line.
+
+## Pending chest (HARD — Grok chat)
+
+When a **Run** or **Peak** chest is earned and still pending (profile `pendingChests[]` / engine overlay armed — ready, not opened):
+
+Speak a **short Pack-voice ready line** in Grok chat. English. 1–3 matching emojis. Same turn.
+
+Examples (shape, not locked):
+
+- `⚡ Run chest ready.`
+- `💎 Peak chest ready.`
+- `⚡ Chest armed — 💎 Peak is lit.`
+
+Do **not** dump `pendingChests` JSON. Do **not** lecture the grant reason / Director stand-in. Do **not** attach the open video until the player opens. Closed still optional (one Peak crystal) — never N media.
+
+Pending is the **ready** beat. Open / reward follows when the player opens (soft chat open or Live engine).
 
 ## Put-in-chest Pack receipt (HARD — Grok chat app only)
 
@@ -164,26 +206,29 @@ When a creator puts an asset into a chest, they **MUST** get an **immediate conf
 
 ### Success (all three, same chat turn)
 
-1. **Short Pack-voice line (EN only).** Examples (shape, not locked to one string):
-   - `Asset sealed for the Peak chest.`
-   - `Sealed into the Rare pool.`
-   - Common / other tiers: same voice — seal + chest / pool.
+1. **Short Pack-voice line (EN only) + matching emojis (1–3).** Examples (shape, not locked to one string — not frozen Mandarin):
+   - `✨ Asset sealed for the 💎 Peak chest.`
+   - `✨ Sealed — 🎁 into the Rare pool.`
+   - `✨ Sealed — 🎁 into Common.`
+   - Other tiers: same voice — ✨ sealed + 🎁 into chest / pool.
 2. **Visual of what they put in.** Attach the cook still or short clip of the asset — the **Imagine plate itself** — in the same chat turn.
 3. **Chips.** Show `assetId` chip + chest tier (`Common` / `Rare` / `Peak`) + `creatorSub` ownership note (`owned by you` / gate `sub`).
 
-Do not skip the visual. Do not skip the chips. Do not speak kitchen instead of Pack-voice.
+Do not skip the visual. Do not skip the chips. Do not speak kitchen instead of Pack-voice. Do not drop the emojis. Do not replace the line with an emoji wall.
 
 ### Soft refuse (off-lore / NSFW / not a Grok Imagine mint)
 
 - **Pack-voice refuse.** Example: `Not Pack lore — recook in Imagine.`
-- Other refuses (not your asset / not Imagine mint / NSFW) stay Pack-voice + EN only. No silent fail.
+- Other refuses (not your asset / not Imagine mint / NSFW) stay Pack-voice + EN only. No silent fail. Emoji optional on refuse (0–1, only if it marks the refuse — never a joke dump).
 - **No registry write.** Refuse is not a propose. Do not append `chests/pool.json`. Do not flip `chestPool` / `status`.
 
 ### Tone (player / creator-facing)
 
 Boltverse **Pack words only**: seal · Peak chest · asset · Resonance · Loom · Pack.
 
-**HARD BAN in spoken / chat receipt lines:** GitHub URLs · API jargon · registry paths · `assets/<id>.json` · `chests/pool.json` · JWT / ticket lectures · kitchen host dumps.
+**Matching emojis** (1–3) sit next to those words on pending / seal / open / reward lines. Stylish / hype. Not spam.
+
+**HARD BAN in spoken / chat receipt lines:** GitHub URLs · API jargon · registry paths · `assets/<id>.json` · `chests/pool.json` · JWT / ticket lectures · kitchen host dumps · emoji walls · random unrelated emoji · frozen Mandarin / FR as the spoken line.
 
 Kitchen may log the refuse reason. The creator sees Pack-voice only.
 
@@ -272,6 +317,22 @@ Do not put GitHub App private keys, xAI keys, wallets, or tickets in this repo.
 
 `boltverse-odyssey` `stock/chests/peak-open.png` is TBD — do not invent an open plate. The ~6s open video is the shared empty-glow beat; the won asset is engine-composited after.
 
+### Chat open / reward (HARD — same message)
+
+When the player opens from **Grok chat** (soft chat open):
+
+1. **Open line** — short Pack English + 🔓. Example (shape): `🔓 Opening…`
+2. **Attach** Pack stock peak-open (~6s closed→empty glow) in that **same** message.
+3. **Then** (still the **same** message — no second turn, no chat wait): **reward** line + media.
+   - Shape: `🏆 Peak drop.` / `🎬 Asset reveal.`
+   - Attach the won Imagine asset (`img` or `mp4`) + `assetId` chip.
+
+**Soft chat open = same message: open video then reward media.** Chat does **not** hold the reward behind a 6s timer.
+
+**Engine timed gate remains Live-only.** The ~6s closed→empty glow **before** the reveal is the Pack Engine overlay in **Build** / in-chat Live preview. Do not port that gate into chat turns.
+
+**HARD BAN:** splitting open video and reward across two chat turns · emoji walls on the open / reward lines · kitchen dumps (`pendingChests`, registry paths) · speaking the reward before the open attach in chat.
+
 ## Status machine
 
 ```
@@ -287,7 +348,7 @@ proposed  →  sealed  →  live
 
 An asset minted on the Imagine rail may stay `proposed` or `sealed` forever and **never** enter a chest. That is fine — the `assetId` still exists.
 
-Common may auto-seal and hang into the large pool after layers 1–4 + creator-only entry. Peak / Legendary: **no** auto-publish `proposed → live` — Pack seal + soft supply cap. Chest entry never remints. Chest entry never accepts a non-creator `sub`. Chest entry is in-app only (Grok chat or Build) and **optional**. Success or refuse always returns a **Pack receipt** in Grok chat — never silent.
+Common may auto-seal and hang into the large pool after layers 1–4 + creator-only entry. Peak / Legendary: **no** auto-publish `proposed → live` — Pack seal + soft supply cap. Chest entry never remints. Chest entry never accepts a non-creator `sub`. Chest entry is in-app only (Grok chat or Build) and **optional**. Success or refuse always returns a **Pack receipt** in Grok chat — never silent. Receipt / pending / open / reward = English Pack voice + matching emojis (chest chat copy).
 
 ## Odyssey pointer
 
@@ -299,7 +360,9 @@ Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = t
 - **Surface HARD:** Grok chat app only (Chat + Imagine + Build) — no external website, no creator portal, no desktop-only tool; v1 creator flow does not require an external Pack website
 - Cook = Imagine (in app). Play / earn / open reveal = Pack Engine overlay in Build / in-chat Live preview (in app). Put-in-chest = **optional** Grok chat or Build after mint
 - **Engine overlay + creator zero wire HARD:** chests appear in Play without the biome / link creator doing anything. Chest UI + earn + open = Pack Engine layer, not the biome plate. Engine watches Resonance / Peak thresholds → overlays Pack stock Peak closed still in-picture → tap plays ~6s stock open video → engine reveals sealed `assetId`. Federated `*.grok.me` / hung-biome creator: ZERO code, ZERO UI, ZERO wire. Ignoring put-in-chest still means Pack pool chests on that link. Ban baking chests into plates, hosting open videos, or adding Open Chest chrome
-- **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
+- **Chest chat copy HARD:** pending / seal / open / reward = English Pack voice + **1–3 matching emojis** (stylish / hype, not spam). Shape: ⚡ chest / 💎 Peak ready · ✨ sealed / 🎁 into Common/Rare/Peak · 🔓 opening… + peak-open ~6s · 🏆 / 🎬 reward + `assetId` chip. Examples are shape — not frozen Mandarin. Ban emoji walls / random unrelated emoji
+- **Soft chat open HARD:** same message = open video then reward media. Engine timed gate (~6s) remains **Live-only**
+- **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + matching emojis + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
 - `assetId` mints **only** via the Grok Imagine cook rail; chests **reference** only
 - **Only the creator** can put THEIR `assetId` into a chest (`sub` === `creatorSub`)
 - No player manual proof; no external upload / URL entry

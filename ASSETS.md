@@ -180,7 +180,7 @@ Hung Imagine kitchen plates already on `StarBoltSprint/boltverse-odyssey` `biome
 
 At mint: `creatorSub` = Grok `sub` of the cook (gate JWT / Imagine rail — automatic).
 
-At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link.
+At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` — else refuse. Automatic check. No manual ownership claim form. Put-in-chest is **optional** and in-app (Grok chat or Build). Immediate **Pack receipt** in Grok chat — never silent. Receipt / pending / open / reward lines = English Pack voice + 1–3 matching emojis (hype, not spam). Law: [CHESTS.md](CHESTS.md). Skipping put-in-chest does **not** stop Pack Engine chest overlays on the creator’s federated link.
 
 Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHESTS.md](CHESTS.md).
 
