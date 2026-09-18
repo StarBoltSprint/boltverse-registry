@@ -171,7 +171,7 @@ Chat ask `show my plates` (any close alias) uses the **same** gate `sub` to **Li
 ## GitHub write shape
 
 - Path: `profiles/<sub>.json` (`userId` === `gateSub` === filename stem)
-- Merge-patch: never wipe `resonance` / `starCore` / `cosmetics` on Welcome register, boot, or heartbeat
+- Merge-patch: never wipe `resonance` / `starCore` / `cosmetics` / `pendingChests` on Welcome register, boot, or heartbeat. Player chest open cues (`Open my pending Run chest` / `Open my pending Peak chest`) = [CHESTS.md](CHESTS.md).
 - Always set: `gateSub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now`
 - Welcome register `playUrl` = canonical `https://boltverse-odysseyyyy.grok.me`
 - Boot / heartbeat `playUrl` = client `location.origin` (federation)

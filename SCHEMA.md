@@ -18,11 +18,12 @@ See `profiles/smir9.json` for a filled example.
 | sessionStartedAt | string \| null | ISO-8601 session start from Play client |
 | lastSeenAt | string \| null | ISO-8601 last Welcome register / boot / heartbeat. `null` = New (COLD_START) |
 | playTimeSec | number | Accumulated open-Play seconds from Live heartbeats only. Welcome register does **not** increment. |
+| pendingChests | array | Run / Peak chests earned, not yet opened. Rows: `tier` (`run` / `peak`), `status` (`pending` → `opened` / `consumed` on chat or Live open), `id`, `earnedAt`, optional `rarity` / `pool`. Chat open cues look this up. Law: [CHESTS.md](CHESTS.md). Never invent a row from chat. Never wipe the array. |
 | updatedAt | string | ISO-8601 |
 
 **Kitchen Pack Play / central Pack API host:** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Beat 3 / not Pack Play.
 
-Federation write rules (Welcome register + boot + heartbeat): merge-patch only — never wipe `resonance` / `starCore` / `cosmetics` (including `cosmetics.inventory` / `cosmetics.badges`). Always set `gateSub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now` when a real `sub` is known. Welcome register `playUrl` = canonical `https://boltverse-odysseyyyy.grok.me`. Welcome register does **not** increment `playTimeSec`. Welcome register does **not** grant the First Sprint badge. First Sprint = first chest after Live ~5s+ (`guaranteedFirst`). Never invent a `sub`. Full wire: [PACK.md](PACK.md). Law: [COLD_START.md](COLD_START.md). First badge: [CHESTS.md](CHESTS.md).
+Federation write rules (Welcome register + boot + heartbeat): merge-patch only — never wipe `resonance` / `starCore` / `cosmetics` (including `cosmetics.inventory` / `cosmetics.badges`) / `pendingChests`. Always set `gateSub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now` when a real `sub` is known. Welcome register `playUrl` = canonical `https://boltverse-odysseyyyy.grok.me`. Welcome register does **not** increment `playTimeSec`. Welcome register does **not** grant the First Sprint badge. First Sprint = first chest after Live ~5s+ (`guaranteedFirst`). Chat open cues (`Open my pending Run chest` / `Open my pending Peak chest`) look up `pendingChests[]` — [CHESTS.md](CHESTS.md). Never invent a `sub`. Full wire: [PACK.md](PACK.md). Law: [COLD_START.md](COLD_START.md). First badge: [CHESTS.md](CHESTS.md).
 
 ## cosmetics.inventory / badges (HARD — won rewards)
 
