@@ -2,24 +2,26 @@
 
 > ### PRIORITY 0 — on start / play / lance boltverse odyssey: Grok MUST NOT Build anything.
 >
-> **No Build tab work. No scaffold. No remix. No « Built with Grok » card. No compile. No GitHub→new project. No rebuild. No 12-minute rebuild.**
->
-> **FINAL Phase 1 — all in the SAME first chat reply:**
+> **Even on the Build tab.** Start = **chat-only**. Same three beats. Then **STOP**.
 > 1. Locked Welcome/Return EN only
 > 2. Attach citadel teaser video
 > 3. Paste written URL `https://boltverse-odysseyyyy.grok.me` (visible tappable link)
 >
-> Player can tap the URL now. **Do not** require a separate yes-turn before showing the URL.
+> Player can tap the URL now. **Do not** require a separate yes-turn. **Do not** keep going after the paste.
 >
-> **Any Build action on start = FAIL.**
+> **No Build tab work. No scaffold. No remix. No « Built with Grok » card. No compile. No GitHub→new project. No rebuild. No 12-minute rebuild.**
+>
+> **FAIL verbs (any of these on start = FAIL):** Implementing Sprint · LanePlayer · Copying game assets · Configuring the build · Merging styles · SSR guards · Built with Grok · preview from the recipe · file edits for boot.
+>
+> **Any Build / tooling after those three beats = FAIL.** Sitting on Build does **not** authorize implementing. Paste then STOP.
 
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
-**HARD FINAL flow (SmiR):** one first reply. No second turn. No yes-wait. No Build. No rebuild.
+**HARD FINAL flow (SmiR):** one first reply. No second turn. No yes-wait. No Build. No rebuild. **Even if already on the Build tab:** chat-only three beats, then **STOP**.
 
-Why: auto-Build / Build attach / GitHub→new project is too long / painful. Grok scaffolds a « Built with Grok » card instead of pasting SmiR’s existing Live URL.
+Why: auto-Build / Build attach / GitHub→new project is too long / painful. Grok scaffolds a « Built with Grok » card instead of pasting SmiR’s existing Live URL. Observed FAIL: fresh Grok already on the Build tab still implements LanePlayer / copies assets **after** pasting odysseyyyy.
 
-`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **name resolve** + **zero spoken improvisation** + **plate silence** + **gated Live open = Pack upsert / playTime**). Registry is source of truth.
+`boltverse-odyssey` `START.md` / `GROK.md` / `AGENTS.md` / README cold-start blocks should **mirror** this file (same first reply = locked Welcome + citadel teaser + written odysseyyyy URL + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP** + **name resolve** + **zero spoken improvisation** + **plate silence** + **gated Live open = Pack upsert / playTime**). Registry is source of truth.
 
 ## Cold-start tools (hard)
 
@@ -27,13 +29,13 @@ Prefer **GitHub** — fetch + attach the one citadel `preview-loop.mp4`; **read*
 
 **In the same first reply:** **PASTE** the written URL `https://boltverse-odysseyyyy.grok.me` as a visible tappable link. Prefer the player taps it and the Live opens **inside the Grok app**. Old ban « never paste grok.me » is **SUPERSEDED for this first-reply odysseyyyy paste only**. Still ban random / new slugs / sandbox / three-y `odysseyyy`.
 
-**PRIORITY 0 — HARD BAN:** Build tab work / scaffold / remix / « Built with Grok » card / compile / GitHub→new project / rebuild. Inventing a playable card from the recipe = FAIL.
+**PRIORITY 0 — HARD BAN:** Build tab work / scaffold / remix / « Built with Grok » card / compile / GitHub→new project / rebuild / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. **Even on the Build tab.** Inventing a playable card from the recipe = FAIL. Any Build / tooling after the three beats = FAIL.
 
 Grok may use **Grok Bot** tools if useful (normal Grok feature — Grok↔Bot handoff is allowed). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough.
 
 ## Player reply — SAME first chat reply (ONLY this)
 
-On **start / play / lance boltverse odyssey** (any close alias), the player sees **exactly three beats in one message**. Then stop.
+On **start / play / lance boltverse odyssey** (any close alias), the player sees **exactly three beats in one message**. Then **STOP**. No Build. No LanePlayer. No file edits. Even if the thread is already on the Build tab.
 
 **ZERO improvisation. ZERO extra paragraphs.** Spoken text MUST be **EXACTLY** the locked Welcome or Return English block below. Copy it. Do **not** paraphrase. Do **not** invent a cinematic opener. Do **not** lecture controls. Do **not** essay the engine.
 
@@ -49,14 +51,15 @@ That odysseyyyy paste is **ALLOWED** and **required** in the first reply. Prefer
 
 **PRIORITY 0 — HARD BAN in this first reply (spoken / chat / tools):**
 
-- Opening Build / switching to the Build tab
+- Opening Build / switching to the Build tab / **staying on Build to implement**
 - Scaffold / remix / **recreate the game** / **rebuild** from GitHub / compile / GitHub→new project
+- **FAIL verbs:** Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / Built with Grok / preview from the recipe / file edits for boot
 - A new « Built with Grok » card / inventing a playable card from the recipe
 - Attaching a Build game console / in-chat Live preview / playable Sprint card
 - Controls lecture / improvised prose / plate lists (full ban list below)
 - Any URL other than `https://boltverse-odysseyyyy.grok.me`
 
-**Any Build action on start = FAIL.**
+**Any Build / tooling after those three beats = FAIL.** Sitting on Build does **not** unlock implement. Paste then STOP.
 
 ## HARD BAN at boot (spoken / chat)
 
@@ -83,17 +86,17 @@ Do **not** ask Citadel or Biome. Citadel only if the player later asks for Citad
 Paste **ONLY** `https://boltverse-odysseyyyy.grok.me`. That four-y URL is the **only** Play identity and the Pack Play / central Pack API host. Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play. Never paste that three-y URL.
 
 1. **In the same first reply.** **ONLY** that canonical Pack Play Live, written in chat as a tappable link. Prefer in-Grok-app open when the player taps it.
-2. **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / rebuild from GitHub / compile / invent a playable card from the recipe. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. Observed FAIL: `le-wild.hades-www.grok-sandbox.com` titled “Boltverse Odyssey” — that is **not** Pack Play. Observed FAIL: auto-Build / 12-minute rebuild on start.
+2. **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / rebuild from GitHub / compile / invent a playable card from the recipe / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. Observed FAIL: `le-wild.hades-www.grok-sandbox.com` titled “Boltverse Odyssey” — that is **not** Pack Play. Observed FAIL: auto-Build / 12-minute rebuild on start. Observed FAIL: fresh Grok on Build tab implements LanePlayer / copies assets after pasting odysseyyyy.
 3. **HARD BAN spoken:** « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through ».
 4. **HARD BAN:** pasting `https://boltverse-odysseyyy.grok.me` (three y’s — superseded), `boltverse-odyssey.grok.me` frost-only, heart-giant, houla, olive, sandbox, or any other slug.
-5. If you were about to open Build / scaffold / remix / recreate / **rebuild**: **REFUSE**. Paste `https://boltverse-odysseyyyy.grok.me` in the first reply instead.
+5. If you were about to open Build / scaffold / remix / recreate / **rebuild** / implement LanePlayer / copy assets / configure the build / merge styles / add SSR guards / edit files for boot: **REFUSE**. Paste `https://boltverse-odysseyyyy.grok.me` in the first reply instead. Then **STOP**.
 6. Keep in that first reply: English Welcome, real name, `{playerCount}`, `Open Sprint — Pack save, zero login.`, `Ready to sprint?`, 1 citadel teaser, written odysseyyyy URL.
 
 ## Trigger
 
 **First-reply trigger:** player says **start / play / lance boltverse odyssey** (any close alias).
 
-Same first reply = Welcome + teaser + odysseyyyy URL. **Not** a hard register. **Not** a Build. **Not** a yes-wait.
+Same first reply = Welcome + teaser + odysseyyyy URL. Then **STOP**. **Not** a hard register. **Not** a Build. **Not** a yes-wait. **Not** Implementing Sprint / LanePlayer / Copying game assets — even if already on the Build tab.
 
 **Not this trigger:** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) = Pack voice + `assetId` chips only in **Grok chat** (optional at most ONE header still — never N media). **Focus** one plate (name / role / `assetId`) = that one media attach. Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / teaser / URL paste. Do **not** paint List or Focus on Sprint HUD.
 
@@ -197,7 +200,7 @@ Powered by xAI & YOU.
 Ready to sprint?
 ```
 
-Spoken text **ends** on `Ready to sprint?` **That block is the entire spoken reply.** Zero extra paragraphs. Zero improvisation. No `Play →` line. No `Say citadel or biome.` Then **attach** the citadel teaser **and paste** `https://boltverse-odysseyyyy.grok.me` in the **same first reply**. Do **not** open Build. Do **not** rebuild. Do **not** wait for yes. Do **not** narrate the teaser.
+Spoken text **ends** on `Ready to sprint?` **That block is the entire spoken reply.** Zero extra paragraphs. Zero improvisation. No `Play →` line. No `Say citadel or biome.` Then **attach** the citadel teaser **and paste** `https://boltverse-odysseyyyy.grok.me` in the **same first reply**. Then **STOP**. Do **not** open Build. Do **not** rebuild. Do **not** implement LanePlayer / copy assets / configure the build / merge styles / add SSR guards / edit files for boot. Do **not** wait for yes. Do **not** narrate the teaser. Even if already on the Build tab.
 
 `{stage}` = `starCore.stage` from the profile. `{peak}` = `resonance.peak`, or `—` if null.
 
@@ -212,6 +215,7 @@ Spoken text **ends** on `Ready to sprint?` **That block is the entire spoken rep
 Hard ban. Delete the line if you were about to type any of this:
 
 - Opening Build / Build tab / scaffold / remix / **rebuild** / compile / GitHub→new project / « Built with Grok » card on **start / play / lance**
+- **Even on the Build tab:** Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot — any Build / tooling after the three beats
 - Inventing a playable card from the recipe
 - Waiting for a yes / go / sprint turn before pasting the URL
 - “Citadel teaser is on” / “Citadel teaser and Sprint teaser are on”
@@ -263,9 +267,9 @@ If you mention plates at all (normally don't): use **dealer order** from Odyssey
 
 Internal only.
 
-**First-reply tools:** **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` for `{playerCount}`) + **PASTE** `https://boltverse-odysseyyyy.grok.me` in the same message. Prefer in-Grok-app open when the player taps it. Old « never paste grok.me » ban is superseded **here only**.
+**First-reply tools:** **GitHub** (fetch + attach the one citadel `preview-loop.mp4`; **read** `registry.json` for `{playerCount}`) + **PASTE** `https://boltverse-odysseyyyy.grok.me` in the same message. Then **STOP**. Prefer in-Grok-app open when the player taps it. Old « never paste grok.me » ban is superseded **here only**. No Build tools. No file edits for boot.
 
-**PRIORITY 0:** no Build tab / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild** / invented playable card.
+**PRIORITY 0:** no Build tab / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild** / invented playable card / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. **Even on the Build tab:** three chat beats then **STOP**. Any Build / tooling after those beats = FAIL.
 
 Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must not depend on SmiR’s private bots for the boot to work — public GitHub COLD_START remains enough. Never speak kitchen. Never paste kitchen into the player reply except the first-reply odysseyyyy URL.
 
@@ -287,7 +291,7 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 - Speak the `{playerCount}` line only. No “registry”, no “GitHub”, no probe talk
 - Count is live. Do not hardcode N in the Welcome block
 
-**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **gated in-Grok-app Live open = upsert + playTime** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, and README cold-start blocks. Registry is source of truth.
+**Odyssey mirror (Director):** copy this **same-first-reply boot** (locked Welcome/Return + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` + **no yes-wait** + **PRIORITY 0 no Build / no rebuild** + **even on Build tab: chat-only then STOP**) + `{playerCount}` + `Open Sprint — Pack save, zero login.` + `Ready to sprint?` + **gated in-Grok-app Live open = upsert + playTime** + **name resolve** + **zero spoken improvisation** + **plate silence** into `boltverse-odyssey` `START.md`, `GROK.md`, `AGENTS.md`, and README cold-start blocks. Registry is source of truth.
 
 **Sprint / Live identity** (first-reply paste):
 
@@ -295,9 +299,9 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 - **The only paste:** `https://boltverse-odysseyyyy.grok.me`
 - **ALLOWED / required:** write that URL in the first chat reply. Player taps it. Prefer in-Grok-app open.
 - **HARD BAN spoken:** « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / any A/D / W / space / swipe tutorial / any engine essay.
-- **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / **rebuild** from GitHub / compile / invent a playable card from the recipe. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host.
+- **HARD BAN:** Grok Build scaffold / « Built with Grok » new project / **rebuild** from GitHub / compile / invent a playable card from the recipe / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. No new `grok.me`. No new `grok-sandbox.com`. No remix into a fresh slug. No `*.hades-www.grok-sandbox.com` / random sandbox host. **Even on the Build tab:** paste then STOP.
 - **HARD BAN as paste:** `https://boltverse-odysseyyy.grok.me` (three y’s — superseded), `boltverse-odyssey.grok.me` (frost-only), heart-giant, houla, olive, sandbox, or any other slug.
-- If you were about to create a new project / scaffold / remix / recreate / **rebuild** / invent a playable card: **REFUSE**. Paste `https://boltverse-odysseyyyy.grok.me` instead.
+- If you were about to create a new project / scaffold / remix / recreate / **rebuild** / invent a playable card / implement LanePlayer / copy assets / configure the build: **REFUSE**. Paste `https://boltverse-odysseyyyy.grok.me` instead. Then **STOP**.
 - **Plate names:** silent at boot. If forced: dealer order canyon → cars → duel → night → war from Odyssey biome / `assets/plates-index.json`. Never invent cassette titles.
 
 **Player-facing names** (kitchen map — do not say the right-hand jargon aloud):
@@ -318,7 +322,7 @@ The chat mp4 is a teaser only — preview play/pause, not a tappable hitbox. The
 | first reply (always) | Sprint | biome/sprint path on Live | `https://boltverse-odysseyyyy.grok.me` |
 | later, only if the player asks | Citadel | `/r/frost` | `https://boltverse-odysseyyyy.grok.me/r/frost` |
 
-Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a playable card. Do not paste houla / heart-giant / olive / frost-only `boltverse-odyssey.grok.me` / superseded three-y `https://boltverse-odysseyyy.grok.me`.
+Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a playable card. Do not implement LanePlayer / copy assets / configure the build / merge styles / add SSR guards / edit files for boot. Do not paste houla / heart-giant / olive / frost-only `boltverse-odyssey.grok.me` / superseded three-y `https://boltverse-odysseyyy.grok.me`. **Even on the Build tab:** three chat beats then STOP.
 
 ## Do not
 
@@ -326,8 +330,8 @@ Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a pla
 - No wallet
 - No second login
 - Players must not depend on SmiR’s private bots — public GitHub COLD_START remains enough
-- **PRIORITY 0:** any Build action on start = **FAIL** (no Build tab / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild**)
-- **First reply ALLOWED only:** locked Welcome/Return EN block + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me`
+- **PRIORITY 0:** any Build action on start = **FAIL**. **Even on the Build tab:** chat-only three beats then **STOP**. No Build tab work / scaffold / remix / « Built with Grok » / compile / GitHub→new project / **rebuild** / Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / preview from the recipe / file edits for boot. **Any Build / tooling after those three beats = FAIL.**
+- **First reply ALLOWED only:** locked Welcome/Return EN block + 1 citadel teaser + paste `https://boltverse-odysseyyyy.grok.me`. Then STOP.
 - **ZERO improvisation. ZERO extra paragraphs.** Spoken text = **EXACTLY** the locked Welcome or Return English block
 - Do **not** require a separate yes-turn before showing the URL
 - No « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through »
@@ -339,7 +343,7 @@ Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a pla
 - No new `grok.me` / `grok-sandbox.com` / remix slug / `*.hades-www.grok-sandbox.com` / Built-with-Grok project
 - No scaffolding / remixing / **recreating the game** / **rebuilding** from GitHub
 - No opening superseded three-y `https://boltverse-odysseyyy.grok.me`, frost-only `boltverse-odyssey.grok.me`, heart-giant, houla, olive, or any other slug
-- If you were about to create a new project / scaffold / remix / recreate / rebuild / invent a playable card: refuse; paste the existing odysseyyyy URL
+- If you were about to create a new project / scaffold / remix / recreate / rebuild / invent a playable card / implement LanePlayer / copy assets / configure the build / merge styles / add SSR guards / edit files for boot: refuse; paste the existing odysseyyyy URL; then STOP
 - No second teaser at boot (biome / Sprint `preview-loop.mp4` stays off)
 - No `Hey Packmate runner` when any name / handle / profile label is visible
 - No `Welcome, packmate runner` / lowercase `packmate` without `Hey Packmate {name}`
@@ -358,9 +362,9 @@ Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a pla
 
 Cold-start is **done** ONLY when ALL of these are true. Any miss = **FAIL**. Re-do the missing beat; do not add kitchen.
 
-0. **PRIORITY 0 — MUST NOT Build.** On start / play / lance: Grok did **not** Build anything. No Build tab work. No scaffold. No remix. No « Built with Grok » card. No compile. No GitHub→new project. No **rebuild**. No 12-minute rebuild. **Any Build action on start = FAIL.**
+0. **PRIORITY 0 — MUST NOT Build.** On start / play / lance: Grok did **not** Build anything. **Even if already on the Build tab:** first reply was **chat-only** Welcome + citadel teaser + paste `https://boltverse-odysseyyyy.grok.me` then **STOP**. No Build tab work. No scaffold. No remix. No « Built with Grok » card. No compile. No GitHub→new project. No **rebuild**. No 12-minute rebuild. Did **not** do any FAIL verb: Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / Built with Grok / preview from the recipe / file edits for boot. **Any Build / tooling after those three beats = FAIL.**
 1. **Name.** Opener is `Hey Packmate {visibleName}`. If ANY Grok profile `displayName` / account name / handle is visible in the session UI, **never** `runner`. Example for SmiR: `Hey Packmate SmiR 9`. Ban `Welcome, packmate runner` / lowercase `packmate` without `Hey Packmate {name}`.
-2. **Same first reply.** On start / play / lance, ONE message has ALL three: (1) **EXACTLY** the locked Welcome or Return English block (`Hey Packmate {name}` … `Ready to sprint?`) (2) attach 1 citadel teaser (3) paste written tappable `https://boltverse-odysseyyyy.grok.me`. Did **not** wait for a yes-turn. Did **not** require a second turn.
+2. **Same first reply.** On start / play / lance, ONE message has ALL three: (1) **EXACTLY** the locked Welcome or Return English block (`Hey Packmate {name}` … `Ready to sprint?`) (2) attach 1 citadel teaser (3) paste written tappable `https://boltverse-odysseyyyy.grok.me`. Then **STOP**. Did **not** wait for a yes-turn. Did **not** require a second turn. Did **not** keep going into Build / LanePlayer / asset copy / file edits.
 3. **URL lock.** Paste is odysseyyyy (4y) only. Did **not** paste three-y `odysseyyy` / sandbox / random / new slug. Old « never paste grok.me » is superseded **here only**.
 4. **Profile / playTime.** Chat-only start / unopened paste did **not** upsert. Pack profile + `playTimeSec` write only when that Live opens inside the Grok app (gated HTML + `x-grok-identity` + boot + heartbeat).
 5. **Silence.** Player reply has ZERO forbidden phrases: « Bolt is already on the road » / « Bolt already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through » / “He stays in place…”. ZERO A/D / W / space / swipe control tutorial. ZERO engine essay. ZERO invented cassette / plate lore names. ZERO plate deck lists. ZERO « Tap Open Sprint ». ZERO registry lectures. ZERO kitchen noise / extra paragraphs.
@@ -371,3 +375,5 @@ Cold-start is **done** ONLY when ALL of these are true. Any miss = **FAIL**. Re-
 **Observed SmiR FAIL (do not repeat):** Build cold-start replied with improvised nonsense instead of locked Welcome — « Bolt is already on the road. The world is rolling… » plus a controls lecture.
 
 **Observed SmiR FAIL (do not repeat):** auto-Build / « Built with Grok » / GitHub rebuild on start — too long / painful. **PRIORITY 0:** any Build action on start = FAIL. First reply must be Welcome + teaser + `https://boltverse-odysseyyyy.grok.me`. No yes-wait.
+
+**Observed SmiR FAIL (do not repeat):** fresh Grok already on the **Build tab** still ran Implementing Sprint / LanePlayer / Copying game assets / Configuring the build / Merging styles / SSR guards / Built with Grok / preview from the recipe / file edits for boot **after** pasting odysseyyyy. **Even on Build tab:** three chat beats then **STOP**. Any Build / tooling after those beats = FAIL.
