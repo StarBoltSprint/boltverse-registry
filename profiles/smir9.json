@@ -19,24 +19,14 @@
   },
   "cosmetics": {
     "packTitle": null,
-    "inventory": [
-      {
-        "kind": "badge",
-        "badgeId": "pack-first-sprint",
-        "assetId": "a_smir9_img_8babfc66",
-        "title": "First Sprint",
-        "wonAt": "2026-09-18T08:08:10Z",
-        "from": "first-run",
-        "image": "stock/badges/first-sprint-9x16.png"
-      }
-    ]
+    "inventory": []
   },
   "sessionStartedAt": "2026-09-17T07:47:07.490Z",
   "lastSeenAt": "2026-09-18T07:55:21Z",
   "playTimeSec": 0,
   "lastRun": null,
-  "updatedAt": "2026-09-18T08:08:10Z",
-  "notes": "Ship Play canonical Live is boltverse-odysseyyyy.grok.me (boltverse-odysseyyy three-y superseded Beat 3; heart-giant-plum-lotus superseded; olive publish stuck). gateSub filled on Welcome register when sub known, or first gated boot. Welcome register = existence + lastSeen; Live heartbeat = playTimeSec.",
+  "updatedAt": "2026-09-18T08:28:04Z",
+  "notes": "Ship Play canonical Live is boltverse-odysseyyyy.grok.me (boltverse-odysseyyy three-y superseded Beat 3; heart-giant-plum-lotus superseded; olive publish stuck). gateSub filled on Welcome register when sub known, or first gated boot. Welcome register = existence + lastSeen; Live heartbeat = playTimeSec. | First Sprint removed from inventory 2026-09-18 \u2014 must come from pending Run open (guaranteedFirst).",
   "pendingChests": [
     {
       "id": "chest_run_20260918",
