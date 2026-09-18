@@ -14,7 +14,7 @@ See `profiles/smir9.json` for a filled example.
 | hangs | array | Short list of hung room ids / urls |
 | resonance | object | `{ peak, lastRunAt }` — crystal feel, not XP |
 | starCore | object | `{ charge, stage }` — Welcome `{stage}` |
-| cosmetics | object | `{ packTitle, inventory }`. **Never wipe.** `inventory` = won rewards for this player `sub` — see below. |
+| cosmetics | object | `{ packTitle, inventory, badges }`. **Never wipe.** `inventory` = badges + won assets for this player `sub`. Optional `badges[]` mirrors badge rows. See below. |
 | sessionStartedAt | string \| null | ISO-8601 session start from Play client |
 | lastSeenAt | string \| null | ISO-8601 last Welcome register / boot / heartbeat. `null` = New (COLD_START) |
 | playTimeSec | number | Accumulated open-Play seconds from Live heartbeats only. Welcome register does **not** increment. |
@@ -22,13 +22,21 @@ See `profiles/smir9.json` for a filled example.
 
 **Kitchen Pack Play / central Pack API host:** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Beat 3 / not Pack Play.
 
-Federation write rules (Welcome register + boot + heartbeat): merge-patch only — never wipe `resonance` / `starCore` / `cosmetics` (including `cosmetics.inventory`). Always set `gateSub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now` when a real `sub` is known. Welcome register `playUrl` = canonical `https://boltverse-odysseyyyy.grok.me`. Welcome register does **not** increment `playTimeSec`. Never invent a `sub`. Full wire: [PACK.md](PACK.md). Law: [COLD_START.md](COLD_START.md).
+Federation write rules (Welcome register + boot + heartbeat): merge-patch only — never wipe `resonance` / `starCore` / `cosmetics` (including `cosmetics.inventory` / `cosmetics.badges`). Always set `gateSub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now` when a real `sub` is known. Welcome register `playUrl` = canonical `https://boltverse-odysseyyyy.grok.me`. Welcome register does **not** increment `playTimeSec`. Welcome register does **not** grant the First Sprint badge. Never invent a `sub`. Full wire: [PACK.md](PACK.md). Law: [COLD_START.md](COLD_START.md). First badge: [CHESTS.md](CHESTS.md).
 
-## cosmetics.inventory (HARD — won rewards)
+## cosmetics.inventory / badges (HARD — won rewards)
 
-`profiles/<sub>.json` → `cosmetics.inventory` = array of rewards **this player** won. Append on chest open or explicit Pack grant. **Never wipe.** Prefer **one entry per `assetId`** (dedupe — keep first `wonAt`). Creator plates are **not** inventory unless that id was won via chest or grant. Product + chat: [CHESTS.md](CHESTS.md).
+`profiles/<sub>.json` → `cosmetics.inventory` = array of rewards **this player** won: **badges + won assets**. Optional `cosmetics.badges[]` may hold the same badge objects. **Never wipe.** Prefer **one entry per `assetId`** and **one entry per badge `id`** (dedupe — keep first `wonAt`). Creator plates are **not** inventory unless that id was won via chest or grant. Product + chat: [CHESTS.md](CHESTS.md).
 
-**Prefer rich objects.** Readers also accept a legacy bare `assetId` **string**. Do not wipe old strings to force objects. New writes prefer objects.
+**First reward = Pack badge (not a plate).** First gated Live on `https://boltverse-odysseyyyy.grok.me` / first heartbeat `playTimeSec` ≥ ~5s (soft) grants **once**:
+
+```json
+{ "kind": "badge", "id": "pack-first-sprint", "title": "First Sprint", "wonAt": "2026-09-18T08:00:00Z", "from": "first-run" }
+```
+
+Write into `inventory` and/or `badges[]`. Idempotent on `id`. Welcome register alone does **not** grant. Cosmetic only. No chat-only « Packmate » badge unless SmiR asks.
+
+**Won assets — prefer rich objects.** Readers also accept a legacy bare `assetId` **string**. Do not wipe old strings to force objects. New writes prefer objects.
 
 ```json
 { "assetId": "a_smir9_vid_aa01ff09", "wonAt": "2026-09-18T07:55:21Z", "fromChest": "run", "rarity": "common" }
@@ -36,13 +44,17 @@ Federation write rules (Welcome register + boot + heartbeat): merge-patch only �
 
 | Field | Type | Notes |
 |---|---|---|
-| `assetId` | string | Won Imagine-rail id. Required (or the whole row is this string, legacy). |
+| `kind` | string \| omit | `badge` \| `asset`. Omit on legacy asset rows. |
+| `id` | string | Badge id (e.g. `pack-first-sprint`). Required on badges. |
+| `title` | string \| omit | Badge title (e.g. `First Sprint`). |
+| `from` | string \| omit | Badge source (`first-run`). |
+| `assetId` | string | Won Imagine-rail id. Required on asset rows (or the whole row is this string, legacy). |
 | `wonAt` | string | ISO-8601 first win. Keep first on dedupe. |
-| `fromChest` | string \| omit | `run` \| `peak` \| chest id \| `grant` |
+| `fromChest` | string \| omit | `run` \| `peak` \| chest id \| `grant` (assets) |
 | `rarity` | string \| omit | `common` \| `rare` \| `peak` (alias `legendary`) |
 
-Missing `inventory` → treat as `[]`. Do not invent wins. Chat `show my inventory` / `mes gains` / `what I won` lists this array (Pack voice + hype emojis + `assetId` chips; Focus one → media). Not `show my plates`.
+Missing `inventory` / `badges` → treat as `[]`. Do not invent wins or badges. Chat `show my inventory` / `mes gains` / `what I won` lists **badges + won assets** (Pack voice + hype emojis + chips; Focus asset → media; Focus badge → voice only, no plate). Not `show my plates`.
 
 Heavy mp4s stay on the Play host — only pointers here.
 
-Grok asset manifests live in `assets/<assetId>.json` — **profiles stay separate**. **Mint only via the Grok Imagine cook rail** (automatic provenance — never a player proof step). Cook = Imagine (in the Grok chat app). Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id; first creator keeps ownership. Chests **reference** the existing `assetId` and **only** when caller `sub` === `creatorSub` (in-app: Grok chat or Build). Source = `grok-imagine` only. **HARD BAN** player file upload / X / Drive / Discord / arbitrary URL. Ask in **Grok chat** (`show my plates` / close alias) → **List** own plates (`creatorSub` === gate `sub`) as Pack voice + `assetId` chips only (short cassette counts OK; never N media). **Focus** one plate → fuller cassette stats + that one media attach. Cassette v1 on `assets/<assetId>.json`: `stats.views` / `stats.playTimeSec` / `stats.players` (or flat twins) — real or `0`; never invent; never pay-to-win. Law: [ASSETS.md](ASSETS.md). Chest product / all-in Grok app surface / rarity / **Pack inventory** (`cosmetics.inventory`): [CHESTS.md](CHESTS.md).
+Grok asset manifests live in `assets/<assetId>.json` — **profiles stay separate**. **Mint only via the Grok Imagine cook rail** (automatic provenance — never a player proof step). Cook = Imagine (in the Grok chat app). Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id; first creator keeps ownership. Chests **reference** the existing `assetId` and **only** when caller `sub` === `creatorSub` (in-app: Grok chat or Build). Source = `grok-imagine` only. **HARD BAN** player file upload / X / Drive / Discord / arbitrary URL. Ask in **Grok chat** (`show my plates` / close alias) → **List** own plates (`creatorSub` === gate `sub`) as Pack voice + `assetId` chips only (short cassette counts OK; never N media). **Focus** one plate → fuller cassette stats + that one media attach. Cassette v1 on `assets/<assetId>.json`: `stats.views` / `stats.playTimeSec` / `stats.players` (or flat twins) — real or `0`; never invent; never pay-to-win. Law: [ASSETS.md](ASSETS.md). Chest product / all-in Grok app surface / rarity / **Pack inventory** (`cosmetics.inventory` / `badges[]`) / First Sprint badge: [CHESTS.md](CHESTS.md).
