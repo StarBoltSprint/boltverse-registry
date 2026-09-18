@@ -12,6 +12,7 @@
 > **Only the creator can put THEIR `assetId` into a chest.** Caller ticket / JWT `sub` MUST match `assetId.creatorSub` — else refuse.
 > **Provenance is automatic.** No player proof screenshot, certificate, or ownership-claim form.
 > **HARD LOCK — cosmetics only. Never pay-to-win. Never play-to-win.** Chest rewards = skins / titles / Pack lore looks. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, or wallet boost. Pack Pass / tips / X subs never buy gameplay power — only cosmetic / drop-count soft.
+> **HARD LOCK — Pack inventory = won rewards on the player profile.** Open a chest → append the won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Never wipe. Prefer one entry per `assetId`. Creator plates ≠ inventory unless won via chest (or explicit grant). Chat `show my inventory` / `mes gains` / `what I won` = List vs Focus like plates. Law below + [SCHEMA.md](SCHEMA.md).
 > **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL · Spotify · external mp3 · non-Grok uploads · paste-someone-else’s-URL as ownership · external Pack website / creator portal / desktop-only tool as a required player or creator UI · requiring biome / link creators to wire chests.
 
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
@@ -33,6 +34,7 @@ The **Grok chat app** (Chat + Imagine + Build) is the **only** player/creator UI
 | Cook asset | **Imagine** (in app) |
 | Play / earn chest / open reveal | **Pack Engine overlay** in **Build** game console / in-chat Live preview (in app). Not the biome plate. |
 | Put asset in chest | **Optional.** Action from **Grok chat** or **Build** after mint — still in app. Immediate **Pack receipt** in Grok chat (never silent). Skipping this does **not** stop Pack pool chests on the creator’s link. |
+| Show inventory / what I won | **Grok chat.** List vs Focus of `cosmetics.inventory` (won rewards for that player `sub`). Not the creator plate list. |
 
 **HARD BAN (surface):**
 
@@ -87,8 +89,10 @@ A hung biome / remix Live that ships **no** chest code is **correct**. Pack pool
 - No baking one fixed object into a shared open plate for all creators
 - No beauty / pixel / AI aesthetic score as rarity
 - No silent put-in-chest (success or refuse)
+- No silent chest-open without an inventory append (once the reward `assetId` is known)
+- No wiping `cosmetics.inventory` on Welcome / boot / heartbeat / open
 - No kitchen noise (GitHub URLs, API jargon, registry paths) in player/creator-facing chat lines
-- **No emoji walls / random unrelated emoji** on chest chat lines (pending / seal / open / reward)
+- **No emoji walls / random unrelated emoji** on chest chat lines (pending / seal / open / reward / inventory List)
 
 ## Soft earn
 
@@ -115,7 +119,7 @@ When a Run / Peak chest arms, Grok speaks a **pending** ready line in chat (⚡ 
 
 ### Cosmetics (HARD — never pay-to-win / never play-to-win)
 
-Chest rewards = **cosmetics only**: skins, titles, Pack lore looks.
+Chest rewards = **cosmetics only**: skins, titles, Pack lore looks. Won `assetId`s land in that player’s **Pack inventory** (`cosmetics.inventory`) — next section after open.
 
 **Never** grant:
 
@@ -333,6 +337,56 @@ When the player opens from **Grok chat** (soft chat open):
 
 **HARD BAN:** splitting open video and reward across two chat turns · emoji walls on the open / reward lines · kitchen dumps (`pendingChests`, registry paths) · speaking the reward before the open attach in chat.
 
+**Inventory write (same open):** after the reward is known, **append** the won `assetId` to that player’s `profiles/<sub>.json` → `cosmetics.inventory`. Never wipe. Prefer one entry per `assetId`. Same write if the open happened on the Live engine overlay. Full law: next section.
+
+## Pack inventory (HARD — won rewards)
+
+When a player **opens a chest** and receives an `assetId` reward, Pack **MUST** persist it on **that player’s** profile.
+
+Inventory = **owned rewards for that player `sub`**. Not the creator cook list.
+
+### Write (profile)
+
+1. **Append** to `profiles/<sub>.json` → `cosmetics.inventory` (array). Prefer rich objects. Kitchen fields: `assetId` (required) · `wonAt` (ISO-8601, first win) · `fromChest` (`run` / `peak` / chest id / `grant`) · `rarity` (`common` / `rare` / `peak`). Shape: [SCHEMA.md](SCHEMA.md).
+
+```json
+{ "assetId": "a_smir9_vid_aa01ff09", "wonAt": "2026-09-18T07:55:21Z", "fromChest": "run", "rarity": "common" }
+```
+
+2. **Legacy strings.** If an old row is a bare `assetId` string, **keep it**. Do not wipe or rewrite the whole array to force objects. New writes prefer rich objects. Readers accept `string | object`.
+3. **Never wipe** existing inventory. Welcome / boot / heartbeat merge-patch must **not** replace `cosmetics` or `inventory`. Append / merge-add only.
+4. **Dedupe:** prefer **one entry per `assetId`**. If already present, keep the **first `wonAt`** — do not clone a second row. Optional later stack note — not v1 default.
+5. **When:** chest open (chat or Live engine) **or** an explicit Pack grant. Do **not** auto-copy a creator’s plates into inventory because they cooked them.
+
+Same `sub` as the opener / grantee. Never invent a `sub`. Never write someone else’s inventory.
+
+### Chat — List vs Focus (same rules as plates)
+
+Ask in **Grok chat**: `show my inventory` / `mes gains` / `what I won` / close alias. **Not** Welcome. **Not** `show my plates`.
+
+- **List** = English Pack voice + **hype emojis (1–3)** + `assetId` chips. Optional rarity / fromChest chip (`🎁 Common` · `💎 Peak`). Same chest chat copy law. Optional at most **ONE** header still. **Never** N media for N rewards (spam FAIL — same as plates).
+- **Focus** one (Pack name / `assetId`) = Pack words + that one `assetId` + **one** media attach (mp4 if vid, photo if img).
+- Empty: `No Pack drops yet — Peak for a chest.` (shape, not frozen)
+
+Examples (shape, not locked):
+
+- `🏆 Pack inventory`
+- `🎁 Common drop` + chip
+- `💎 Peak drop` + chip
+
+**HARD BAN:** dumping `cosmetics.inventory` JSON · GitHub / registry paths · attaching every won clip on List · treating `show my plates` as inventory · treating inventory as the creator plate list · emoji walls.
+
+### Creator plates ≠ inventory
+
+A plate the player **cooked** (`creatorSub` === their `sub`) is **not** inventory unless that `assetId` was **won via chest** or an **explicit grant**.
+
+| Ask | Source | Whose |
+|---|---|---|
+| `show my plates` | Imagine-rail manifests where `creatorSub` === gate `sub` | cooks they made |
+| `show my inventory` | `profiles/<sub>.json` `cosmetics.inventory` | rewards they **won** |
+
+Law for plates: [ASSETS.md](ASSETS.md). Do not merge the two lists.
+
 ## Status machine
 
 ```
@@ -360,9 +414,10 @@ Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = t
 - **Surface HARD:** Grok chat app only (Chat + Imagine + Build) — no external website, no creator portal, no desktop-only tool; v1 creator flow does not require an external Pack website
 - Cook = Imagine (in app). Play / earn / open reveal = Pack Engine overlay in Build / in-chat Live preview (in app). Put-in-chest = **optional** Grok chat or Build after mint
 - **Engine overlay + creator zero wire HARD:** chests appear in Play without the biome / link creator doing anything. Chest UI + earn + open = Pack Engine layer, not the biome plate. Engine watches Resonance / Peak thresholds → overlays Pack stock Peak closed still in-picture → tap plays ~6s stock open video → engine reveals sealed `assetId`. Federated `*.grok.me` / hung-biome creator: ZERO code, ZERO UI, ZERO wire. Ignoring put-in-chest still means Pack pool chests on that link. Ban baking chests into plates, hosting open videos, or adding Open Chest chrome
-- **Chest chat copy HARD:** pending / seal / open / reward = English Pack voice + **1–3 matching emojis** (stylish / hype, not spam). Shape: ⚡ chest / 💎 Peak ready · ✨ sealed / 🎁 into Common/Rare/Peak · 🔓 opening… + peak-open ~6s · 🏆 / 🎬 reward + `assetId` chip. Examples are shape — not frozen Mandarin. Ban emoji walls / random unrelated emoji
+- **Chest chat copy HARD:** pending / seal / open / reward = English Pack voice + **1–3 matching emojis** (stylish / hype, not spam). Shape: ⚡ chest / 💎 Peak ready · ✨ sealed / 🎁 into Common/Rare/Peak · 🔓 opening… + peak-open ~6s · 🏆 / 🎬 reward + `assetId` chip. Inventory List uses the same voice + hype emojis. Examples are shape — not frozen Mandarin. Ban emoji walls / random unrelated emoji
 - **Soft chat open HARD:** same message = open video then reward media. Engine timed gate (~6s) remains **Live-only**
 - **Pack receipt HARD:** immediate Grok-chat confirmation — never silent. Success = Pack-voice + matching emojis + Imagine-plate visual + `assetId` / tier / ownership chips. Soft refuse = Pack-voice (e.g. `Not Pack lore — recook in Imagine.`) + no registry write. Pack words only; no kitchen noise in creator-facing lines
+- **Pack inventory HARD:** chest open (or explicit grant) **appends** won `assetId` to `profiles/<sub>.json` `cosmetics.inventory`. Prefer `{ assetId, wonAt, fromChest, rarity }`. Legacy string rows stay valid — never wipe. Prefer one entry per `assetId` (keep first `wonAt`). Chat `show my inventory` / `mes gains` / `what I won` = List (Pack voice + hype emojis + chips, never N media) / Focus one → media. Creator plates ≠ inventory unless won via chest or grant. Schema: [SCHEMA.md](SCHEMA.md)
 - `assetId` mints **only** via the Grok Imagine cook rail; chests **reference** only
 - **Only the creator** can put THEIR `assetId` into a chest (`sub` === `creatorSub`)
 - No player manual proof; no external upload / URL entry
@@ -374,4 +429,4 @@ Odyssey kitchen map should say: chests law = this file; v1 soft-earn numbers = t
 - **Rarity HARD:** Common = auto seal, large pool; Rare = Loom / Resonance / tips / low supply signals; Peak / Legendary = Pack seal + soft supply cap. **Not** a beauty / pixel AI score
 - Shared Peak open video ~6s closed→empty glow; engine then shows won `assetId`
 - **Soft earn NUMBERS HARD (v1):** player-local calendar day (Europe-friendly local midnight). Soft daily cap **max 2**. Run chest = 1st armed Peak (~45–60s bone picture-time + `m` for Peak arm), max **1 / day**, Common/Rare pool. Peak chest = 2nd higher threshold same day (stronger `m` / Legendary lean), max **1 / day**, Peak/Legendary path. Total soft max **1–2 / day**. Not daily login. Not AFK wall-clock. Optional Pack Pass later = +1 soft drop, cosmetic only
-- **Cosmetics HARD — never pay-to-win / never play-to-win:** skins / titles / Pack lore looks only. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, wallet boost. Pack Pass / tips / X subs never buy gameplay power
+- **Cosmetics HARD — never pay-to-win / never play-to-win:** skins / titles / Pack lore looks only. Never speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, wallet boost. Pack Pass / tips / X subs never buy gameplay power. Won looks persist in `cosmetics.inventory` — still cosmetic only
