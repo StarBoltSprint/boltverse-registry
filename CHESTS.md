@@ -186,7 +186,7 @@ When Grok speaks chest lines in **Grok chat** (pending ready, Pack receipt / sea
 | **Sealed / Pack receipt** | seal + into tier | ✨ sealed · 🎁 into Common / Rare / Peak |
 | **Open** | opening beat | 🔓 opening… then attach peak-open ~6s |
 | **Reward** | asset reveal | 🏆 · 🎬 + `assetId` chip |
-| **First Sprint badge** | first Live reward (not a plate) | 🐺⚡ First Sprint — you’re in the Pack |
+| **First Sprint badge** | first Live reward (not a plate) | 🐺⚡ First Sprint — you’re in the Pack. Focus attaches the stock still (`image` / `assetId`) |
 
 **Soft chat open vs Live timed gate:**
 
