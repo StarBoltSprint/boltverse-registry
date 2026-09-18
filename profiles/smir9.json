@@ -19,13 +19,23 @@
   },
   "cosmetics": {
     "packTitle": null,
-    "inventory": []
+    "inventory": [
+      {
+        "kind": "badge",
+        "badgeId": "pack-first-sprint",
+        "assetId": "a_smir9_img_8babfc66",
+        "title": "First Sprint",
+        "wonAt": "2026-09-18T08:08:10Z",
+        "from": "first-run",
+        "image": "stock/badges/first-sprint-9x16.png"
+      }
+    ]
   },
   "sessionStartedAt": "2026-09-17T07:47:07.490Z",
   "lastSeenAt": "2026-09-18T07:55:21Z",
   "playTimeSec": 0,
   "lastRun": null,
-  "updatedAt": "2026-09-18T07:55:21Z",
+  "updatedAt": "2026-09-18T08:08:10Z",
   "notes": "Ship Play canonical Live is boltverse-odysseyyyy.grok.me (boltverse-odysseyyy three-y superseded Beat 3; heart-giant-plum-lotus superseded; olive publish stuck). gateSub filled on Welcome register when sub known, or first gated boot. Welcome register = existence + lastSeen; Live heartbeat = playTimeSec.",
   "pendingChests": [
     {
@@ -35,7 +45,8 @@
       "status": "pending",
       "earnedAt": "2026-09-18T07:55:21Z",
       "reason": "manual Pack grant \u2014 Director (soft earn stand-in until Live wire)",
-      "pool": "common"
+      "pool": "common",
+      "guaranteedAssetId": "a_smir9_img_8babfc66"
     }
   ]
 }
