@@ -22,6 +22,12 @@ Any `*.grok.me` Live auto-joins central Pack profiles. Identity = Grok gate `sub
 
 → **[PACK.md](PACK.md)**
 
+## Kitchen: Pack Den (official player chat)
+
+**HARD LOCK:** official player-to-player chat = **Pack Den** on X. Exact join URL (never invent another): `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`. On ask (den / Pack chat / player chat / X chat / where players talk / exchange) → English Pack voice + paste that URL (one short EN line + the link). Do **not** claim chat is inside Grok Chat 1:1 or the Live iframe. Do **not** invent Discord / Telegram / other links. Welcome may optionally mention `Pack Den is on X.` in one short EN line — do **not** spam the long URL on every Welcome. v1 = open X (native). In-game button / tap that opens this same URL is allowed later. Embed iframe of X Chat is banned.
+
+→ **[PACK.md](PACK.md)**
+
 ## Kitchen: Assets (Imagine-rail mint)
 
 Mint `assetId` **only** when a Grok Imagine cook completes through the Pack / Boltverse cook rail. **Cook = Imagine (in the Grok chat app).** Provenance is **automatic** (server / rail — `creatorSub`, `source: grok-imagine`, `contentHash`, `kind`, `createdAt`, optional `cookId` / `threadId` / `railsVersion`). Player never supplies proof. Format `a_<sub>_<img|vid>_<hash8>`. Same hash = same id; first creator keeps ownership. **HARD LOCK:** Grok Imagine cook-rail img / vid only. **HARD BAN:** player file upload / X/Twitter URL / Drive / Discord / arbitrary mp4-img URL / Spotify / external mp3 / non-Grok uploads / manual proof. Ask in **Grok chat** (`show my plates` / close alias) → **List** own plates (`creatorSub` === gate `sub`) as Pack voice + `assetId` chips only (short cassette counts OK; optional at most ONE header still — never N media). **Focus** one plate (name / role / `assetId`) → fuller cassette stats + that one media attach. Cassette `stats.views` / `playTimeSec` / `players` = real or `0` — never invent, never pay-to-win. Never Sprint HUD, never GitHub-path dumps.

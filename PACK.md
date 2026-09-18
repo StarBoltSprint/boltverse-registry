@@ -15,6 +15,31 @@ Kitchen + implementer contract. Silent of player chat. No secrets in this repo.
 >
 > This is **not** a start / play / lance Build. PRIORITY 0 still holds on Welcome — paste the existing odysseyyyy Live, then STOP. The wire ships **inside the recipe** so a new Live is already joined.
 
+> ### HARD LOCK — official player chat = Pack Den (X group join)
+>
+> Official **player-to-player** chat is **Pack Den** — this exact X Chat group join URL. **Never invent another.**
+>
+> `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`
+>
+> Product name in Pack voice: **Pack Den**. Also accept player phrases: den · Pack chat · player chat · X chat · where players talk / exchange.
+>
+> **On ask (required):** when a player asks for the den / Pack chat / player chat / X chat / where players can talk to each other → reply in **English Pack voice** and **paste that exact URL**. One short EN line + the link. No kitchen noise (no GitHub paths, no API jargon).
+>
+> Example shape (English only — short line may vary, URL must not):
+>
+> ```
+> Pack Den is on X — tap in and talk.
+> https://x.com/i/chat/group_join/g2028659912277180482/M364z39064
+> ```
+>
+> **Welcome / cold-start:** do **not** spam the long join URL on every Welcome unless the player asks. Locked Welcome/Return stays the spoken block. **Optional** (not required): one short EN mention `Pack Den is on X.` — never the long URL on boot. Join URL is **required on ask**.
+>
+> **v1 = open X (native).** Player taps the join URL → X opens. An in-game button / tap that opens **this same URL** is allowed later. **HARD BAN:** embed / iframe of X Chat. Do **not** claim Pack Den lives inside Grok Chat 1:1 or inside the Live iframe.
+>
+> **HARD BAN:** invent Discord / Telegram / Slack / other chat links. Invent a second X group. Claim chat is embedded in Grok 1:1 or the Live iframe. Kitchen noise in the player reply.
+>
+> Player-facing Pack lines are **English only**.
+
 ## Goal
 
 Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **automatically and instantly** to central Pack profiles. Chat **start / play / lance** is also a Pack register when a real `sub` is known.
@@ -36,6 +61,8 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 - Do not treat `https://boltverse-odysseyyy.grok.me` (three y’s) as Pack Play or the central Pack API host — superseded Beat 3 target
 - **Never** wait for the player to say « install Pack wire / plate views / playTime ». Pack client + plate dealer stats are recipe floor — not a briefing, not a Build chore
 - **Never** publish a new biome / citadel / Sprint Live without `client/pack.js` or `BOLTVERSE_PACK_ORIGIN` → `https://boltverse-odysseyyyy.grok.me`
+- **Never** invent Discord / Telegram / Slack / another X group as Pack player chat. Official chat = **Pack Den** only — exact join URL above
+- **Never** claim Pack Den is inside Grok Chat 1:1 or the Live iframe. **Never** embed / iframe X Chat. v1 = open X (native)
 
 ## Architecture
 

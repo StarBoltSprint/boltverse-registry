@@ -23,6 +23,16 @@
 >
 > **Welcome register = existence + lastSeen. Live open = playTime / heartbeats.** **Pack wire is automatic — never a player ask.** Players must NEVER tell Grok « install Pack wire / plate views / playTime ». Every new biome / citadel / Sprint Live ships `client/pack.js` or `BOLTVERSE_PACK_ORIGIN` → central + plate dealer stats. Live floor: `boltverse-odyssey` `biome/docs/07-pack-live.md`. Law: [PACK.md](PACK.md).
 
+> ### HARD LOCK — Pack Den (official player chat) = this X join URL
+>
+> Official **player-to-player** chat is **Pack Den**. Exact join URL (never invent another):
+>
+> `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`
+>
+> **On ask** (den / Pack chat / player chat / X chat / where players talk / exchange — any close alias): English Pack voice + **paste that exact URL**. One short EN line + the link. No kitchen noise. **Do not** claim chat is inside this Grok 1:1 or the Live iframe. **Do not** invent Discord / Telegram / other links. v1 = open X (native). Embed iframe of X Chat is banned.
+>
+> Welcome may **optionally** mention `Pack Den is on X.` in one short EN line. **Do not** spam the long URL on every Welcome unless the player asks. Join URL is **required on ask**. Full law: [PACK.md](PACK.md).
+
 This is the **#1** doc for chat Grok on **start / play / lance boltverse odyssey**.
 
 **HARD FINAL flow (SmiR):** one first reply. No second turn. No yes-wait. No Build. No rebuild. **Even if already on the Build tab:** chat-only three beats, then **STOP**.
@@ -65,7 +75,7 @@ That odysseyyyy paste is **ALLOWED** and **required** in the first reply. Prefer
 - A new « Built with Grok » card / inventing a playable card from the recipe
 - Attaching a Build game console / in-chat Live preview / playable Sprint card
 - Controls lecture / improvised prose / plate lists (full ban list below)
-- Any URL other than `https://boltverse-odysseyyyy.grok.me`
+- Any URL other than `https://boltverse-odysseyyyy.grok.me` (Pack Den join URL is **not** a first-reply paste — only **on ask**, including a same-turn Den ask after the three Welcome beats)
 
 **Any Build / tooling after those three beats = FAIL.** Sitting on Build does **not** unlock implement. Paste then STOP.
 
@@ -107,6 +117,8 @@ Paste **ONLY** `https://boltverse-odysseyyyy.grok.me`. That four-y URL is the **
 Same first reply = Welcome + teaser + odysseyyyy URL. Then **STOP**. Welcome **is** Pack register (existence + lastSeen when `sub` known). **Not** a `playTimeSec` write. **Not** a Build. **Not** a yes-wait. **Not** Implementing Sprint / LanePlayer / Copying game assets — even if already on the Build tab.
 
 **Not this trigger:** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) = Pack voice + `assetId` chips only in **Grok chat** (optional at most ONE header still — never N media). **Focus** one plate (name / role / `assetId`) = that one media attach. Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / teaser / URL paste. Do **not** paint List or Focus on Sprint HUD.
+
+**Not this trigger:** **Pack Den** (`den` / `Pack chat` / `player chat` / `X chat` / where players talk / exchange / close alias) = English Pack voice + paste the exact X join URL `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`. Law: [PACK.md](PACK.md). Do **not** fire Welcome / teaser / odysseyyyy paste for a Den-only ask. Do **not** invent Discord / Telegram. Do **not** claim chat is inside this 1:1 or the Live iframe. If the **same** start turn also asks for the den: keep the three Welcome beats, then add one short EN line + that exact Den URL.
 
 ## Profile (zero login / wallet)
 
@@ -297,6 +309,8 @@ Grok may use Grok Bot tools if useful (normal Grok feature). Still: players must
 
 **Own plates List vs Focus (not this Welcome trigger):** **List** (`show my plates` / `mes plaques` / `list my assets` / `what did I cook` / close alias) → **own** plates in **Grok chat** (`creatorSub` === gate `sub` / `profiles/<sub>.json`) as Pack words + `assetId` chips only. Short cassette counts (`views` · `players`) OK next to the chip. Optional at most **ONE** header still — never N media for N plates (spam FAIL). **Focus** one plate (name / role / `assetId`) → Pack words + that one `assetId` + fuller cassette stats + attach that plate’s media (mp4 if vid, photo if img) — own `creatorSub` only. Counts are real or `0` — never invent, never pay-to-win. Empty list: `No Pack plates sealed yet — cook in Imagine.` Law: [ASSETS.md](ASSETS.md). Do **not** fire Welcome / teaser / URL paste. Do **not** paint List or Focus on Sprint HUD. Do **not** dump GitHub / registry paths.
 
+**Pack Den (not this Welcome trigger):** official player-to-player chat = X group join `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`. On ask (den / Pack chat / player chat / X chat / where players talk) → one short EN Pack line + that exact URL. Welcome may optionally say `Pack Den is on X.` in one short EN line — **never** the long URL on every Welcome. Do **not** invent Discord / Telegram. Do **not** claim chat is inside Grok 1:1 or the Live iframe. v1 = open X (native). Law: [PACK.md](PACK.md).
+
 **Welcome register / Live playTime** (this chat trigger + Live wire):
 
 - **Welcome register** (this chat turn): if a real `sub` is known, merge-patch upsert `profiles/<sub>.json` + `registry.json` `players[]` (`gateSub`, `displayName` / `handle` if known, `lastSeenAt=now`, `updatedAt=now`, `playUrl=https://boltverse-odysseyyyy.grok.me`). Existence + lastSeen. Never invent a `sub`. No `sub` → soft skip, still Welcome. Never wipe `resonance` / `starCore` / `cosmetics`. Do **not** increment `playTimeSec`.
@@ -358,7 +372,7 @@ Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a pla
 - Do **not** require a separate yes-turn before showing the URL
 - No « Bolt is already on the road » / « the world is rolling » / « the film keeps moving » / « plant a lane » / « no menu to click through »
 - No A/D / W / space / swipe control tutorial / engine essay / invented cassette lore names / plate deck lists / « Tap Open Sprint » in the player reply
-- No pasted Play URL except `https://boltverse-odysseyyyy.grok.me` in the first reply
+- No pasted Play URL except `https://boltverse-odysseyyyy.grok.me` in the first reply (Pack Den join URL is **on ask** only — [PACK.md](PACK.md))
 - No Citadel / Biome choice prompt
 - No spoken teaser substitutes (“Citadel teaser is on”)
 - The chat mp4 is a teaser only — not a tappable hitbox
@@ -376,6 +390,9 @@ Remix off. Do not scaffold / remix / recreate / **rebuild**. Do not invent a pla
 - No invented `sub` on Welcome register — upsert only when a real `sub` is known; no fake `playTimeSec` on Welcome (heartbeats only). Unopened paste still does not write playTime.
 - No GitHub / registry lecture — `{playerCount}` is enough
 - `show my plates` (close alias) is **not** Welcome — **List** = Pack voice + `assetId` chips only (never N media); **Focus** one plate = one media attach ([ASSETS.md](ASSETS.md)); no Sprint HUD
+- No invented Discord / Telegram / Slack / other player-chat links — official chat = **Pack Den** only ([PACK.md](PACK.md))
+- No Pack Den join URL on every Welcome (required **on ask**; optional one short EN `Pack Den is on X.` only)
+- No claiming Pack Den is inside Grok Chat 1:1 or the Live iframe — no X Chat iframe / embed
 - No fake Pack size
 - No “stay 30 seconds”
 - Player reply is **English only** — no French
