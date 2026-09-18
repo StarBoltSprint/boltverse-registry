@@ -6,7 +6,7 @@
 > **Chest surface law** (play / earn / open / put-in-chest) = Grok chat app only — see [CHESTS.md](CHESTS.md). No external Pack website required to cook.
 > **Chest overlay = Pack Engine, not the biome plate.** Chests, Hang, forge, and biome plates **reference** `assetId`s. They do **not** host chest UI. Federated `*.grok.me` / hung-biome creators: ZERO chest wire. Put-in-chest is optional.
 > **Provenance is automatic.** The server / rail writes it at mint. The player **never** supplies proof.
-> **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim · GitHub / `raw.githubusercontent` / registry-path dumps in the player plate list · Sprint HUD as the plate list.
+> **HARD BAN:** player file upload · X/Twitter URL paste · Drive / Discord drop · arbitrary mp4/img URL as a Pack asset entry · Spotify · external mp3 · non-Grok uploads · player-uploaded “proof” screenshot · pasted certificate · manual ownership claim · GitHub / `raw.githubusercontent` / registry-path dumps in List or Focus · N media for N plates on List (spam FAIL) · Sprint HUD as the plate list.
 
 Kitchen + implementer contract. English. Silent of player chat. No secrets in this repo.
 
