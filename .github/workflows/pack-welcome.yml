@@ -1,0 +1,97 @@
+# Pack Welcome register — existence + lastSeen only.
+# HARD: this Action is the Welcome write path. NOT *.grok.me. NOT Live /v1/pack/boot.
+# Welcome must succeed even if Live 404s. playTime / heartbeats stay out of scope.
+#
+# Grok / Bot fire:
+#   gh workflow run pack-welcome.yml -f sub=USER_SUB -f displayName='Ada Pack' -f handle='@ada'
+# or repository_dispatch type pack-welcome:
+#   gh api repos/StarBoltSprint/boltverse-registry/dispatches \
+#     -f event_type=pack-welcome \
+#     -f 'client_payload[sub]=USER_SUB' \
+#     -f 'client_payload[displayName]=Ada Pack'
+#
+# Phase 2 durable playTime Worker (boltverse-pack, not grok.me): HOLD.
+
+name: pack-welcome
+
+on:
+  workflow_dispatch:
+    inputs:
+      sub:
+        description: Grok gate sub (required — never invent)
+        required: true
+        type: string
+      displayName:
+        description: Display name from Grok profile
+        required: false
+        type: string
+      handle:
+        description: '@handle from X/Grok when available'
+        required: false
+        type: string
+      playUrl:
+        description: Canonical playUrl override (default https://boltverse-odysseyyyy.grok.me)
+        required: false
+        type: string
+  repository_dispatch:
+    types: [pack-welcome]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pack-welcome-${{ github.event.inputs.sub || github.event.client_payload.sub || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    env:
+      PACK_SUB: ${{ github.event.inputs.sub || github.event.client_payload.sub }}
+      PACK_DISPLAY_NAME: ${{ github.event.inputs.displayName || github.event.client_payload.displayName }}
+      PACK_HANDLE: ${{ github.event.inputs.handle || github.event.client_payload.handle }}
+      PACK_PLAY_URL: ${{ github.event.inputs.playUrl || github.event.client_payload.playUrl }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Upsert Welcome profile
+        run: node scripts/pack-welcome.mjs
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "profiles/${PACK_SUB}.json" registry.json
+          if git diff --cached --quiet; then
+            echo "No Welcome file changes"
+            exit 0
+          fi
+
+          git commit -m "pack: welcome upsert ${PACK_SUB}"
+
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          for attempt in 1 2 3 4 5; do
+            if git push origin "HEAD:${BRANCH}"; then
+              exit 0
+            fi
+            echo "push failed (attempt ${attempt}); rebase onto latest ${BRANCH}"
+            git fetch origin "${BRANCH}"
+            if ! git rebase "origin/${BRANCH}"; then
+              git rebase --abort || true
+              git reset --hard "origin/${BRANCH}"
+              node scripts/pack-welcome.mjs
+              git add "profiles/${PACK_SUB}.json" registry.json
+              if git diff --cached --quiet; then
+                echo "Rebase rewrite produced no file changes"
+                exit 0
+              fi
+              git commit -m "pack: welcome upsert ${PACK_SUB}"
+            fi
+          done
+          echo "Failed to push Welcome upsert after retries"
+          exit 1
