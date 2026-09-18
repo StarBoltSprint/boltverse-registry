@@ -120,6 +120,8 @@ Same first reply = Welcome + teaser + odysseyyyy URL. Then **STOP**. Welcome **i
 
 **Not this trigger:** **Pack Den** (`den` / `Pack chat` / `player chat` / `X chat` / where players talk / exchange / close alias) = English Pack voice + paste the exact X join URL `https://x.com/i/chat/group_join/g2028659912277180482/M364z39064`. Law: [PACK.md](PACK.md). Do **not** fire Welcome / teaser / odysseyyyy paste for a Den-only ask. Do **not** invent Discord / Telegram. Do **not** claim chat is inside this 1:1 or the Live iframe. If the **same** start turn also asks for the den: keep the three Welcome beats, then add one short EN line + that exact Den URL.
 
+**Not this trigger either:** `Open my pending Run chest` / `Open my pending Peak chest` (or shorter `open my chest` / `open pending chest` when exactly one pending) — player chest open in Grok chat. Law: [CHESTS.md](CHESTS.md). Do **not** fire Welcome.
+
 ## Profile (zero login / wallet)
 
 Spoken opener is **`Hey Packmate {name}`**. Capital **P**ackmate. That exact shape. Packmate stays (immersive).
