@@ -2,7 +2,8 @@
 
 > **HARD LOCK — Pack assets = Grok Imagine cook-rail output ONLY (images / videos).**
 > **Cook asset = Imagine (in the Grok chat app).** Mint `assetId` ONLY when a Grok Imagine cook completes through the Pack / Boltverse cook rail (Imagine in-app — Build hooks / Imagine session attached to gated Live / cook-room path — whatever the Pack wire uses).
-> **HARD LOCK — own-plates chat = Grok chat app ONLY.** **List** (`show my plates` / close alias) → Pack voice + `assetId` chips only (optional at most **ONE** header still — never N media for N plates). **Focus** (one plate by name / role / `assetId`) → Pack words + that one `assetId` + **one** media attach (mp4 if vid, photo if img). Own `creatorSub` only. **Never** Sprint HUD / overlay chrome.
+> **HARD LOCK — own-plates chat = Grok chat app ONLY.** **List** (`show my plates` / close alias) → Pack voice + `assetId` chips only (optional at most **ONE** header still — never N media for N plates). Short cassette counts OK next to the chip. **Focus** (one plate by name / role / `assetId`) → Pack words + that one `assetId` + fuller cassette stats + **one** media attach (mp4 if vid, photo if img). Own `creatorSub` only. **Never** Sprint HUD / overlay chrome.
+> **HARD LOCK — cassette stats are real or zero.** Never invent views / playTime / players. Never pay-to-win stats.
 > **Chest surface law** (play / earn / open / put-in-chest) = Grok chat app only — see [CHESTS.md](CHESTS.md). No external Pack website required to cook.
 > **Chest overlay = Pack Engine, not the biome plate.** Chests, Hang, forge, and biome plates **reference** `assetId`s. They do **not** host chest UI. Federated `*.grok.me` / hung-biome creators: ZERO chest wire. Put-in-chest is optional.
 > **Provenance is automatic.** The server / rail writes it at mint. The player **never** supplies proof.
@@ -120,6 +121,7 @@ Store on `assets/<assetId>.json` at mint (Imagine cook complete — rail writes 
 | `label` | string \| omit | Optional kitchen short name (e.g. `plate-road`). Chat may map it to a Pack label. Never speak the kitchen stem alone. |
 | `role` | string \| omit | Optional one-line role. Chat may show this as the row’s extra line. |
 | `playPath` | string \| omit | Optional hung path (e.g. `biome/master/road.mp4`). **Kitchen only** — never dump to the player. |
+| `stats` | object \| omit | Optional Pack cassette play stats. Prefer nested `stats{}`. Flat `views` / `playTimeSec` / `players` on the manifest also OK. Missing = treat as `0`. Never invent. |
 
 Sketch:
 
@@ -141,11 +143,18 @@ Sketch:
   "railsVersion": "odyssey-chests-1",
   "status": "proposed",
   "chestPool": null,
-  "tags": ["cosmetic", "pack-lore"]
+  "tags": ["cosmetic", "pack-lore"],
+  "stats": {
+    "views": 0,
+    "playTimeSec": 0,
+    "players": 0
+  }
 }
 ```
 
 `contentHash` in the sketch is shape only — live rows use the real sha256 of rail output bytes.
+
+`stats` may start at `0` / omit until the Sprint / dealer wire upserts. Do **not** invent live counts in the sketch or in chat.
 
 ## Registry shape
 
@@ -175,6 +184,29 @@ At chest entry: caller ticket / JWT `sub` **MUST** match `assetId.creatorSub` �
 
 Full ownership + surface + rarity + engine overlay / creator zero wire law: [CHESTS.md](CHESTS.md).
 
+## Cassette stats (HARD — real or zero)
+
+Each `assetId` **may** carry Pack play stats. Kitchen fields on `assets/<assetId>.json` — prefer nested `stats{}`; flat twins on the manifest are also OK.
+
+v1 schema (even if every counter is still `0`):
+
+| Field | Type | Meaning |
+|---|---|---|
+| `views` | number | Opens / Focus asks / dealer starts on that plate |
+| `playTimeSec` | number | Picture-time spent on that plate (seconds) |
+| `players` | number | Unique gate `sub` count who played it |
+
+Optional later (not required v1): `peaks`, `tips`. Do not invent them. Do not speak them until the wire writes them.
+
+**Wire later (kitchen — not a v1 ship gate):** Live Sprint heartbeat / plate dealer events **upsert** these counters **by `assetId`**. Merge-add only. Never wipe provenance. v1 docs = this schema + chat law even if counters start at `0`.
+
+**HARD BAN:**
+
+- **Never invent fake numbers.** Missing field → `0` or omit in chat. Do not guess, round up, or demo-pad.
+- **Never pay-to-win stats.** Cassette counts are looks / social proof only. They never buy speed, Resonance power, score multiplier, path advantage, easier Hit windows, extra lives, paid skill, or wallet boost. Pack Pass / tips never buy a fake view count.
+
+Kitchen may store the raw counters. Player chat uses Pack words (`views` · `players` · picture-time) — never `stats{}` / JSON lectures.
+
 ## Player chat — List vs Focus (HARD — Grok chat app only)
 
 Two asks. Both reply **IN CHAT** (Grok chat app). English Pack voice. Own `creatorSub` only.
@@ -200,7 +232,7 @@ Skip `dropped` rows. Kitchen probes are not plates.
 
 When a player asks in **Grok chat** to see their plates / creations / biomes / hung films (any close alias: `show my plates`, `mes plaques`, `list my assets`, `what did I cook`…):
 
-**Pack voice lines + `assetId` chips only.**
+**Pack voice lines + `assetId` chips only.** Short cassette counts OK next to the chip.
 
 Each row (same chat turn, text — no per-row media):
 
@@ -208,8 +240,9 @@ Each row (same chat turn, text — no per-row media):
 2. `assetId` chip (`a_<sub>_…`)
 3. kind `img` \| `vid`
 4. Optional one-line **role** from the manifest (`role`, or a Pack reading of `label`)
+5. Optional short cassette counts next to the chip — e.g. `views` · `players` (real or `0`; never invent)
 
-Do not skip the chip.
+Do not skip the chip. Counts are optional chips, not a reason to attach media.
 
 **HARD BAN — list media spam:** do **NOT** attach one still / mp4 per row when there are many plates. That is a **spam FAIL**.
 
@@ -227,13 +260,14 @@ Then stop. Do not lecture GitHub. Do not fire Welcome. Do not attach plate media
 
 When the player **focuses one plate** (by Pack name, role, or `assetId`):
 
-**THEN** attach **that** plate’s media in chat — **mp4** if `vid`, **photo / still** if `img`.
+**THEN** attach **that** plate’s media in chat — **mp4** if `vid`, **photo / still** if `img`. Show **fuller** cassette stats on the same turn.
 
 Same turn:
 
 1. Pack words for that plate
 2. That one `assetId` chip
-3. The **one** media attach (kind-matched)
+3. Fuller cassette stats — `views` · `players` · picture-time (`playTimeSec`) — real or `0`; never invent
+4. The **one** media attach (kind-matched)
 
 Ownership still HARD: attach **only** if `creatorSub` matches the caller’s gate `sub`. Not owned / not found → Pack-voice refuse, **no** attach, no kitchen dump.
 
@@ -241,7 +275,7 @@ Ownership still HARD: attach **only** if `creatorSub` matches the caller’s gat
 
 ### HARD BAN (player-facing)
 
-Kitchen may read GitHub. **List** = Pack words + `assetId` chips (optional one header still). **Focus** = Pack words + that one `assetId` + that one media.
+Kitchen may read GitHub. **List** = Pack words + `assetId` chips + optional short counts (optional one header still). **Focus** = Pack words + that one `assetId` + fuller cassette stats + that one media.
 
 **Never** dump to the player:
 
@@ -249,6 +283,7 @@ Kitchen may read GitHub. **List** = Pack words + `assetId` chips (optional one h
 - `raw.githubusercontent.com`
 - registry paths (`assets/<id>.json`, `assets/plates-index.json`, `biome/master/…`)
 - kitchen noise (`playPath`, `contentHash`, `mintedVia`, `railsVersion`, JWT / ticket lectures)
+- Fake cassette numbers (missing → `0` or omit — never invent)
 
 ### Tone
 
@@ -270,8 +305,9 @@ Odyssey `biome/master/ASSETS.md` stays a **pointer** at this file. Do not fork a
 - Chest propose only if caller `sub` === `creatorSub` (in-app: Grok chat or Build)
 - Grok Imagine only — HARD
 - Chest surface + rarity + engine overlay / creator zero wire: [CHESTS.md](CHESTS.md)
-- **List** ask in **Grok chat** (`show my plates` / close alias) → **own** plates (`creatorSub` === gate `sub`) as Pack voice + `assetId` chips only — optional at most **ONE** header still; **never** N media for N plates (spam FAIL)
-- **Focus** one plate (name / role / `assetId`) → Pack words + that one `assetId` + **one** media attach (mp4 if vid, photo if img) — own `creatorSub` only
+- Cassette stats (`views` / `playTimeSec` / `players`, prefer `stats{}`) may live on each `assetId` — real or `0`; never invent; never pay-to-win
+- **List** ask in **Grok chat** (`show my plates` / close alias) → **own** plates (`creatorSub` === gate `sub`) as Pack voice + `assetId` chips only — short counts OK next to the chip; optional at most **ONE** header still; **never** N media for N plates (spam FAIL)
+- **Focus** one plate (name / role / `assetId`) → Pack words + that one `assetId` + fuller cassette stats + **one** media attach (mp4 if vid, photo if img) — own `creatorSub` only
 - Empty list = `No Pack plates sealed yet — cook in Imagine.`
 - **HARD BAN** GitHub / `raw.githubusercontent` / registry-path dumps in List or Focus
 - **HARD BAN** Sprint HUD / overlay chrome as the plate list — chat only

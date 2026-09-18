@@ -87,11 +87,13 @@ Body:
 
 Updates `lastSeenAt`, `playTimeSec`, `playUrl`, `updatedAt` on `profiles/<sub>.json` + the registry index.
 
+**Later (not a v1 ship gate):** Sprint heartbeat / plate dealer events may also upsert cassette stats on `assets/<assetId>.json` (`stats.views` / `stats.playTimeSec` / `stats.players`) — [ASSETS.md](ASSETS.md). Never invent. Never pay-to-win.
+
 **GET `/v1/pack/me`** (optional)
 
 Bearer ticket → current profile JSON (for chat Welcome stage/peak).
 
-Chat ask `show my plates` (any close alias) uses the **same** gate `sub` to **List** own `creatorSub` assets in **Grok chat** (Pack voice + `assetId` chips only). **Focus** one plate (name / role / `assetId`) attaches that one media. [ASSETS.md](ASSETS.md). Not a profile write. Not Sprint HUD.
+Chat ask `show my plates` (any close alias) uses the **same** gate `sub` to **List** own `creatorSub` assets in **Grok chat** (Pack voice + `assetId` chips + optional short cassette counts). **Focus** one plate (name / role / `assetId`) = fuller stats + that one media. [ASSETS.md](ASSETS.md). Not a profile write. Not Sprint HUD.
 
 ## Server verify rules (copy from working heart-giant fix)
 
