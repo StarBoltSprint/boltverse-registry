@@ -9,17 +9,19 @@ Kitchen + implementer contract. Silent of player chat. No secrets in this repo.
 > **HARD SPLIT — two hosts, never mix:**
 >
 > 1. **Welcome existence + `lastSeenAt`** = GitHub Action `pack-welcome` on this registry (`StarBoltSprint/boltverse-registry`) — **NOT** any `*.grok.me`.
-> 2. **`playTimeSec` / Live heartbeats** = durable host `StarBoltSprint/boltverse-pack` deployed on Vercel (or similar) — **NOT** any `*.grok.me`. Placeholder origin until the deploy URL is known: `https://YOUR-PACK.vercel.app`.
+> 2. **`playTimeSec` / Live heartbeats** = **TEMPORARY** external Pack API / playTime host `https://boltverse-pack.vercel.app` (`StarBoltSprint/boltverse-pack`) — **NOT** any `*.grok.me`.
+>
+> **TEMPORARY (SmiR):** this Vercel host exists because `*.grok.me` Lives **freeze**. It is **not** the forever home. Long-term: Pack stays inside the **Grok sandbox** — revisit when Live Pack wire is stable. Kitchen docs may name `https://boltverse-pack.vercel.app`. **Do not** put Vercel in player-facing Welcome copy.
 >
 > **HARD BAN:** `https://boltverse-odysseyyyy.grok.me` / any Live as the central Pack API / playTime host. Those Lives **freeze**. Four-y currently **404s Pack routes**. Do not restore Pack API onto a grok.me Live.
 >
-> **Recipe HARD:** every new biome / citadel / Sprint Live Grok **creates or publishes** MUST set `window.BOLTVERSE_PACK_ORIGIN` to the boltverse-pack Vercel origin **and** load its `/client/pack.js`, **and** plate dealer reporting `assetId` stats (`views` / `playTimeSec` / `players`). No optional step. No waiting for the player to ask.
+> **Recipe HARD:** every new biome / citadel / Sprint Live Grok **creates or publishes** MUST set `window.BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app` **and** load `/client/pack.js` from that origin, **and** plate dealer reporting `assetId` stats (`views` / `playTimeSec` / `players`). No optional step. No waiting for the player to ask. **First gated Live open = auto register** (player does nothing else).
 >
 > When Grok creates plates / biome / citadel: mint `assetId`s + wire the stats path **automatically** from [ASSETS.md](ASSETS.md) / Odyssey `biome/docs/07-pack-live.md` / [CHESTS.md](CHESTS.md) if relevant.
 >
 > Live may keep a thin same-origin `/api/pack` **proxy** later, but registry writes must **not** depend on Live secrets or Live uptime for the API itself.
 >
-> **Phase 2 is the playTime path** (no longer HOLD). Do not build `boltverse-pack` in this registry repo.
+> **Phase 2 is the playTime path** (no longer HOLD). Host = TEMPORARY `https://boltverse-pack.vercel.app`. Do not build `boltverse-pack` in this registry repo.
 >
 > **Ban** treating Pack wire as a manual Build chore the player briefs.
 >
@@ -58,11 +60,11 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 
 - **Identity** = Grok gate `sub` / Grok identity JWT `sub` / stable Grok account id used for profiles — never invent
 - **Welcome register** (chat start) = existence + `lastSeenAt` via **GitHub Action** `pack-welcome` / `scripts/pack-welcome.mjs`. Canonical `playUrl=https://boltverse-odysseyyyy.grok.me`. Does **not** increment `playTimeSec`. **NOT** any `*.grok.me` Pack API.
-- **Live open** (`/v1/pack/boot` + heartbeat on **boltverse-pack**) = **Phase 2 playTime path** — `playTimeSec` / plate views. `playUrl` = whatever origin they opened (`location.origin`). Client calls `window.BOLTVERSE_PACK_ORIGIN` (placeholder `https://YOUR-PACK.vercel.app` until the Vercel URL is known). Welcome must succeed even if Live **404** / **frozen**.
+- **Live open** (`/v1/pack/boot` + heartbeat on **boltverse-pack**) = **Phase 2 playTime path** — `playTimeSec` / plate views. `playUrl` = whatever origin they opened (`location.origin`). Client calls `window.BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app`. **First gated Live open = auto register** (player does nothing else). Welcome must succeed even if Live **404** / **frozen**.
 - Same `sub` on a second Live → **same** `profiles/<sub>.json`, `playUrl` updated
 - Same `sub` / `userId` lists **own** plates in **Grok chat** when the player asks (`show my plates` / close alias) — `creatorSub` === that sub. **List** = Pack voice + `assetId` chips only (never N media). **Focus** one plate = one media attach. Law: [ASSETS.md](ASSETS.md). Chat only — not Sprint HUD.
 - **Pack Play Live paste (kitchen):** `https://boltverse-odysseyyyy.grok.me` (four y’s). Old `https://boltverse-odysseyyy.grok.me` (three y’s) is superseded — not Pack Play. **HARD BAN:** treat any `*.grok.me` (including four-y) as the Welcome register host **or** the central Pack API / playTime host.
-- **Phase 2 playTime host (kitchen):** `StarBoltSprint/boltverse-pack` on Vercel (or similar). Placeholder `https://YOUR-PACK.vercel.app`. Do not invent a deploy URL. Do not build it in this repo.
+- **Phase 2 playTime host (kitchen):** **TEMPORARY** external Pack API `https://boltverse-pack.vercel.app` (`StarBoltSprint/boltverse-pack`). Lives freeze — do not put the API on `*.grok.me`. Long-term: Pack stays inside the Grok sandbox. Do not build it in this repo. Do not speak this URL in player-facing Welcome copy.
 
 ## Hard bans
 
@@ -74,7 +76,7 @@ Every player-created `*.grok.me` Live (from the Odyssey recipe) connects **autom
 - Do not treat `https://boltverse-odysseyyy.grok.me` (three y’s) as Pack Play — superseded Beat 3 target
 - **HARD BAN:** `https://boltverse-odysseyyyy.grok.me` / any Live as the central Pack API / playTime host. Lives freeze. Four-y currently 404s Pack routes
 - **Never** wait for the player to say « install Pack wire / plate views / playTime ». Pack client + plate dealer stats are recipe floor — not a briefing, not a Build chore
-- **Never** publish a new biome / citadel / Sprint Live without `window.BOLTVERSE_PACK_ORIGIN` → boltverse-pack Vercel origin + load `/client/pack.js` from that origin
+- **Never** publish a new biome / citadel / Sprint Live without `window.BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app` + load `/client/pack.js` from that origin
 - **Never** invent Discord / Telegram / Slack / another X group as Pack player chat. Official chat = **Pack Den** only — exact join URL above
 - **Never** claim Pack Den is inside Grok Chat 1:1 or the Live iframe. **Never** embed / iframe X Chat. v1 = open X (native)
 - **Never** treat any `*.grok.me` (including `https://boltverse-odysseyyyy.grok.me`) as the Welcome register host. Welcome existence write = GitHub Action `pack-welcome` only
@@ -92,13 +94,15 @@ Welcome / chat start (start / play / lance + locked Welcome)
        HARD: NOT *.grok.me   NOT Live /v1/pack/boot   NOT boltverse-pack
 
 Any Live (*.grok.me)  — Play surface (may freeze / 404 Pack routes)
-  set window.BOLTVERSE_PACK_ORIGIN = https://YOUR-PACK.vercel.app
-       (replace with real boltverse-pack Vercel origin when known)
+  set window.BOLTVERSE_PACK_ORIGIN = https://boltverse-pack.vercel.app
+       TEMPORARY external Pack API / playTime host  (Lives freeze)
+       long-term: Pack stays inside Grok sandbox
   load BOLTVERSE_PACK_ORIGIN + /client/pack.js
+    first gated Live open = auto register  (player does nothing else)
     playUrl = location.origin
     forward gate JWT / ticket
-       → Phase 2 playTime host  StarBoltSprint/boltverse-pack  (Vercel / similar)
-            HARD BAN: odysseyyyy / any Live as this API
+       → Phase 2 playTime host  https://boltverse-pack.vercel.app
+            HARD BAN: odysseyyyy / any Live / *.grok.me as this API
             verify x-grok-identity
             GitHub App → StarBoltSprint/boltverse-registry
             upsert profiles/<sub>.json + registry.json row
@@ -117,7 +121,7 @@ Optional thin `/api/pack` on each Live may **proxy** playTime later (same contra
 > **NOT** `https://boltverse-odysseyyyy.grok.me` Pack API. **NOT** any other `*.grok.me` Live. **NOT** boltverse-pack (that host is playTime only).
 > Ban treating a grok.me host as the Welcome register. Live `/v1/pack/boot` is **not** Welcome.
 > Welcome **must succeed even if Live 404 / frozen**.
-> **Phase 2 playTime path** = `StarBoltSprint/boltverse-pack` on Vercel (placeholder `https://YOUR-PACK.vercel.app`) — not HOLD.
+> **Phase 2 playTime path** = **TEMPORARY** `https://boltverse-pack.vercel.app` (`StarBoltSprint/boltverse-pack`) — not HOLD. Not the forever home. Do not speak Vercel in Welcome copy.
 
 **SUPERSEDES** « chat start does not upsert » / « Welcome reads only » / « Welcome writes through the odysseyyyy Pack API » / « Phase 2 playTime Worker HOLD » / « Live is the central Pack API ». Law: [COLD_START.md](COLD_START.md).
 
@@ -145,15 +149,15 @@ gh api repos/StarBoltSprint/boltverse-registry/dispatches \
   -f 'client_payload[displayName]=Ada Pack'
 ```
 
-**Welcome register = existence + lastSeen (GitHub Action). Live heartbeats = playTime on boltverse-pack (Phase 2).** Live Pack wire is automatic (recipe floor — never a player ask): set `window.BOLTVERSE_PACK_ORIGIN` + load `/client/pack.js` from that origin. Welcome does **not** wait on Live or boltverse-pack. Live floor: Odyssey `biome/docs/07-pack-live.md`.
+**Welcome register = existence + lastSeen (GitHub Action `pack-welcome`). Live heartbeats = playTime on TEMPORARY `https://boltverse-pack.vercel.app` (Phase 2).** Live Pack wire is automatic (recipe floor — never a player ask): set `window.BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app` + load `/client/pack.js` from that origin. **First gated Live open = auto register** (player does nothing else). Welcome does **not** wait on Live or boltverse-pack. Live floor: Odyssey `biome/docs/07-pack-live.md`.
 
 ## Routes (Phase 2 playTime host — boltverse-pack)
 
-These routes live on **`StarBoltSprint/boltverse-pack`** (Vercel / similar). Placeholder origin: `https://YOUR-PACK.vercel.app` until the deploy URL is known. **HARD BAN:** serving them from `https://boltverse-odysseyyyy.grok.me` or any other Live. Four-y currently 404s these routes. Lives freeze — do not put the API back on grok.me.
+These routes live on **TEMPORARY** `https://boltverse-pack.vercel.app` (`StarBoltSprint/boltverse-pack`). Kitchen may name this URL. **Do not** put it in player-facing Welcome copy. Long-term: Pack stays inside the Grok sandbox — revisit when Live Pack wire is stable. **HARD BAN:** serving them from `https://boltverse-odysseyyyy.grok.me` or any other Live. Four-y currently 404s these routes. Lives freeze — do not put the API back on grok.me.
 
 **POST `/v1/pack/boot`** (also acceptable alias **POST `/api/pack`** for back-compat)
 
-When: first document load from the Grok app (Play Live open **inside the Grok app** — gated HTML + `x-grok-identity` / gate JWT). Client POSTs to `BOLTVERSE_PACK_ORIGIN`, **not** `location.origin` (unless a thin same-origin proxy forwards to boltverse-pack). **Not the Welcome register.** Welcome already wrote existence + `lastSeenAt` via GitHub Action `pack-welcome` when a real `sub` was known on chat start. This boot is the **playTime** merge-patch (`gateSub` from JWT, `playUrl` from the Live `location.origin`). Heartbeat is the only `playTimeSec` increment. An unopened paste still does **not** write playTime. Live **404** / frozen → Welcome still succeeded; playTime waits on boltverse-pack, not the Live API. Opening Live **outside** the Grok app → `{ ok: false, reason: "no-sub" }` — never invent a `sub`. Cold-start first reply still **pastes** `https://boltverse-odysseyyyy.grok.me` (same message as Welcome + teaser — no yes-wait). Law: [COLD_START.md](COLD_START.md).
+When: first document load from the Grok app (Play Live open **inside the Grok app** — gated HTML + `x-grok-identity` / gate JWT). **First gated Live open = auto register** — player does nothing else. Client POSTs to `BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app`, **not** `location.origin` (unless a thin same-origin proxy forwards to boltverse-pack). **Not the Welcome register.** Welcome already wrote existence + `lastSeenAt` via GitHub Action `pack-welcome` when a real `sub` was known on chat start. This boot is the **playTime** merge-patch (`gateSub` from JWT, `playUrl` from the Live `location.origin`). Heartbeat is the only `playTimeSec` increment. An unopened paste still does **not** write playTime. Live **404** / frozen → Welcome still succeeded; playTime waits on boltverse-pack, not the Live API. Opening Live **outside** the Grok app → `{ ok: false, reason: "no-sub" }` — never invent a `sub`. Cold-start first reply still **pastes** `https://boltverse-odysseyyyy.grok.me` (same message as Welcome + teaser — no yes-wait). **Do not** speak the Vercel host in that Welcome copy. Law: [COLD_START.md](COLD_START.md).
 
 Headers: `x-grok-identity` (JWT) and/or `Authorization: Bearer <ticket>`
 
@@ -184,7 +188,7 @@ No identity 200/401 policy: prefer **200** with `{ "ok": false, "github": "skip"
 
 **POST `/v1/pack/heartbeat`**
 
-Every ~30s while Play is open. Same host: boltverse-pack Vercel origin — **not** the Live.
+Every ~30s while Play is open. Same host: TEMPORARY `https://boltverse-pack.vercel.app` — **not** the Live. **HARD BAN** `*.grok.me`.
 
 Headers: `Authorization: Bearer <ticket>` (from boot)
 
@@ -215,12 +219,12 @@ Chat ask `show my plates` (any close alias) uses the **same** gate `sub` to **Li
 - Decode claim `sub` even when JWKS is 404
 - Upsert on the **gate-signed document/boot** request, not only heartbeat
 - Log once per boot: `identity source=… sub=…`
-- Host is boltverse-pack (Vercel / similar). **Never** require the Live to be the Host for registry writes
+- Host is TEMPORARY `https://boltverse-pack.vercel.app`. **Never** require the Live to be the Host for registry writes. **HARD BAN** `*.grok.me` as this API.
 
 ## GitHub write shape
 
 - **Welcome writer:** `.github/workflows/pack-welcome.yml` → `scripts/pack-welcome.mjs` (Action / local). **Not** a grok.me Pack API. **Not** boltverse-pack.
-- **playTime writer:** `StarBoltSprint/boltverse-pack` (Vercel / similar) merge-patches the same files on boot / heartbeat. Placeholder origin `https://YOUR-PACK.vercel.app`. **Not** any Live.
+- **playTime writer:** TEMPORARY `https://boltverse-pack.vercel.app` (`StarBoltSprint/boltverse-pack`) merge-patches the same files on boot / heartbeat. **Not** any Live. **Not** the forever home.
 - Path: `profiles/<sub>.json` (`userId` === `gateSub` === filename stem)
 - Merge-patch: never wipe `resonance` / `starCore` / `cosmetics` / `pendingChests` on Welcome register, boot, or heartbeat. Player chest open cues (`Open my pending Run chest` / `Open my pending Peak chest`) = [CHESTS.md](CHESTS.md).
 - Always set: `userId`=`gateSub`=`sub`, `playUrl`, `lastSeenAt=now`, `updatedAt=now`
@@ -236,12 +240,12 @@ Do not put GitHub App private keys, xAI keys, or tickets in this repo. No wallet
 
 ## Client snippet (recipe floor — every Live)
 
-**HARD:** every new biome / citadel / Sprint Live Grok creates or publishes ships this. Not optional. Not a player brief. Set `window.BOLTVERSE_PACK_ORIGIN` to the **boltverse-pack Vercel origin** and load **that origin’s** `/client/pack.js`. Placeholder until the deploy URL is known: `https://YOUR-PACK.vercel.app`. **HARD BAN:** point `BOLTVERSE_PACK_ORIGIN` at `https://boltverse-odysseyyyy.grok.me` or any other Live. Plate dealer reports `assetId` stats (`views` / `playTimeSec` / `players`) on the same wire. Live floor: Odyssey `biome/docs/07-pack-live.md`.
+**HARD:** every new biome / citadel / Sprint Live Grok creates or publishes ships this. Not optional. Not a player brief. Set `window.BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app` and load **that origin’s** `/client/pack.js`. **First gated Live open = auto register** (player does nothing else). **HARD BAN:** point `BOLTVERSE_PACK_ORIGIN` at `https://boltverse-odysseyyyy.grok.me` or any other Live. Plate dealer reports `assetId` stats (`views` / `playTimeSec` / `players`) on the same wire. Live floor: Odyssey `biome/docs/07-pack-live.md`.
 
 Pseudo:
 
 ```
-window.BOLTVERSE_PACK_ORIGIN = 'https://YOUR-PACK.vercel.app'   // replace when Vercel URL known
+window.BOLTVERSE_PACK_ORIGIN = 'https://boltverse-pack.vercel.app'   // TEMPORARY — Lives freeze
 load BOLTVERSE_PACK_ORIGIN + '/client/pack.js'
 on boot (Grok webview):
   POST BOLTVERSE_PACK_ORIGIN /v1/pack/boot { playUrl: location.origin, displayName? }
@@ -260,8 +264,8 @@ Optional later: Live thin same-origin `/api/pack` **proxy** to `BOLTVERSE_PACK_O
 ## Ship order
 
 1. **Welcome register (on main):** GitHub Action `pack-welcome` + `scripts/pack-welcome.mjs` on boltverse-registry (`contents:write`). Grok/Bot fires `gh workflow run` or `repository_dispatch`. Independent of any Live and of boltverse-pack.
-2. **Phase 2 playTime path (this unlock):** durable host `StarBoltSprint/boltverse-pack` on Vercel (or similar). Placeholder origin `https://YOUR-PACK.vercel.app` until the deploy URL is known. Do not invent a URL. Do not build it in this repo.
-3. Recipe ships Pack client: `window.BOLTVERSE_PACK_ORIGIN` → boltverse-pack + load `/client/pack.js` from that origin + plate dealer stats. Live floor: Odyssey `biome/docs/07-pack-live.md`
+2. **Phase 2 playTime path (this unlock):** **TEMPORARY** external host `https://boltverse-pack.vercel.app` (`StarBoltSprint/boltverse-pack`). Lives freeze — not `*.grok.me`. Long-term: Pack stays inside the Grok sandbox. Do not build it in this repo. Do not speak Vercel in Welcome copy.
+3. Recipe ships Pack client: `window.BOLTVERSE_PACK_ORIGIN=https://boltverse-pack.vercel.app` + load `/client/pack.js` from that origin + plate dealer stats. **First gated Live open = auto register.** Live floor: Odyssey `biome/docs/07-pack-live.md`
 4. **HARD BAN** treating odysseyyyy / any Live as the central Pack API. Lives freeze; four-y 404s Pack routes. Welcome must work when the Live is down.
 5. Optional later: thin same-origin Live proxy — writes still must not depend on Live secrets or Live uptime.
 6. Any new biome / citadel / Sprint Live Grok creates or publishes **inherits** that client — auto-joined for playTime. Player never asks.
@@ -270,7 +274,7 @@ Optional later: Live thin same-origin `/api/pack` **proxy** to `BOLTVERSE_PACK_O
 
 start / Welcome with a known `sub` → Action `pack-welcome` upserts `profiles/<sub>.json` (merge-patch) with `userId`=`gateSub`=`sub` + canonical `playUrl=https://boltverse-odysseyyyy.grok.me` + `lastSeenAt=now`. `playTimeSec` unchanged. `{playerCount}` includes this player after a successful write / dispatch. **No** `*.grok.me` call required. Never invent a `sub`. Never wipe `resonance` / `starCore` / `cosmetics` / `pendingChests`.
 
-Open Live from Grok app ~30s → client talks to **boltverse-pack** (`BOLTVERSE_PACK_ORIGIN`, placeholder `https://YOUR-PACK.vercel.app`) → same file updated: `playUrl` = that Live origin + `playTimeSec` increased via heartbeat. Plate dealer writes `assetId` stats without a player install ask. **Not** via `boltverse-odysseyyyy.grok.me` / any Live Pack API.
+Open Live from Grok app (first gated open) → auto register on **TEMPORARY** `https://boltverse-pack.vercel.app` (`BOLTVERSE_PACK_ORIGIN`) — player does nothing else → same file updated: `playUrl` = that Live origin + `playTimeSec` increased via heartbeat. Plate dealer writes `assetId` stats without a player install ask. **Not** via `boltverse-odysseyyyy.grok.me` / any Live Pack API.
 
 Second Live, different URL, same `sub` → same file, `playUrl` updated.
 
